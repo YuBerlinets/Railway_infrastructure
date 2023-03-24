@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args){
         Station warsaw = new Station("Warsaw, Poland");
@@ -23,6 +28,7 @@ public class Main {
         RestaurantRailroadCar rrc3 = new RestaurantRailroadCar("WOG", 3200);
 
 
+
         porc1.connectToElectricalGrid();
         rrc1.connectToElectricalGrid();
         rrc2.connectToElectricalGrid();
@@ -46,6 +52,8 @@ public class Main {
         prc1.addPeople(38);
         prc2.addPeople(43);
 
+
+
         System.out.println(t1);
         System.out.println(t1.getNumRailroadCarsElectricityGrid());
 
@@ -65,5 +73,38 @@ public class Main {
 
         System.out.println(t2);
 
+        Trainset t3 = new Trainset(l2);
+        generateCars(t3);
+        System.out.println(t3);
+    }
+    public static void generateCars(Trainset trainset){
+        int numOfCars = (int) (Math.random()*3+8);
+        double netWeight =Math.random()*1000+3500;
+        for (int i = 0; i < numOfCars; i++) {
+            trainset.addCar(new PostOfficeRailroadCar(getShipper(),netWeight));
+
+        }
+    }
+    public static String getShipper() {
+        String res = null;
+        String path = "TechFiles\\CarShipper.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            int lines = 0;
+            while (reader.readLine() != null) lines++;
+            Random random = new Random();
+            int randomLineIndex = random.nextInt(lines);
+            reader.close();
+            BufferedReader reader1 = new BufferedReader(new FileReader(path));
+
+            for (int i = 0; i < randomLineIndex; i++) {
+                reader1.readLine();
+            }
+
+            res = reader1.readLine();
+            reader1.close();
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+        return res;
     }
 }
