@@ -110,7 +110,6 @@ public class Main {
     }
 
     public static ArrayList generateStations(ArrayList<Station> stations) {
-
         String result = null;
         Random random = new Random();
         String path = "TechFiles\\Stations.txt";
