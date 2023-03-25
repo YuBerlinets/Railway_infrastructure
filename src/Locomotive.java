@@ -19,7 +19,6 @@ public class Locomotive {
         this.destinationStation = destinationStation;
 
     }
-
     public void adjustSpeed() throws InterruptedException {
         Random random = new Random();
         while (true) {
