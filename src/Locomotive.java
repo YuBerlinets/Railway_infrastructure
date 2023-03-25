@@ -1,3 +1,6 @@
+import exception.RailroadHazard;
+import exception.TooBigWeight;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,11 +10,11 @@ public class Locomotive {
     private Station homeRailwayStation;
     private Station sourceStation;
     private Station destinationStation;
-    private double speed = 150;
+    private double speed = 160;
 
     private static int count = 1;
 
-    Locomotive(String name,Station homeRailwayStation,Station sourceStation, Station destinationStation){
+    Locomotive(String name, Station homeRailwayStation, Station sourceStation, Station destinationStation) {
         this.id = id + count++;
         this.name = name;
         this.homeRailwayStation = homeRailwayStation;
@@ -19,24 +22,34 @@ public class Locomotive {
         this.destinationStation = destinationStation;
 
     }
+
     public void adjustSpeed() throws InterruptedException {
         Random random = new Random();
         while (true) {
-            double delta = speed * 0.03;
-            boolean increase = random.nextBoolean();
-            if (increase) {
-                speed += delta;
+            if (speed < 200) {
+                double delta = Math.round(speed * 0.03);
+                boolean increase = random.nextBoolean();
+                if (increase) {
+                    speed += delta;
+                } else {
+                    speed -= delta;
+                }
+                //System.out.println("Train " + getId() + " 's speed is " + getSpeed());
+                Thread.sleep(1000);
             } else {
-                speed -= delta;
+                try {
+                    throw new RailroadHazard();
+                } catch (RailroadHazard e) {
+                    throw new RuntimeException("Locomotive " + getId() + " is out of speed limit");
+                }
             }
-            System.out.println("Train " + getId() + " 's speed is " + getSpeed()+ "\n");
-            Thread.sleep(1000);
         }
     }
 
-        @Override
-    public String toString(){
-        return "ID: " + getId() + "\tName: " + getName() + "\nHome Station: " + getHomeRailwayStation() + " | Sources: " + getSourceStation() +
+    @Override
+    public String toString() {
+        return "ID: " + getId() + "\tName: " + getName() + " Speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
+                " | Sources: " + getSourceStation() +
                 " | Destination: " + getDestinationStation();
     }
 
@@ -44,6 +57,7 @@ public class Locomotive {
     public double getSpeed() {
         return speed;
     }
+
     public String getId() {
         return id;
     }
