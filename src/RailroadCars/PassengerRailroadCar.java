@@ -1,3 +1,5 @@
+package RailroadCars;
+
 import exception.TooManyPeople;
 
 public class PassengerRailroadCar extends RailroadCar{
@@ -5,9 +7,9 @@ public class PassengerRailroadCar extends RailroadCar{
     private int people;
     public static int count = 1;
 
-    PassengerRailroadCar(String shipper, double netWeight, int numberSeats){
+    public PassengerRailroadCar(String shipper, double netWeight, int numberSeats){
         super(shipper, netWeight);
-        this.id = "prc" + count++; //prc stands for PassengerRailroadCar
+        this.id = "prc" + count++; //prc stands for RailroadCars.PassengerRailroadCar
         this.numberSeats = numberSeats;
     }
     public void addPeople(int people){

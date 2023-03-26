@@ -1,13 +1,15 @@
+package RailroadCars;
+
 public class ExplosiveRailroadCar extends HeavyFreightRailroadCar{
     private String cargoType;
     public static int count = 1;
 
     //add unique fields
 
-    ExplosiveRailroadCar(String shipper, double netWeight, String cargoType){
+    public ExplosiveRailroadCar(String shipper, double netWeight, String cargoType){
         super(shipper,netWeight);
         this.cargoType = cargoType;
-        this.id = "erc" + count++;//erc stands for ExplosiveRailroadCar
+        this.id = "erc" + count++;//erc stands for RailroadCars.ExplosiveRailroadCar
     }
 
     public String getCargoType() {

@@ -48,9 +48,9 @@ public class Locomotive {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + "\tName: " + getName() + " Speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
-                " | Sources: " + getSourceStation() +
-                " | Destination: " + getDestinationStation();
+        return "ID: " + getId() + " | Name: " + getName() + " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
+                "\nSource: " + getSourceStation() +
+                "\nDestination: " + getDestinationStation();
     }
 
 

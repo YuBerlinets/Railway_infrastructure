@@ -1,9 +1,11 @@
+package RailroadCars;
+
 public class RefrigeratedRailroadCar extends BasicFreightRailroadCar implements ElectricalGrid{
     public static int count = 1;
     //add some unique fields
-    RefrigeratedRailroadCar(String shipper, double netWeight){
+    public RefrigeratedRailroadCar(String shipper, double netWeight){
         super(shipper, netWeight);
-        this.id = "rfrc" + count++; //rfrc stands for RefrigeratedRailroadCar
+        this.id = "rfrc" + count++; //rfrc stands for RailroadCars.RefrigeratedRailroadCar
     }
 
     public String toString(){
