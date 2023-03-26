@@ -19,82 +19,53 @@ public class Main {
 
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 40);
-        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 3800, 52);
-        PassengerRailroadCar prc3 = new PassengerRailroadCar("Deutsche Bahn", 4100, 55);
-        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("UkrPoshta", 1000);
-        PostOfficeRailroadCar porc2 = new PostOfficeRailroadCar("Poczta Polska", 2000);
-        BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 3200);
-        BaggageMailRailroadCar bmrc2 = new BaggageMailRailroadCar("American Express", 3920);
-        BasicFreightRailroadCar bfrc1 = new BasicFreightRailroadCar("Stark Industries", 2500);
-        BasicFreightRailroadCar bfrc2 = new BasicFreightRailroadCar("G&G Company LLC", 4000);
-        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("Mcdonald's", 3800);
-        RestaurantRailroadCar rrc2 = new RestaurantRailroadCar("KFC", 3950);
-        RestaurantRailroadCar rrc3 = new RestaurantRailroadCar("WOG", 3200);
-        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Test", 3500, "water");
+        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 50);
+        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post",3900);
+        BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000);
+        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG",3600);
+        RefrigeratedRailroadCar rfrc1 = new RefrigeratedRailroadCar("LG", 3800);
+        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Stark Industries", 3400,"Water");
+        GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900,"Petrol");
+        ExplosiveRailroadCar erc1 = new ExplosiveRailroadCar("American Express", 4100, "Bomb");
+        ToxicRailroadCar trc1 = new ToxicRailroadCar("South uranium", 3400, "Uranium");
 
 
+        prc1.connectToElectricalGrid();
         porc1.connectToElectricalGrid();
-//        rrc1.connectToElectricalGrid();
-//        rrc2.connectToElectricalGrid();
-        //rrc3.connectToElectricalGrid();//throws an exception
-
-        Trainset t1 = new Trainset(l1);
-        t1.addCar(prc1);
-        t1.addCar(prc2);
-        t1.addCar(prc3);
-        t1.addCar(porc1);
-        t1.addCar(porc2);
-        t1.addCar(bmrc1);
-        t1.addCar(bmrc2);
-        t1.addCar(bfrc1);
-        t1.addCar(bfrc2);
-        t1.addCar(rrc1);
-        t1.addCar(lrc1);
-        t1.addCar(bmrc2);//throws an exception
+        rrc1.connectToElectricalGrid();
+        rfrc1.isConnectedToElectricalGrid();
 
         prc1.addPeople(38);
         prc2.addPeople(43);
 
+        Trainset t1 = new Trainset(l1);
+        t1.addCar(prc1);
+        t1.addCar(porc1);
+        t1.addCar(bmrc1);
+        t1.addCar(rrc1);
+        t1.addCar(rfrc1);
+        t1.addCar(lrc1);
+        t1.addCar(grc1);
+        t1.addCar(erc1);
+        t1.addCar(trc1);
 
-        //System.out.println(t1);
-        //System.out.println(t1.getNumRailroadCarsElectricityGrid());
 
         Trainset t2 = new Trainset(l2);
         t2.addCar(prc1);
-        t2.addCar(prc2);
-        t2.addCar(prc3);
         t2.addCar(porc1);
-        t2.addCar(porc2);
         t2.addCar(bmrc1);
-        t2.addCar(bmrc2);
-        t2.addCar(bfrc1);
-        t2.addCar(bfrc2);
         t2.addCar(rrc1);
-        t2.addCar(rrc2);
-        t2.addCar(rrc3);
+        t2.addCar(rfrc1);
+        t2.addCar(lrc1);
+        t2.addCar(grc1);
+        t2.addCar(erc1);
+        t2.addCar(trc1);
 
-        //System.out.println(t2);
 
-
-        //System.out.println(t3);
         //ArrayList<Station> stations = new ArrayList<>();
         //generateStations(stations);
         //System.out.println(stations);
 
-        //passenger railroad car that requires connection to the locomotive’s electrical grid +
-        //• railroad post office that requires connection to the locomotive’s electrical grid +
-        //• railroad baggage and mail car +
-        //• railroad restaurant car that requires connection to the locomotive’s electrical grid +
-        //• basic railroad freight car +
-        //• heavy railroad freight car +
-        //• refrigerated railroad car, which is a type of basic freight railroad car that requires connection +
-        //to the locomotive’s electrical grid +
-        //• railroad car for liquid materials, which is a kind of basic freight railroad car +
-        //• railroad car for gaseous materials, which is a kind of basic railroad freight car +
-        //• railroad car for explosives, which is a kind of heavy railroad freight car +
-        //• railroad car for toxic materials, which is a kind of heavy railroad freight car +
-        //• railroad car for liquid, toxic material, which is a kind of heavy railroad freight car, and
-        //has the characteristics of a railroad car for liquid materials
 
 
 
@@ -116,19 +87,28 @@ public class Main {
             threads[i].start(); //assign speed to locomotive
         }
 
-        Scanner scannerTrainset = new Scanner(System.in);
+        Scanner menu = new Scanner(System.in);
         while(true){
-            System.out.println("Enter the number of the train or 0 to exit the program:");
-            int numTrainset = scannerTrainset.nextInt();
-
-            switch (numTrainset){
-                case 0:
+            System.out.println("For providing information about trains' abbreviation type \"info\".\n" +
+                    "For providing information about specific train type train's id.\n" +
+                    "For exiting from the program type \"q\" or \"exit\".");
+            String menuItems = menu.next();
+            switch (menuItems.toLowerCase()){
+                case ("info"):{
+                    System.out.println(abbreviationInfo());
+                    break;
+                }
+                case "q":
+                case "exit": {
+                    System.out.println("Exiting the program...");
                     System.exit(0);
-                case 1:{
+                    break;
+                }
+                case "t1":{
                     System.out.println(t1);
                     break;
                 }
-                case 2:{
+                case "t2":{
                     System.out.println(t2);
                     break;
                 }
@@ -181,6 +161,22 @@ public class Main {
             System.out.println("Error reading file: " + e);
         }
         return stations;
+    }
+
+    public static String abbreviationInfo(){
+        return "Here is the explanation of the trains' abbreviation\n" +
+                "1.prc - Passenger Railroad Car\n" +
+                "2.porc - Post Office Railroad Car\n" +
+                "3.bmrc - Baggage and Mail Railroad Car\n" +
+                "4.rrc - Restaurant Railroad Car\n" +
+                "5.bfrc - Basic Freight Railroad Car\n" +
+                "6.hrfc - Heavy Freight Railroad Car\n" +
+                "7.rfrc - Refrigerated Railroad Car\n" +
+                "8.lrc - Liquid Railroad Car\n" +
+                "9.grc - Gaseous Railroad Car\n" +
+                "10.erc - Explosive Railroad Car\n" +
+                "11.trc - Toxic Railroad Car\n" +
+                "12.ltrc - Liquid Toxic Railroad Car\n";
     }
 }
 

@@ -64,7 +64,8 @@ public class Trainset implements TrainsetConfiguration {
 
 
     public String toString() {
-        return "Trainset - ID: " + getId() + " | Total Weight: " + getWeightLoad() + "\t" + "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + " ";
+        return "Trainset - ID: " + getId() + " | Total Weight: " + getWeightLoad() + "\t" +
+                "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
     }
 
     public String getId() {

@@ -7,7 +7,7 @@ public class PassengerRailroadCar extends RailroadCar{
 
     PassengerRailroadCar(String shipper, double netWeight, int numberSeats){
         super(shipper, netWeight);
-        this.id = "prc" + count++;
+        this.id = "prc" + count++; //prc stands for PassengerRailroadCar
         this.numberSeats = numberSeats;
     }
     public void addPeople(int people){
