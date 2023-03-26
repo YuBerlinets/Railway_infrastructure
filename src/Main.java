@@ -30,11 +30,12 @@ public class Main {
         RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("Mcdonald's", 3800);
         RestaurantRailroadCar rrc2 = new RestaurantRailroadCar("KFC", 3950);
         RestaurantRailroadCar rrc3 = new RestaurantRailroadCar("WOG", 3200);
+        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Test", 3500, "water");
 
 
         porc1.connectToElectricalGrid();
-        rrc1.connectToElectricalGrid();
-        rrc2.connectToElectricalGrid();
+//        rrc1.connectToElectricalGrid();
+//        rrc2.connectToElectricalGrid();
         //rrc3.connectToElectricalGrid();//throws an exception
 
         Trainset t1 = new Trainset(l1);
@@ -48,9 +49,8 @@ public class Main {
         t1.addCar(bfrc1);
         t1.addCar(bfrc2);
         t1.addCar(rrc1);
-        t1.addCar(rrc2);
-        t1.addCar(rrc3); //throws an exception
-        //t1.addCar(bmrc2);//throws an exception
+        t1.addCar(lrc1);
+        t1.addCar(bmrc2);//throws an exception
 
         prc1.addPeople(38);
         prc2.addPeople(43);
@@ -80,6 +80,23 @@ public class Main {
         //ArrayList<Station> stations = new ArrayList<>();
         //generateStations(stations);
         //System.out.println(stations);
+
+        //passenger railroad car that requires connection to the locomotive’s electrical grid +
+        //• railroad post office that requires connection to the locomotive’s electrical grid +
+        //• railroad baggage and mail car +
+        //• railroad restaurant car that requires connection to the locomotive’s electrical grid +
+        //• basic railroad freight car +
+        //• heavy railroad freight car +
+        //• refrigerated railroad car, which is a type of basic freight railroad car that requires connection +
+        //to the locomotive’s electrical grid +
+        //• railroad car for liquid materials, which is a kind of basic freight railroad car +
+        //• railroad car for gaseous materials, which is a kind of basic railroad freight car +
+        //• railroad car for explosives, which is a kind of heavy railroad freight car +
+        //• railroad car for toxic materials, which is a kind of heavy railroad freight car +
+        //• railroad car for liquid, toxic material, which is a kind of heavy railroad freight car, and
+        //has the characteristics of a railroad car for liquid materials
+
+
 
         List<Trainset> trainsets = new ArrayList<>();
 

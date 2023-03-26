@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class RailroadCar implements ElectricalGrid{
+public class RailroadCar {
     public String id; //rc stands for railroad car
     private String shipper;
     private String securityInformation;
