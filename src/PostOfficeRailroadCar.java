@@ -1,5 +1,4 @@
-public class PostOfficeRailroadCar extends RailroadCar{
-
+public class PostOfficeRailroadCar extends RailroadCar implements ElectricalGrid{
     public static int count = 1;
 
     PostOfficeRailroadCar(String shipper, double netWeight){
@@ -10,5 +9,4 @@ public class PostOfficeRailroadCar extends RailroadCar{
     public String toString(){
         return super.toString();
     }
-
 }
