@@ -1,3 +1,5 @@
+package RailroadCars;
+
 import java.util.Date;
 
 public class RailroadCar {

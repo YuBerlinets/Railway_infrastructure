@@ -1,13 +1,15 @@
+package RailroadCars;
+
 public class GaseousRailroadCar extends BasicFreightRailroadCar{
     private String gasType;
     public static int count = 1;
 
     // add unique fields
 
-    GaseousRailroadCar(String shipper, double netWeight, String gasType){
+    public GaseousRailroadCar(String shipper, double netWeight, String gasType){
         super(shipper, netWeight);
         this.gasType = gasType;
-        this.id = "grc" + count++; //grc stands for GaseousRailroadCar
+        this.id = "grc" + count++; //grc stands for RailroadCars.GaseousRailroadCar
     }
 
     public String getGasType() {
