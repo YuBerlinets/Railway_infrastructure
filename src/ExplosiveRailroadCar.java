@@ -1,4 +1,4 @@
-public class ExplosiveRailroadCar extends HeavyRailroadCar{
+public class ExplosiveRailroadCar extends HeavyFreightRailroadCar{
     private String cargoType;
     public static int count = 1;
 

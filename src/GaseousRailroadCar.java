@@ -7,7 +7,7 @@ public class GaseousRailroadCar extends BasicFreightRailroadCar{
     GaseousRailroadCar(String shipper, double netWeight, String gasType){
         super(shipper, netWeight);
         this.gasType = gasType;
-        this.id = "lrc" + count++; //lrc stands for LiquidRailroadCar
+        this.id = "grc" + count++; //grc stands for GaseousRailroadCar
     }
 
     public String getGasType() {
