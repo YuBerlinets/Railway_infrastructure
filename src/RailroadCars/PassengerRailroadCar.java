@@ -19,7 +19,7 @@ public class PassengerRailroadCar extends RailroadCar{
             try {
                 throw new TooManyPeople();
             } catch (TooManyPeople e) {
-                System.out.println(people + " people cannot be added to " + this.getId() + " car");
+                System.out.println("WARNING: " + people + " people cannot be added to " + this.getId() + " car");
             }
         }
     }

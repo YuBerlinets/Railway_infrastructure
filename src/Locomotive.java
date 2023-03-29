@@ -10,17 +10,19 @@ public class Locomotive {
     private Station homeRailwayStation;
     private Station sourceStation;
     private Station destinationStation;
-    private double speed = 160;
+    private double speed = 190;
+    private int maxNumCar;
+    private double maxWeight;
 
     private static int count = 1;
 
-    Locomotive(String name, Station homeRailwayStation, Station sourceStation, Station destinationStation) {
+    Locomotive(String name,int maxNumCar, Station homeRailwayStation, Station sourceStation, Station destinationStation) {
         this.id = id + count++;
         this.name = name;
+        this.maxNumCar = maxNumCar;
         this.homeRailwayStation = homeRailwayStation;
         this.sourceStation = sourceStation;
         this.destinationStation = destinationStation;
-
     }
 
     public void adjustSpeed() throws InterruptedException {
@@ -40,7 +42,7 @@ public class Locomotive {
                 try {
                     throw new RailroadHazard();
                 } catch (RailroadHazard e) {
-                    throw new RuntimeException("Locomotive " + getId() + " is out of speed limit");
+                    throw new RuntimeException("WARNING: Locomotive " + getId() + " is out of speed limit | Current speed is " + getSpeed());
                 }
             }
         }
@@ -50,9 +52,12 @@ public class Locomotive {
     public String toString() {
         return "ID: " + getId() + " | Name: " + getName() + " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
                 "\nSource: " + getSourceStation() +
-                "\nDestination: " + getDestinationStation();
+                "\nDestination: " + getDestinationStation(); //add maxNum of cars
     }
 
+    public int getMaxNumCar() {
+        return maxNumCar;
+    }
 
     public double getSpeed() {
         return speed;

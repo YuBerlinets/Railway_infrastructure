@@ -26,7 +26,8 @@ public class Trainset implements TrainsetConfiguration {
     }
 
     public void addCar(RailroadCar railroadCar) {
-        if (this.railroadCars.size() <= TrainsetConfiguration.maxRailroadCars) {
+        int numCar = this.getLocomotive().getMaxNumCar(); // getting num of max car from locomotive
+        if (this.railroadCars.size() <= numCar) {
             if (this.getWeightLoad() <= TrainsetConfiguration.maxWeightLoad) {
                 if (!railroadCar.isConnectedToElectricalGrid()) {
                     railroadCars.add(railroadCar);

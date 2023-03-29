@@ -9,14 +9,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Station warsaw = new Station("Warsaw, Poland");
         Station wroclaw = new Station("Wroclaw, Poland");
         Station poltava = new Station("Poltava, Ukraine");
         Station london = new Station("London, UK");
         Station paris = new Station("Paris, France");
-        Locomotive l1 = new Locomotive("Victory", poltava, warsaw, wroclaw);
-        Locomotive l2 = new Locomotive("Python", warsaw, london, paris);
+        Locomotive l1 = new Locomotive("Victory",10, poltava, warsaw, wroclaw);
+        Locomotive l2 = new Locomotive("Python", 10,warsaw, london, paris);
 
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 40);
@@ -37,7 +38,7 @@ public class Main {
         rfrc1.isConnectedToElectricalGrid();
 
         prc1.addPeople(38);
-        prc2.addPeople(43);
+        prc2.addPeople(52);
 
         Trainset t1 = new Trainset(l1);
         t1.addCar(prc1);
@@ -89,7 +90,8 @@ public class Main {
         }
 
         Scanner menu = new Scanner(System.in);
-        while(true){
+        boolean programIsRunning = true;
+        while(programIsRunning){
             System.out.println("For providing information about trains' abbreviation type \"info\".\n" +
                     "For providing information about specific train type train's id.\n" +
                     "For exiting from the program type \"q\" or \"exit\".");
@@ -102,15 +104,16 @@ public class Main {
                 case "q":
                 case "exit": {
                     System.out.println("Exiting the program...");
+                    programIsRunning = false;
                     System.exit(0);
                     break;
                 }
                 case "t1":{
-                    System.out.println(t1);
+                    System.out.println(trainsets.get(0));
                     break;
                 }
                 case "t2":{
-                    System.out.println(t2);
+                    System.out.println(trainsets.get(1));
                     break;
                 }
                 default:
@@ -118,6 +121,7 @@ public class Main {
             }
         }
     }
+
 
     public static void generateCars(Trainset trainset) {
         int numOfCars = (int) (Math.random() * 3 + 8);
