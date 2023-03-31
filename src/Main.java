@@ -16,8 +16,8 @@ public class Main {
         Station poltava = new Station("Poltava, Ukraine");
         Station london = new Station("London, UK");
         Station paris = new Station("Paris, France");
-        Locomotive l1 = new Locomotive("Victory",10, poltava, warsaw, wroclaw);
-        Locomotive l2 = new Locomotive("Python", 10,warsaw, london, paris);
+        Locomotive l1 = new Locomotive("Victory",10,41000,5, poltava, warsaw, wroclaw);
+        Locomotive l2 = new Locomotive("Python", 10,39500, 4,warsaw, london, paris);
 
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 40);
@@ -50,6 +50,7 @@ public class Main {
         t1.addCar(grc1);
         t1.addCar(erc1);
         t1.addCar(trc1);
+        t1.addCar(erc1);
 
 
         Trainset t2 = new Trainset(l2);

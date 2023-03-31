@@ -10,16 +10,20 @@ public class Locomotive {
     private Station homeRailwayStation;
     private Station sourceStation;
     private Station destinationStation;
-    private double speed = 190;
+    private double speed = 150;
     private int maxNumCar;
     private double maxWeight;
+    private int maxNumRailroadCarsElectricityGrid;
 
     private static int count = 1;
 
-    Locomotive(String name,int maxNumCar, Station homeRailwayStation, Station sourceStation, Station destinationStation) {
+
+    Locomotive(String name,int maxNumCar,double maxWeight, int maxNumRailroadCarsElectricityGrid, Station homeRailwayStation, Station sourceStation, Station destinationStation) {
         this.id = id + count++;
         this.name = name;
         this.maxNumCar = maxNumCar;
+        this.maxWeight = maxWeight;
+        this.maxNumRailroadCarsElectricityGrid = maxNumRailroadCarsElectricityGrid;
         this.homeRailwayStation = homeRailwayStation;
         this.sourceStation = sourceStation;
         this.destinationStation = destinationStation;
@@ -42,7 +46,7 @@ public class Locomotive {
                 try {
                     throw new RailroadHazard();
                 } catch (RailroadHazard e) {
-                    throw new RuntimeException("WARNING: Locomotive " + getId() + " is out of speed limit | Current speed is " + getSpeed());
+                    System.out.println(("WARNING: Locomotive " + getId() + " is out of speed limit | Current speed is " + getSpeed()));
                 }
             }
         }
@@ -50,11 +54,20 @@ public class Locomotive {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + " | Name: " + getName() + " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
+        return "ID: " + getId() + " | Name: " + getName() +
+                " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
                 "\nSource: " + getSourceStation() +
-                "\nDestination: " + getDestinationStation(); //add maxNum of cars
+                "\nDestination: " + getDestinationStation();
     }
 
+
+    public int getMaxNumRailroadCarsElectricityGrid() {
+        return maxNumRailroadCarsElectricityGrid;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
     public int getMaxNumCar() {
         return maxNumCar;
     }
@@ -66,42 +79,22 @@ public class Locomotive {
     public String getId() {
         return id;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Station getHomeRailwayStation() {
         return homeRailwayStation;
     }
 
-    public void setHomeRailwayStation(Station homeRailwayStation) {
-        this.homeRailwayStation = homeRailwayStation;
-    }
 
     public Station getSourceStation() {
         return sourceStation;
     }
 
-    public void setSourceStation(Station sourceStation) {
-        this.sourceStation = sourceStation;
-    }
-
     public Station getDestinationStation() {
         return destinationStation;
     }
-
-    public void setDestinationStation(Station destinationStation) {
-        this.destinationStation = destinationStation;
-    }
-
 
 }
