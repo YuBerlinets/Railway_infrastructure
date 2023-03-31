@@ -16,18 +16,19 @@ public class Main {
         Station poltava = new Station("Poltava, Ukraine");
         Station london = new Station("London, UK");
         Station paris = new Station("Paris, France");
-        Locomotive l1 = new Locomotive("Victory",10,41000,5, poltava, warsaw, wroclaw);
-        Locomotive l2 = new Locomotive("Python", 10,39500, 4,warsaw, london, paris);
+
+        Locomotive l1 = new Locomotive("Victory", 10, 45000, 5, poltava, warsaw, wroclaw);
+        Locomotive l2 = new Locomotive("Python", 10, 39500, 4, warsaw, london, paris);
 
 
-        PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 40);
-        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 50);
-        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post",3900);
+        PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 40, 3);
+        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 50, 0);
+        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post", 3900);
         BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000);
-        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG",3600);
-        RefrigeratedRailroadCar rfrc1 = new RefrigeratedRailroadCar("LG", 3800);
-        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Stark Industries", 3400,"Water");
-        GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900,"Petrol");
+        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG", 3600,3);
+        RefrigeratedRailroadCar rfrc1 = new RefrigeratedRailroadCar("LG", 3800, "Direct Expansion System", true);
+        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Stark Industries", 3400, "Water");
+        GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900, "Petrol","Centrifugal Compressor");
         ExplosiveRailroadCar erc1 = new ExplosiveRailroadCar("American Express", 4100, "Bomb");
         ToxicRailroadCar trc1 = new ToxicRailroadCar("South uranium", 3400, "Uranium");
 
@@ -35,13 +36,14 @@ public class Main {
         prc1.connectToElectricalGrid();
         porc1.connectToElectricalGrid();
         rrc1.connectToElectricalGrid();
-        rfrc1.isConnectedToElectricalGrid();
+        System.out.println(rrc1.isConnectedToElectricalGrid());
 
         prc1.addPeople(38);
-        prc2.addPeople(52);
+        prc2.addPeople(36);
 
         Trainset t1 = new Trainset(l1);
         t1.addCar(prc1);
+        t1.addCar(prc2);
         t1.addCar(porc1);
         t1.addCar(bmrc1);
         t1.addCar(rrc1);
@@ -50,11 +52,11 @@ public class Main {
         t1.addCar(grc1);
         t1.addCar(erc1);
         t1.addCar(trc1);
-        t1.addCar(erc1);
-
+        t1.addCar(erc1);//throws exception
 
         Trainset t2 = new Trainset(l2);
         t2.addCar(prc1);
+        t2.addCar(prc2);
         t2.addCar(porc1);
         t2.addCar(bmrc1);
         t2.addCar(rrc1);
@@ -63,21 +65,18 @@ public class Main {
         t2.addCar(grc1);
         t2.addCar(erc1);
         t2.addCar(trc1);
-
+        t2.addCar(erc1);//throws exception
 
         //ArrayList<Station> stations = new ArrayList<>();
         //generateStations(stations);
         //System.out.println(stations);
-
-
-
 
         List<Trainset> trainsets = new ArrayList<>();
 
         trainsets.add(t1);
         trainsets.add(t2);
 
-        Thread [] threads = new Thread[trainsets.size()];
+        Thread[] threads = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
             final int j = i;
             threads[i] = new Thread(() -> {
@@ -87,18 +86,18 @@ public class Main {
                     e.printStackTrace();
                 }
             });
-            threads[i].start(); //assign speed to locomotive
+            threads[i].start(); //assigns speed to locomotive
         }
 
         Scanner menu = new Scanner(System.in);
         boolean programIsRunning = true;
-        while(programIsRunning){
+        while (programIsRunning) {
             System.out.println("For providing information about trains' abbreviation type \"info\".\n" +
                     "For providing information about specific train type train's id.\n" +
                     "For exiting from the program type \"q\" or \"exit\".");
             String menuItems = menu.next();
-            switch (menuItems.toLowerCase()){
-                case ("info"):{
+            switch (menuItems.toLowerCase()) {
+                case ("info"): {
                     System.out.println(abbreviationInfo());
                     break;
                 }
@@ -109,11 +108,11 @@ public class Main {
                     System.exit(0);
                     break;
                 }
-                case "t1":{
+                case "t1": {
                     System.out.println(trainsets.get(0));
                     break;
                 }
-                case "t2":{
+                case "t2": {
                     System.out.println(trainsets.get(1));
                     break;
                 }
@@ -169,7 +168,7 @@ public class Main {
         return stations;
     }
 
-    public static String abbreviationInfo(){
+    public static String abbreviationInfo() {
         return "Here is the explanation of the trains' abbreviation\n" +
                 "1.prc - Passenger Railroad Car\n" +
                 "2.porc - Post Office Railroad Car\n" +
