@@ -9,9 +9,11 @@ public class Trainset implements TrainsetConfiguration {
     private String id = "t"; // t stands for Trainset
     private Locomotive locomotive;
     public ArrayList<RailroadCar> railroadCars = new ArrayList<RailroadCar>();
-    private int numRailroadCars;
-    private double weightLoad;
-    private int numRailroadCarsElectricityGrid;
+    private int trainsetNumberCars;
+    private double trainsetWeightLoad;
+    private int trainsetCarsConnectedElectricalGrid;
+
+
     public static int count = 1;
 
     Trainset(Locomotive locomotive) {
@@ -27,16 +29,18 @@ public class Trainset implements TrainsetConfiguration {
 
     public void addCar(RailroadCar railroadCar) {
         int numCar = this.getLocomotive().getMaxNumCar(); // getting num of max car from locomotive
+        double maxWeightLoad = this.getLocomotive().getMaxWeight();// getting a max weight load
+        int numCarsConnectedElectricalGrid = this.getLocomotive().getMaxNumRailroadCarsElectricityGrid();// getting a max number of cars connected to electrical grid
         if (this.railroadCars.size() <= numCar) {
-            if (this.getWeightLoad() <= TrainsetConfiguration.maxWeightLoad) {
+            if (this.trainsetWeightLoad <= maxWeightLoad) {
                 if (!railroadCar.isConnectedToElectricalGrid()) {
                     railroadCars.add(railroadCar);
-                    this.weightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
+                    this.trainsetWeightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
                 } else if (railroadCar.isConnectedToElectricalGrid() &&
-                        (this.numRailroadCarsElectricityGrid + 1 <= TrainsetConfiguration.maxNumRailroadCarsElectricityGrid)) {
+                        (this.trainsetCarsConnectedElectricalGrid + 1 <= numCarsConnectedElectricalGrid)) {
                     railroadCars.add(railroadCar);
-                    this.weightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
-                    this.numRailroadCarsElectricityGrid++;
+                    this.trainsetWeightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
+                    this.trainsetCarsConnectedElectricalGrid++;
                 } else {
                     try {
                         throw new TooManyRailroadCarsElecticalGrid();
@@ -65,8 +69,20 @@ public class Trainset implements TrainsetConfiguration {
 
 
     public String toString() {
-        return "Trainset - ID: " + getId() + " | Total Weight: " + getWeightLoad() + "\n" +
+        return "Trainset - ID: " + getId() + " | Total Weight: " + getTrainsetWeightLoad() + "\n"+
                 "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
+    }
+
+    public int getTrainsetNumberCars() {
+        return trainsetNumberCars;
+    }
+
+    public double getTrainsetWeightLoad() {
+        return trainsetWeightLoad;
+    }
+
+    public int getTrainsetCarsConnectedElectricalGrid() {
+        return trainsetCarsConnectedElectricalGrid;
     }
 
     public String getId() {
@@ -81,15 +97,4 @@ public class Trainset implements TrainsetConfiguration {
         return railroadCars;
     }
 
-    public int getNumRailroadCars() {
-        return numRailroadCars;
-    }
-
-    public double getWeightLoad() {
-        return weightLoad;
-    }
-
-    public int getNumRailroadCarsElectricityGrid() {
-        return numRailroadCarsElectricityGrid;
-    }
 }

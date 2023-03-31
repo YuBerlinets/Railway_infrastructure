@@ -5,7 +5,7 @@ public class HeavyFreightRailroadCar extends RailroadCar{
 
     HeavyFreightRailroadCar(String shipper, double netWeight){
         super(shipper, netWeight);
-        this.id = "hrc" + count++; //hrfc stands for RailroadCars.HeavyFreightRailroadCar
+        this.id = "hfrc" + count++; //hfrc stands for HeavyFreightRailroadCar
     }
 
     public String toString(){
