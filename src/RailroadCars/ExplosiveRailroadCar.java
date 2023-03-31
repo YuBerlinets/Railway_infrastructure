@@ -1,6 +1,6 @@
 package RailroadCars;
 
-public class ExplosiveRailroadCar extends HeavyFreightRailroadCar{
+public class ExplosiveRailroadCar extends RailroadCar implements HeavyFreightRailroadCar{
     private String cargoType;
     public static int count = 1;
 

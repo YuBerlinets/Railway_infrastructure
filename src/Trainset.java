@@ -5,7 +5,7 @@ import exception.TooManyRailroadCarsElecticalGrid;
 
 import java.util.ArrayList;
 
-public class Trainset implements TrainsetConfiguration {
+public class Trainset {
     private String id = "t"; // t stands for Trainset
     private Locomotive locomotive;
     public ArrayList<RailroadCar> railroadCars = new ArrayList<RailroadCar>();
@@ -31,8 +31,8 @@ public class Trainset implements TrainsetConfiguration {
         int numCar = this.getLocomotive().getMaxNumCar(); // getting num of max car from locomotive
         double maxWeightLoad = this.getLocomotive().getMaxWeight();// getting a max weight load
         int numCarsConnectedElectricalGrid = this.getLocomotive().getMaxNumRailroadCarsElectricityGrid();// getting a max number of cars connected to electrical grid
-        if (this.railroadCars.size() <= numCar) {
-            if (this.trainsetWeightLoad <= maxWeightLoad) {
+        if (this.railroadCars.size() + 1 <= numCar) {
+            if (this.trainsetWeightLoad + (railroadCar.getNetWeight() + railroadCar.getGrossWeight()) <= maxWeightLoad) {
                 if (!railroadCar.isConnectedToElectricalGrid()) {
                     railroadCars.add(railroadCar);
                     this.trainsetWeightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
@@ -45,7 +45,7 @@ public class Trainset implements TrainsetConfiguration {
                     try {
                         throw new TooManyRailroadCarsElecticalGrid();
                     } catch (TooManyRailroadCarsElecticalGrid e) {
-                        System.out.println("WARNING: RailroadCars.RailroadCar - " + railroadCar.getId() + " - can't be attached," +
+                        System.out.println("WARNING: RailroadCar - " + railroadCar.getId() + " - can't be attached," +
                                 " because there are too many railroad cars that are already connected to electrical grid in " + this.getId());
                     }
                 }
@@ -53,7 +53,7 @@ public class Trainset implements TrainsetConfiguration {
                 try {
                     throw new TooBigWeight();
                 } catch (TooBigWeight e) {
-                    System.out.println("WARNING: RailroadCars.RailroadCar - " + railroadCar.getId() + " - can't be attached," +
+                    System.out.println("WARNING: RailroadCar - " + railroadCar.getId() + " - can't be attached," +
                             " because there will be too big weight in trainset " + this.getId());
                 }
             }
@@ -61,7 +61,7 @@ public class Trainset implements TrainsetConfiguration {
             try {
                 throw new TooManyRailroadCars();
             } catch (TooManyRailroadCars e) {
-                System.out.println("WARNING: RailroadCars.RailroadCar - " + railroadCar.getId() + " - can't be attached," +
+                System.out.println("WARNING: RailroadCar - " + railroadCar.getId() + " - can't be attached," +
                         " because there are too many cars in trainset " + this.getId());
             }
         }
@@ -69,7 +69,7 @@ public class Trainset implements TrainsetConfiguration {
 
 
     public String toString() {
-        return "Trainset - ID: " + getId() + " | Total Weight: " + getTrainsetWeightLoad() + "\n"+
+        return "Trainset - ID: " + getId() + " | Total Weight: " + getTrainsetWeightLoad() + "\n" +
                 "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
     }
 
