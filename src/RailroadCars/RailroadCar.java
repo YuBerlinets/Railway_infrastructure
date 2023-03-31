@@ -3,7 +3,7 @@ package RailroadCars;
 import java.util.Date;
 
 public class RailroadCar {
-    public String id; //rc stands for railroad car
+    public String id;
     private String shipper;
     private String securityInformation;
     private double netWeight;
@@ -12,13 +12,9 @@ public class RailroadCar {
     private boolean connectedToElectricalGrid;
     public static int count = 1;
 
-    RailroadCar(String shipper){
-        this.id = "rc" + count++;
-        this.shipper = shipper;
-    }
 
     public RailroadCar(String shipper, double netWeight) {
-        this.id = "rc" + count++;
+        this.id = "rc" + count++;//rc stands for railroad car
         this.shipper = shipper;
         this.netWeight = netWeight;
     }
