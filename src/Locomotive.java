@@ -10,7 +10,8 @@ public class Locomotive {
     private Station homeRailwayStation;
     private Station sourceStation;
     private Station destinationStation;
-    private double speed = 150;
+    private double speed = 120;
+    private boolean onRoute = false;
     private int maxNumCar;
     private double maxWeight;
     private int maxNumRailroadCarsElectricityGrid;
@@ -27,20 +28,21 @@ public class Locomotive {
         this.homeRailwayStation = homeRailwayStation;
         this.sourceStation = sourceStation;
         this.destinationStation = destinationStation;
+        this.onRoute = true;
     }
 
     public void adjustSpeed() throws InterruptedException {
         Random random = new Random();
-        while (true) {
+        while (this.onRoute) {
             if (speed < 200) {
                 double delta = Math.round(speed * 0.03);
-                boolean increase = random.nextBoolean();
-                if (increase) {
+                boolean speedChanging = random.nextBoolean();
+                if (speedChanging) {
                     speed += delta;
                 } else {
                     speed -= delta;
                 }
-                //System.out.println("Train " + getId() + " 's speed is " + getSpeed());
+                System.out.println("Train " + getId() + " 's speed is " + getSpeed());
                 Thread.sleep(1000);
             } else {
                 try {
@@ -54,13 +56,15 @@ public class Locomotive {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + " | Name: " + getName() +
+        return "id: " + getId() + " | Name: " + getName() +
                 " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
                 "\nSource: " + getSourceStation() +
                 "\nDestination: " + getDestinationStation();
     }
 
-
+    public boolean isOnRoute() {
+        return onRoute;
+    }
     public int getMaxNumRailroadCarsElectricityGrid() {
         return maxNumRailroadCarsElectricityGrid;
     }

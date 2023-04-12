@@ -4,27 +4,87 @@ import exception.TooManyRailroadCars;
 import exception.TooManyRailroadCarsElecticalGrid;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Trainset {
     private String id = "t"; // t stands for Trainset
     private Locomotive locomotive;
-    public ArrayList<RailroadCar> railroadCars = new ArrayList<RailroadCar>();
+    public ArrayList<RailroadCar> railroadCars = new ArrayList<>();
     private int trainsetNumberCars;
     private double trainsetWeightLoad;
     private int trainsetCarsConnectedElectricalGrid;
-
+    private Route route;
+    private Station currentStation;
+    private double speed;
+    private boolean onRoute = true;
 
     public static int count = 1;
 
-    Trainset(Locomotive locomotive) {
+    Trainset(Locomotive locomotive, Route route) {
         this.id = id + count++;
         this.locomotive = locomotive;
+        this.route = route;
+        this.currentStation = locomotive.getSourceStation();
+        this.currentStation = route.getRoute().get(0);
+        this.speed = locomotive.getSpeed();
     }
 
     Trainset(Locomotive locomotive, ArrayList<RailroadCar> railroadCars) {
         this.id = id + count++;
         this.locomotive = locomotive;
         this.railroadCars = railroadCars;
+    }
+
+    public void moveRoute() throws InterruptedException {
+        List<Station> r = this.route.getRoute();
+        this.onRoute = true;
+        Station lastStation = r.get(route.getRoute().size() - 1);
+        System.out.println("the last station " + lastStation);
+        while (this.onRoute) {
+            for (int i = 0; i < r.size() - 1; i++) {
+                Station station = r.get(i);
+                Station nextStation = r.get(i + 1);
+                double distance = station.getIntersectsWith().get(nextStation);
+
+                if (nextStation.isAvailable()) {
+                    double time = ((distance / this.speed) * 1000);
+                    nextStation.setUnavailability();
+
+                    try {
+                        Thread.sleep((long) time);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    this.currentStation.setAvailability();
+                    this.currentStation = nextStation;
+                    System.out.println(getId() + " is on station: " + this.currentStation);
+                    if (this.currentStation == lastStation) {
+                        System.out.println(this.getId() + " train has reached an endpoint");
+                        Thread.sleep(30000);
+                    }
+
+                } else {
+                    System.out.println(nextStation + " is currently not available");
+                    System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+
+                    double prevSpeed = this.speed;
+                    this.speed = 0;
+
+                    while (true) {
+                        Thread.sleep(1000);
+
+                        if (nextStation.isAvailable()) {
+                            System.out.println("Station: " + nextStation + " is now available");
+                            this.speed = prevSpeed;
+                            break;
+                        }
+                    }
+                }
+            }
+            Collections.reverse(r);
+        }
     }
 
     public void addCar(RailroadCar railroadCar) {
@@ -69,7 +129,7 @@ public class Trainset {
 
 
     public String toString() {
-        return "Trainset - ID: " + getId() + " | Total Weight: " + getTrainsetWeightLoad() + "\n" +
+        return "Trainset - ID: " + getId() + " | Current Station: " + getCurrentStation() + "\nTotal Weight: " + getTrainsetWeightLoad() + "\n" +
                 "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
     }
 
@@ -97,4 +157,27 @@ public class Trainset {
         return railroadCars;
     }
 
+    public void stopMovingOnRoute() {
+        this.onRoute = false;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public Station getCurrentStation() {
+        return currentStation;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public boolean isOnRoute() {
+        return onRoute;
+    }
+
+    public void setOnRoute(boolean onRoute) {
+        this.onRoute = onRoute;
+    }
 }
