@@ -1,24 +1,106 @@
-Warsaw, Poland
-Krakow, Poland
-Kyiv, Ukraine
-Poltava, Ukraine
-Kharkiv, Ukraine
-Wroclaw, Poland
-Lviv, Ukraine
-Berlin, Germany
-Poznan, Poland
-Gdansk, Poland
-Odesa, Ukraine
-Paris, France
-Amsterdam, the Netherlands
-Venice, Italy
-Rome, Italy
-Milan, Italy
-Turin, Italy
-Prague, Czech Republic
-London, UK
-Manchester, UK
-Liverpool, UK
-Zurich, Switzerland
-Madrid, Spain
-Dublin, Ireland
+Poltava,Ukraine
+Paris,France
+Barcelona,Spain
+Berlin,Germany
+Brussels,Belgium
+Odesa,Ukraine
+Vienna,Austria
+Rome,Italy
+Amsterdam,Netherlands
+Copenhagen,Denmark
+Budapest,Hungary
+Zurich,Switzerland
+Oslo,Norway
+Helsinki,Finland
+Warsaw,Poland
+Prague,CzechRepublic
+Athens,Greece
+Lisbon,Portugal
+Lviv,Ukraine
+Dublin,Ireland
+Edinburgh,Scotland
+Krakow,Poland
+Nice,France
+Madrid,Spain
+Venice,Italy
+Munich,Germany
+Valencia,Spain
+Frankfurt,Germany
+Marseille,France
+Bruges,Belgium
+Geneva,Switzerland
+Stockholm,Sweden
+Porto,Portugal
+Salzburg,Austria
+Bucharest,Romania
+Tallinn,Estonia
+Belgrade,Serbia
+Dubrovnik,Croatia
+Riga,Latvia
+Ljubljana,Slovenia
+Innsbruck,Austria
+Seville,Spain
+Santorini,Greece
+Granada,Spain
+Reykjavik,Iceland
+Gdansk,Poland
+Bergen,Norway
+Bratislava,Slovakia
+Gothenburg,Sweden
+Florence,Italy
+Sarajevo,BosniaandHerzegovina
+Split,Croatia
+Cologne,Germany
+Toulouse,France
+Marseille,France
+Bordeaux,France
+Bern,Switzerland
+Bologna,Italy
+Donetsk,Ukraine
+Vilnius,Lithuania
+Leipzig,Germany
+Dresden,Germany
+Zagreb,Croatia
+Valencia,Spain
+Dubrovnik,Croatia
+Genoa,Italy
+Kharkiv,Ukraine
+Krakow,Poland
+Ghent,Belgium
+Poznan,Poland
+Trieste,Italy
+Nuremberg,Germany
+Heidelberg,Germany
+Marseille,France
+Basel,Switzerland
+Pisa,Italy
+Siena,Italy
+Brno,CzechRepublic
+Linz,Austria
+KarlovyVary,CzechRepublic
+Lucerne,Switzerland
+Granada,Spain
+Cannes,France
+Graz,Austria
+Santander,Spain
+Valencia,Spain
+Odense,Denmark
+Bordeaux,France
+Malaga,Spain
+Utrecht,Netherlands
+Valencia,Spain
+Porto,Portugal
+Kyiv,Ukraine
+LuxembourgCity,Luxembourg
+Cologne,Germany
+Salzburg,Austria
+Montpellier,France
+Lille,France
+Braga,Portugal
+Groningen,Netherlands
+Leipzig,Germany
+Sevastopol,Ukraine
+Antwerp,Belgium
+Turin,Italy
+Bremen,Germany
+Marseille,France
