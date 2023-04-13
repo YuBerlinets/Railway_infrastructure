@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class TestStation {
     public static void main(String[] args) {
-        List<Station> stations = Station.generateStations(10);
+        List<Station> stations = Station.generateStations();
 
          //print out each station and its intersections
         for (Station station : stations) {

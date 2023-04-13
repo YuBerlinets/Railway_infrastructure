@@ -37,13 +37,13 @@ public class Station {
         }
     }
 
-    public static List<Station> generateStations(int numStations) {
+    public static List<Station> generateStations() {
         List<Station> stations = new ArrayList<>();
         String path = "TechFiles\\Stations.txt";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             String line = null;
             int index = 0;
-            while ((line = bufferedReader.readLine()) != null && index < numStations) {
+            while ((line = bufferedReader.readLine()) != null && index < 100) {
                 Station station = new Station(line);
                 stations.add(station);
                 index++;
