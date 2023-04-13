@@ -1,5 +1,6 @@
 import RailroadCars.*;
 
+import javax.swing.plaf.TableHeaderUI;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,47 +10,24 @@ public class Main {
 
     public static void main(String[] args) {
         List<Station> stations = Station.generateStations();
-        Station stationA = new Station("Station A");
-        Station stationB = new Station("Station B");
-        Station stationC = new Station("Station C");
-        Station stationD = new Station("Station D");
-        Station stationE = new Station("Station E");
-        Station stationF = new Station("Station F");
-        Station stationG = new Station("Station G");
-        Station stationK = new Station("Station K");
-        Station stationM = new Station("Station M");
-        Station stationL = new Station("Station L");
-        Station stationN = new Station("Station N");
+        Station stationTMP = new Station("Station TMP HOME");
 
         Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
-                stationD, findStation("Madrid,Spain",stations), findStation("Bordeaux,France",stations));
-        Locomotive l2 = new Locomotive("Python", 10, 39500, 4, stationK, stationB, stationM);
-
-
-        stationA.addIntersectsWith(stationB, 310);
-        stationB.addIntersectsWith(stationC, 280);
-        stationC.addIntersectsWith(stationD, 175);
-        stationD.addIntersectsWith(stationE, 183);
-        stationD.addIntersectsWith(stationF, 421);
-        stationD.addIntersectsWith(stationM, 253);
-        stationE.addIntersectsWith(stationK, 341);
-        stationE.addIntersectsWith(stationG, 71);
-        stationG.addIntersectsWith(stationM, 128);
-        stationK.addIntersectsWith(stationM, 209);
-        stationM.addIntersectsWith(stationL, 312);
-        stationM.addIntersectsWith(stationN, 138);
+                stationTMP, findStation("Madrid,Spain", stations), findStation("Bordeaux,France", stations));
+        Locomotive l2 = new Locomotive("Python", 10, 39500, 4,
+                stationTMP, findStation("Bordeaux,France", stations), findStation("Braga,Portugal", stations));
 
         Route route1 = generateRoute(l1);
-        //Route route2 = generateRoute(l2);
+        Route route2 = generateRoute(l2);
 
         System.out.println(route1);
         System.out.println("route 1 total km -> " + route1.getTotalDistance());
 
-        //System.out.println(route2);
-        //System.out.println("route 2 total km -> " + route2.getTotalDistance());
+        System.out.println(route2);
+        System.out.println("route 2 total km -> " + route2.getTotalDistance());
 
-        PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1,40);
-        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 2,50);
+        PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1, 40);
+        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 2, 50);
         PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post", 3900);
         BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000);
         RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG", 3600, 3);
@@ -64,13 +42,15 @@ public class Main {
         rrc1.connectToElectricalGrid();
         System.out.println(rrc1.isConnectedToElectricalGrid());
 
+        prc1.takeCarToService();
         prc1.addPeople(38);
         prc2.addPeople(36);
         prc1.hasWifi();
         prc2.hasWifi();
         prc1.addBicycle(2);
         prc2.addBicycle(5);
-        Trainset t1 = new Trainset(l1,route1);
+
+        Trainset t1 = new Trainset(l1, route1);
         t1.addCar(prc1);
         t1.addCar(prc2);
         t1.addCar(porc1);
@@ -83,57 +63,47 @@ public class Main {
         t1.addCar(trc1);
         t1.addCar(erc1);//throws exception
 
-//        Trainset t2 = new Trainset(l2,route2);
-//        t2.addCar(prc1);
-//        t2.addCar(prc2);
-//        t2.addCar(porc1);
-//        t2.addCar(bmrc1);
-//        t2.addCar(rrc1);
-//        t2.addCar(rfrc1);
-//        t2.addCar(lrc1);
-//        t2.addCar(grc1);
-//        t2.addCar(erc1);
-//        t2.addCar(trc1);
-//        t2.addCar(erc1);//throws exception
+        Trainset t2 = new Trainset(l2, route2);
+        t2.addCar(prc1);
+        t2.addCar(prc2);
+        t2.addCar(porc1);
+        t2.addCar(bmrc1);
+        t2.addCar(rrc1);
+        t2.addCar(rfrc1);
+        t2.addCar(lrc1);
+        t2.addCar(grc1);
+        t2.addCar(erc1);
+        t2.addCar(trc1);
+        t2.addCar(erc1);//throws exception
 
-        //ArrayList<Station> stations = new ArrayList<>();
-        //generateStations(stations);
-        //System.out.println(stations);
-
+        //Threads
         List<Trainset> trainsets = new ArrayList<>();
-
         trainsets.add(t1);
-        //trainsets.add(t2);
+        trainsets.add(t2);
 
-        Thread[] threads = new Thread[trainsets.size()];
+        Thread[] threadsSpeed = new Thread[trainsets.size()];
+        Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
             final int j = i;
-            threads[i] = new Thread(() -> {
+            threadsSpeed[i] = new Thread(() -> {
                 try {
                     trainsets.get(j).getLocomotive().adjustSpeed();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             });
-            threads[i].start(); //assigns speed to locomotive
+            threadsRoute[i]= new Thread(() -> {
+                try {
+                    trainsets.get(j).moveRoute();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            threadsSpeed[i].start(); //assigns speed to locomotive
+            threadsRoute[i].start();
         }
-        Thread trainMove1 = new Thread(() -> {
-            try {
-                trainsets.get(0).moveRoute();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        });
-        trainMove1.start();
-//        Thread trainMove2 = new Thread(() -> {
-//            try {
-//                trainsets.get(1).moveRoute(route2);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
-//        trainMove2.start();
 
+        //menu
         Scanner menu = new Scanner(System.in);
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
@@ -158,7 +128,13 @@ public class Main {
                 System.out.println("Incorrect input");
         }
     }
-    public static Station findStation(String stationName,List<Station> stations){
+
+    public static void carToService(RailroadCar railroadCar){
+        railroadCar.getId();
+    }
+
+
+    public static Station findStation(String stationName, List<Station> stations) {
 
         for (Station station : stations) {
             if (station.getName().equals(stationName)) {
@@ -167,10 +143,11 @@ public class Main {
         }
         return null;
     }
+
     public static Route generateRoute(Locomotive locomotive) {
         Route route = new Route();
         Station source = locomotive.getSourceStation();
-        Station destination =locomotive.getDestinationStation();
+        Station destination = locomotive.getDestinationStation();
         Map<Station, Double> distances = new HashMap<>();
         Map<Station, Station> prev = new HashMap<>();
         PriorityQueue<Station> pq = new PriorityQueue<>(Comparator.comparingDouble(distances::get));
@@ -195,6 +172,8 @@ public class Main {
         }
 
         if (!prev.containsKey(destination)) {
+            System.out.println("This no connection between those stations" + locomotive.getSourceStation() +" "
+            + locomotive.getDestinationStation());
             return null;
         }
 
@@ -210,17 +189,8 @@ public class Main {
         route.reverse();
         route.addStation(destination);
         route.calculatedDistance(totalDistance);
+
         return route;
-    }
-
-
-    public static void generateCars(Trainset trainset) {
-        int numOfCars = (int) (Math.random() * 3 + 8);
-        double netWeight = Math.random() * 1000 + 3500;
-        for (int i = 0; i < numOfCars; i++) {
-            trainset.addCar(new PostOfficeRailroadCar(getShipper(), netWeight));
-
-        }
     }
 
     public static String getShipper() {
@@ -240,23 +210,6 @@ public class Main {
         }
 
         return result;
-    }
-
-    public static List<Station> generateStations(ArrayList<Station> stations) {
-        String result = null;
-        Random random = new Random();
-        String path = "TechFiles\\Stations.txt";
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
-            ArrayList<String> lines = new ArrayList<>();
-            String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
-                Station station = new Station(line);
-                stations.add(station);
-            }
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e);
-        }
-        return stations;
     }
 
     public static String abbreviationInfo() {

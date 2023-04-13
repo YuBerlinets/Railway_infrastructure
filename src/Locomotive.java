@@ -62,6 +62,10 @@ public class Locomotive {
                 "\nDestination: " + getDestinationStation();
     }
 
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
     public boolean isOnRoute() {
         return onRoute;
     }

@@ -1,8 +1,10 @@
 package RailroadCars;
 
-public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid{
-    public static int count = 1;
+public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid,Service{
     private int staffMembers;
+    private boolean service;
+    private boolean connectedToElectricalGrid;
+    public static int count = 1;
 
     public RestaurantRailroadCar(String shipper, double netWeight, int staffMembers) {
         super(shipper, netWeight);
@@ -15,4 +17,23 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
         return super.toString();
     }
 
+    @Override
+    public void connectToElectricalGrid() {
+        super.connectedToElectricalGrid = true;
+    }
+
+    @Override
+    public void disconnectFromElectricalGrid() {
+        super.connectedToElectricalGrid = false;
+    }
+
+    @Override
+    public void takeCarToService() {
+        super.service = true;
+    }
+
+    @Override
+    public void takeCarOffService() {
+        super.service = false;
+    }
 }

@@ -25,15 +25,8 @@ public class Trainset {
         this.id = id + count++;
         this.locomotive = locomotive;
         this.route = route;
-        this.currentStation = locomotive.getSourceStation();
         this.currentStation = route.getRoute().get(0);
         this.speed = locomotive.getSpeed();
-    }
-
-    Trainset(Locomotive locomotive, ArrayList<RailroadCar> railroadCars) {
-        this.id = id + count++;
-        this.locomotive = locomotive;
-        this.railroadCars = railroadCars;
     }
 
     public void moveRoute() throws InterruptedException {
@@ -46,20 +39,21 @@ public class Trainset {
                 Station station = r.get(i);
                 Station nextStation = r.get(i + 1);
                 double distance = station.getIntersectsWith().get(nextStation);
-
                 if (nextStation.isAvailable()) {
                     double time = ((distance / this.speed) * 1000);
                     nextStation.setUnavailability();
-
                     try {
                         Thread.sleep((long) time);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-
                     this.currentStation.setAvailability();
                     this.currentStation = nextStation;
                     System.out.println(getId() + " is on station: " + this.currentStation);
+                    double prevSpeed = this.speed;
+                    this.locomotive.setSpeed(0);
+                    Thread.sleep(4000);
+                    this.locomotive.setSpeed(prevSpeed);
                     if (this.currentStation == lastStation) {
                         System.out.println(this.getId() + " train has reached an endpoint");
                         Thread.sleep(30000);

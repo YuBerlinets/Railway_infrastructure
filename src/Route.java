@@ -6,6 +6,7 @@ public class Route{
     public Route(){
         this.stations = new ArrayList<>();
     }
+
     public Route(Locomotive locomotive) {
         this.stations = new ArrayList<>();
     }
