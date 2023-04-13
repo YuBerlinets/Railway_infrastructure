@@ -89,14 +89,14 @@ public class Main {
                 try {
                     trainsets.get(j).getLocomotive().adjustSpeed();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    System.out.println(e);
                 }
             });
             threadsRoute[i]= new Thread(() -> {
                 try {
                     trainsets.get(j).moveRoute();
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    System.out.println(e);
                 }
             });
             threadsSpeed[i].start(); //assigns speed to locomotive
@@ -104,6 +104,9 @@ public class Main {
         }
 
         //menu
+
+
+
         Scanner menu = new Scanner(System.in);
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
@@ -111,7 +114,9 @@ public class Main {
             menuButton.put(trainNum, trainsets.get(i));
         }
         MenuTrain menuTrain = new MenuTrain(menuButton);
-        boolean programIsRunning = true;
+        Menu menuTest = new Menu(menuButton);
+        menuTest.display();
+        boolean programIsRunning = false;
         while (programIsRunning) {
             System.out.println("For providing information about trains' abbreviation type \"info\".\n" +
                     "For providing information about specific train type train's id.\n" +
