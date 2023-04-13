@@ -49,19 +49,19 @@ public class Trainset {
                     }
                     this.currentStation.setAvailability();
                     this.currentStation = nextStation;
-                    System.out.println(getId() + " is on station: " + this.currentStation);
+                    //System.out.println(getId() + " is on station: " + this.currentStation);
                     double prevSpeed = this.speed;
                     this.locomotive.setSpeed(0);
                     Thread.sleep(4000);
                     this.locomotive.setSpeed(prevSpeed);
                     if (this.currentStation == lastStation) {
-                        System.out.println(this.getId() + " train has reached an endpoint");
+                        //System.out.println(this.getId() + " train has reached an endpoint");
                         Thread.sleep(30000);
                     }
 
                 } else {
-                    System.out.println(nextStation + " is currently not available");
-                    System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+                    //System.out.println(nextStation + " is currently not available");
+                    //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
 
                     double prevSpeed = this.speed;
                     this.speed = 0;
@@ -70,7 +70,7 @@ public class Trainset {
                         Thread.sleep(1000);
 
                         if (nextStation.isAvailable()) {
-                            System.out.println("Station: " + nextStation + " is now available");
+                            //System.out.println("Station: " + nextStation + " is now available");
                             this.speed = prevSpeed;
                             break;
                         }

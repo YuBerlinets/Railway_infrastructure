@@ -42,7 +42,7 @@ public class Locomotive {
                 } else {
                     speed -= delta;
                 }
-                System.out.println("Train " + getId() + " 's speed is " + getSpeed());
+                //System.out.println("Train " + getId() + " 's speed is " + getSpeed());
                 Thread.sleep(1000);
             } else {
                 try {
