@@ -9,7 +9,11 @@ public class RailroadCar {
     private double netWeight;
     private double grossWeight;
     private Date dateOfManufacture;
-    private boolean connectedToElectricalGrid;
+    protected boolean connectedToElectricalGrid;
+    protected boolean service;
+
+
+
     public static int count = 1;
 
 
@@ -23,12 +27,12 @@ public class RailroadCar {
         this.grossWeight += weight;
     }
 
-    public void connectToElectricalGrid(){
-        this.connectedToElectricalGrid = true;
-    }
-    public void disconnectFromElectricalGrid(){
-        this.connectedToElectricalGrid = false;
-    }
+//    public void connectToElectricalGrid(){
+//        this.connectedToElectricalGrid = true;
+//    }
+//    public void disconnectFromElectricalGrid(){
+//        this.connectedToElectricalGrid = false;
+//    }
 
     public String toString(){
         return "\nID: " + getId() + " | Shipper: " + getShipper() +
@@ -36,6 +40,9 @@ public class RailroadCar {
                 " | netWeight: " + getNetWeight();
     }
 
+    public boolean isOnService() {
+        return service;
+    }
     public boolean isConnectedToElectricalGrid() {
         return connectedToElectricalGrid;
     }

@@ -1,6 +1,6 @@
 package RailroadCars;
 
-public class RefrigeratedRailroadCar extends BasicFreightRailroadCar implements ElectricalGrid{
+public class RefrigeratedRailroadCar extends BasicFreightRailroadCar implements ElectricalGrid,Service{
     private String coolingMethod;
     //examples of cooling methods:
     //Direct Expansion System
@@ -25,5 +25,25 @@ public class RefrigeratedRailroadCar extends BasicFreightRailroadCar implements 
 
     public boolean isHumidityControl() {
         return humidityControl;
+    }
+
+    @Override
+    public void connectToElectricalGrid() {
+        super.connectedToElectricalGrid = true;
+    }
+
+    @Override
+    public void disconnectFromElectricalGrid() {
+        super.connectedToElectricalGrid = false;
+    }
+
+    @Override
+    public void takeCarToService() {
+        super.service = true;
+    }
+
+    @Override
+    public void takeCarOffService() {
+        super.service = false;
     }
 }

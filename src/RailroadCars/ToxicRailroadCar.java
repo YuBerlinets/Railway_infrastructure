@@ -19,4 +19,14 @@ public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroa
     public String toString(){
         return super.toString() + " | Toxic materials type: " +getToxicMaterialsType();
     }
+
+    @Override
+    public void addCargo(String cargoType, double weight) {
+
+    }
+
+    @Override
+    public void checkPressure() {
+
+    }
 }
