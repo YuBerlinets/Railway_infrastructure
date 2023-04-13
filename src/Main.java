@@ -8,6 +8,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        List<Station> stations = Station.generateStations();
         Station stationA = new Station("Station A");
         Station stationB = new Station("Station B");
         Station stationC = new Station("Station C");
@@ -20,7 +21,8 @@ public class Main {
         Station stationL = new Station("Station L");
         Station stationN = new Station("Station N");
 
-        Locomotive l1 = new Locomotive("Victory", 10, 45000, 5, stationD, stationA, stationN);
+        Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
+                stationD, findStation("Madrid,Spain",stations), findStation("Bordeaux,France",stations));
         Locomotive l2 = new Locomotive("Python", 10, 39500, 4, stationK, stationB, stationM);
 
 
@@ -156,7 +158,15 @@ public class Main {
                 System.out.println("Incorrect input");
         }
     }
+    public static Station findStation(String stationName,List<Station> stations){
 
+        for (Station station : stations) {
+            if (station.getName().equals(stationName)) {
+                return station;
+            }
+        }
+        return null;
+    }
     public static Route generateRoute(Locomotive locomotive) {
         Route route = new Route();
         Station source = locomotive.getSourceStation();
