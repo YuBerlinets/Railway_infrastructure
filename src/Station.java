@@ -54,7 +54,7 @@ public class Station {
         // generate random intersections for each station
         for (Station station : stations) {
             Random random =new Random();
-            int num = random.nextInt(3) + 1;
+            int num = random.nextInt(4) + 2;
             station.generateRandomIntersections(stations, num); // generate 3 random intersections for each station
         }
 

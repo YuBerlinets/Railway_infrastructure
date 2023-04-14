@@ -15,6 +15,7 @@ public class Locomotive {
     private int maxNumCar;
     private double maxWeight;
     private int maxNumRailroadCarsElectricityGrid;
+    private Route route;
 
     private static int count = 1;
 

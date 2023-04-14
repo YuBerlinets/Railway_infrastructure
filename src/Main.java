@@ -1,6 +1,5 @@
 import RailroadCars.*;
 
-import javax.swing.plaf.TableHeaderUI;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,18 +12,22 @@ public class Main {
         Station stationTMP = new Station("Station TMP HOME");
 
         Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
-                stationTMP, findStation("Madrid,Spain", stations), findStation("Bordeaux,France", stations));
+                stationTMP, findStation("Poltava,Ukraine", stations), findStation("Lille,France", stations));
         Locomotive l2 = new Locomotive("Python", 10, 39500, 4,
-                stationTMP, findStation("Bordeaux,France", stations), findStation("Braga,Portugal", stations));
+                stationTMP, findStation("Krakow,Poland", stations), findStation("Braga,Portugal", stations));
+        Locomotive l3 = new Locomotive("Test 1", 10, 43000, 6, stationTMP,
+                findStation("Zurich,Switzerland", stations), findStation("Reykjavik,Iceland", stations));
 
         Route route1 = generateRoute(l1);
         Route route2 = generateRoute(l2);
-
+        Route route3 = generateRoute(l3);
         System.out.println(route1);
-        System.out.println("route 1 total km -> " + route1.getTotalDistance());
+        //System.out.println("route 1 total km -> " + route1.getTotalDistance());
 
         System.out.println(route2);
-        System.out.println("route 2 total km -> " + route2.getTotalDistance());
+        //System.out.println("route 2 total km -> " + route2.getTotalDistance());
+        System.out.println(route3);
+
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1, 40);
         PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 2, 50);
@@ -36,6 +39,10 @@ public class Main {
         GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900, "Petrol", "Centrifugal Compressor");
         ExplosiveRailroadCar erc1 = new ExplosiveRailroadCar("American Express", 4100, "Bomb");
         ToxicRailroadCar trc1 = new ToxicRailroadCar("South uranium", 3400, "Uranium");
+
+        Map<String, RailroadCar> hashCars = new HashMap<>();
+        hashCars.put("prc1", prc1);
+        hashCars.put("prc2", prc2);
 
         prc1.connectToElectricalGrid();
         porc1.connectToElectricalGrid();
@@ -56,11 +63,11 @@ public class Main {
         t1.addCar(porc1);
         t1.addCar(bmrc1);
         t1.addCar(rrc1);
-        t1.addCar(rfrc1);
-        t1.addCar(lrc1);
-        t1.addCar(grc1);
-        t1.addCar(erc1);
-        t1.addCar(trc1);
+//        t1.addCar(rfrc1);
+//        t1.addCar(lrc1);
+//        t1.addCar(grc1);
+//        t1.addCar(erc1);
+//        t1.addCar(trc1);
         t1.addCar(erc1);//throws exception
 
         Trainset t2 = new Trainset(l2, route2);
@@ -76,11 +83,13 @@ public class Main {
         t2.addCar(trc1);
         t2.addCar(erc1);//throws exception
 
+        Trainset t3 = new Trainset(l3, route3);
         //Threads
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
-        trainsets.add(t2);
-
+        //trainsets.add(t2);
+        //trainsets.add(t3);
+        System.out.println("train t1 is on route before: " + t1.isOnRoute());
         Thread[] threadsSpeed = new Thread[trainsets.size()];
         Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
@@ -92,7 +101,7 @@ public class Main {
                     System.out.println(e);
                 }
             });
-            threadsRoute[i]= new Thread(() -> {
+            threadsRoute[i] = new Thread(() -> {
                 try {
                     trainsets.get(j).moveRoute();
                 } catch (InterruptedException e) {
@@ -100,13 +109,13 @@ public class Main {
                 }
             });
             threadsSpeed[i].start(); //assigns speed to locomotive
-            threadsRoute[i].start();
+            threadsRoute[i].start(); //assigns routes to trainsets
         }
 
         //menu
 
 
-
+        System.out.println("train t1 is on route after: " + t1.isOnRoute());
         Scanner menu = new Scanner(System.in);
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
@@ -114,7 +123,7 @@ public class Main {
             menuButton.put(trainNum, trainsets.get(i));
         }
         MenuTrain menuTrain = new MenuTrain(menuButton);
-        Menu menuTest = new Menu(menuButton);
+        Menu menuTest = new Menu(menuButton, hashCars);
         menuTest.display();
         boolean programIsRunning = false;
         while (programIsRunning) {
@@ -126,6 +135,10 @@ public class Main {
                 System.out.println(abbreviationInfo());
             else if (menuInput.equals("exit")) {
                 programIsRunning = false;
+                for (Thread item : threadsSpeed)
+                    item.interrupt();
+                for (Thread item : threadsRoute)
+                    item.interrupt();
                 System.out.println("Exiting the program...");
             } else if (menuButton.containsKey(menuInput))
                 System.out.println(menuTrain.getInformation(menuInput));
@@ -134,7 +147,7 @@ public class Main {
         }
     }
 
-    public static void carToService(RailroadCar railroadCar){
+    public static void carToService(RailroadCar railroadCar) {
         railroadCar.getId();
     }
 
@@ -149,7 +162,7 @@ public class Main {
         return null;
     }
 
-    public static Route generateRoute(Locomotive locomotive) {
+    public static  Route generateRoute(Locomotive locomotive) {
         Route route = new Route();
         Station source = locomotive.getSourceStation();
         Station destination = locomotive.getDestinationStation();
@@ -177,9 +190,10 @@ public class Main {
         }
 
         if (!prev.containsKey(destination)) {
-            System.out.println("This no connection between those stations" + locomotive.getSourceStation() +" "
-            + locomotive.getDestinationStation());
-            return null;
+            System.out.println("This no connection between those stations" + locomotive.getSourceStation() + " "
+                    + locomotive.getDestinationStation());
+            NullPointerException npe = new NullPointerException("no connection");
+            System.out.println(npe);
         }
 
         Station currentStation = destination;
@@ -195,7 +209,12 @@ public class Main {
         route.addStation(destination);
         route.calculatedDistance(totalDistance);
 
-        return route;
+        try {
+            return route;
+        } catch (NullPointerException e) {
+            System.out.println("here");
+        }
+        return null;
     }
 
     public static String getShipper() {
