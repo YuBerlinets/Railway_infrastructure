@@ -52,7 +52,6 @@ Sarajevo,BosniaandHerzegovina
 Split,Croatia
 Cologne,Germany
 Toulouse,France
-Marseille,France
 Bordeaux,France
 Bern,Switzerland
 Bologna,Italy
@@ -71,7 +70,6 @@ Poznan,Poland
 Trieste,Italy
 Nuremberg,Germany
 Heidelberg,Germany
-Marseille,France
 Basel,Switzerland
 Pisa,Italy
 Siena,Italy
@@ -103,4 +101,3 @@ Sevastopol,Ukraine
 Antwerp,Belgium
 Turin,Italy
 Bremen,Germany
-Marseille,France
