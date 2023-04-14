@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) {
+        //generate stations with intersections from file Station.txt
         List<Station> stations = Station.generateStations();
         Station stationTMP = new Station("Station TMP HOME");
-
+        //creating locomotives
         Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
                 stationTMP, findStation("Poltava,Ukraine", stations), findStation("Lille,France", stations));
         Locomotive l2 = new Locomotive("Python", 10, 39500, 4,
@@ -18,15 +18,13 @@ public class Main {
         Locomotive l3 = new Locomotive("Test 1", 10, 43000, 6, stationTMP,
                 findStation("Zurich,Switzerland", stations), findStation("Reykjavik,Iceland", stations));
 
-        Route route1 = generateRoute(l1);
-        Route route2 = generateRoute(l2);
-        Route route3 = generateRoute(l3);
-        System.out.println(route1);
-        //System.out.println("route 1 total km -> " + route1.getTotalDistance());
-
-        System.out.println(route2);
-        //System.out.println("route 2 total km -> " + route2.getTotalDistance());
-        System.out.println(route3);
+        l1.generateRoute();
+        l2.generateRoute();
+        l3.generateRoute();
+        System.out.println("HERE");
+        System.out.println(l1.getRoute());
+        System.out.println(l2.getRoute());
+        System.out.println(l3.getRoute());
 
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1, 40);
@@ -47,8 +45,8 @@ public class Main {
         prc1.connectToElectricalGrid();
         porc1.connectToElectricalGrid();
         rrc1.connectToElectricalGrid();
-        System.out.println(rrc1.isConnectedToElectricalGrid());
 
+        System.out.println("\nTest lines start: ");
         prc1.takeCarToService();
         prc1.addPeople(38);
         prc2.addPeople(36);
@@ -56,8 +54,9 @@ public class Main {
         prc2.hasWifi();
         prc1.addBicycle(2);
         prc2.addBicycle(5);
+        System.out.println("Test lines end\n");
 
-        Trainset t1 = new Trainset(l1, route1);
+        Trainset t1 = new Trainset(l1);
         t1.addCar(prc1);
         t1.addCar(prc2);
         t1.addCar(porc1);
@@ -70,7 +69,7 @@ public class Main {
 //        t1.addCar(trc1);
         t1.addCar(erc1);//throws exception
 
-        Trainset t2 = new Trainset(l2, route2);
+        Trainset t2 = new Trainset(l2);
         t2.addCar(prc1);
         t2.addCar(prc2);
         t2.addCar(porc1);
@@ -81,15 +80,14 @@ public class Main {
         t2.addCar(grc1);
         t2.addCar(erc1);
         t2.addCar(trc1);
-        t2.addCar(erc1);//throws exception
+        //t2.addCar(erc1);//throws exception
 
-        Trainset t3 = new Trainset(l3, route3);
+        Trainset t3 = new Trainset(l3);
         //Threads
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
         //trainsets.add(t2);
         //trainsets.add(t3);
-        System.out.println("train t1 is on route before: " + t1.isOnRoute());
         Thread[] threadsSpeed = new Thread[trainsets.size()];
         Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
@@ -113,106 +111,21 @@ public class Main {
         }
 
         //menu
-
-
-        System.out.println("train t1 is on route after: " + t1.isOnRoute());
-        Scanner menu = new Scanner(System.in);
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
             String trainNum = "t" + (i + 1);
             menuButton.put(trainNum, trainsets.get(i));
         }
-        MenuTrain menuTrain = new MenuTrain(menuButton);
         Menu menuTest = new Menu(menuButton, hashCars);
         menuTest.display();
-        boolean programIsRunning = false;
-        while (programIsRunning) {
-            System.out.println("For providing information about trains' abbreviation type \"info\".\n" +
-                    "For providing information about specific train type train's id.\n" +
-                    "For exiting from the program type \"exit\".");
-            String menuInput = menu.next().toLowerCase();
-            if (menuInput.equals("info"))
-                System.out.println(abbreviationInfo());
-            else if (menuInput.equals("exit")) {
-                programIsRunning = false;
-                for (Thread item : threadsSpeed)
-                    item.interrupt();
-                for (Thread item : threadsRoute)
-                    item.interrupt();
-                System.out.println("Exiting the program...");
-            } else if (menuButton.containsKey(menuInput))
-                System.out.println(menuTrain.getInformation(menuInput));
-            else
-                System.out.println("Incorrect input");
-        }
-    }
-
-    public static void carToService(RailroadCar railroadCar) {
-        railroadCar.getId();
     }
 
 
     public static Station findStation(String stationName, List<Station> stations) {
-
         for (Station station : stations) {
             if (station.getName().equals(stationName)) {
                 return station;
             }
-        }
-        return null;
-    }
-
-    public static  Route generateRoute(Locomotive locomotive) {
-        Route route = new Route();
-        Station source = locomotive.getSourceStation();
-        Station destination = locomotive.getDestinationStation();
-        Map<Station, Double> distances = new HashMap<>();
-        Map<Station, Station> prev = new HashMap<>();
-        PriorityQueue<Station> pq = new PriorityQueue<>(Comparator.comparingDouble(distances::get));
-
-        distances.put(source, 0.0);
-        pq.offer(source);
-
-        while (!pq.isEmpty()) {
-            Station currentStation = pq.poll();
-            if (currentStation == destination) {
-                break;
-            }
-            double currentDistance = distances.get(currentStation);
-            for (Station nextStation : currentStation.getIntersectsWith().keySet()) {
-                double distance = currentDistance + currentStation.getDistanceTo(nextStation);
-                if (!distances.containsKey(nextStation) || distance < distances.get(nextStation)) {
-                    distances.put(nextStation, distance);
-                    prev.put(nextStation, currentStation);
-                    pq.offer(nextStation);
-                }
-            }
-        }
-
-        if (!prev.containsKey(destination)) {
-            System.out.println("This no connection between those stations" + locomotive.getSourceStation() + " "
-                    + locomotive.getDestinationStation());
-            NullPointerException npe = new NullPointerException("no connection");
-            System.out.println(npe);
-        }
-
-        Station currentStation = destination;
-        double totalDistance = 0.0;
-        while (currentStation != source) {
-            Station previousStation = prev.get(currentStation);
-            double distance = previousStation.getDistanceTo(currentStation);
-            totalDistance += distance;
-            route.addStation(previousStation);
-            currentStation = previousStation;
-        }
-        route.reverse();
-        route.addStation(destination);
-        route.calculatedDistance(totalDistance);
-
-        try {
-            return route;
-        } catch (NullPointerException e) {
-            System.out.println("here");
         }
         return null;
     }
@@ -236,20 +149,5 @@ public class Main {
         return result;
     }
 
-    public static String abbreviationInfo() {
-        return "Here is the explanation of the trains' abbreviation\n" +
-                "1.prc - Passenger Railroad Car\n" +
-                "2.porc - Post Office Railroad Car\n" +
-                "3.bmrc - Baggage and Mail Railroad Car\n" +
-                "4.rrc - Restaurant Railroad Car\n" +
-                "5.bfrc - Basic Freight Railroad Car\n" +
-                "6.hrfc - Heavy Freight Railroad Car\n" +
-                "7.rfrc - Refrigerated Railroad Car\n" +
-                "8.lrc - Liquid Railroad Car\n" +
-                "9.grc - Gaseous Railroad Car\n" +
-                "10.erc - Explosive Railroad Car\n" +
-                "11.trc - Toxic Railroad Car\n" +
-                "12.ltrc - Liquid Toxic Railroad Car\n";
-    }
 }
 

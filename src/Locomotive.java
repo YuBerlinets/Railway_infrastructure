@@ -1,8 +1,7 @@
 import exception.RailroadHazard;
 import exception.TooBigWeight;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 public class Locomotive {
     private String id = "l"; // l - stands for locomotive
@@ -31,7 +30,54 @@ public class Locomotive {
         this.destinationStation = destinationStation;
         this.onRoute = true;
     }
+    public void generateRoute() {
+        Route route = new Route();
+        Station source = this.getSourceStation();
+        Station destination = this.getDestinationStation();
+        Map<Station, Double> distances = new HashMap<>();
+        Map<Station, Station> prev = new HashMap<>();
+        PriorityQueue<Station> pq = new PriorityQueue<>(Comparator.comparingDouble(distances::get));
 
+        distances.put(source, 0.0);
+        pq.offer(source);
+
+        while (!pq.isEmpty()) {
+            Station currentStation = pq.poll();
+            if (currentStation == destination) {
+                break;
+            }
+            double currentDistance = distances.get(currentStation);
+            for (Station nextStation : currentStation.getIntersectsWith().keySet()) {
+                double distance = currentDistance + currentStation.getDistanceTo(nextStation);
+                if (!distances.containsKey(nextStation) || distance < distances.get(nextStation)) {
+                    distances.put(nextStation, distance);
+                    prev.put(nextStation, currentStation);
+                    pq.offer(nextStation);
+                }
+            }
+        }
+
+        if (!prev.containsKey(destination)) {
+            System.out.println("This no connection between those stations" + this.getSourceStation() + " "
+                    + this.getDestinationStation());
+            NullPointerException npe = new NullPointerException("no connection");
+            System.out.println(npe);
+        }
+
+        Station currentStation = destination;
+        double totalDistance = 0.0;
+        while (currentStation != source) {
+            Station previousStation = prev.get(currentStation);
+            double distance = previousStation.getDistanceTo(currentStation);
+            totalDistance += distance;
+            route.addStation(previousStation);
+            currentStation = previousStation;
+        }
+        route.reverse();
+        route.addStation(destination);
+        route.calculatedDistance(totalDistance);
+        this.route = route;
+    }
     public void adjustSpeed() throws InterruptedException {
         Random random = new Random();
         while (this.onRoute) {
@@ -61,6 +107,10 @@ public class Locomotive {
                 " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
                 "\nSource: " + getSourceStation() +
                 "\nDestination: " + getDestinationStation();
+    }
+
+    public Route getRoute() {
+        return route;
     }
 
     public void setSpeed(double speed) {

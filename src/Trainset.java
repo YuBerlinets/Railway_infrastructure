@@ -21,10 +21,10 @@ public class Trainset {
 
     public static int count = 1;
 
-    Trainset(Locomotive locomotive, Route route) {
+    Trainset(Locomotive locomotive) {
         this.id = id + count++;
         this.locomotive = locomotive;
-        this.route = route;
+        this.route = locomotive.getRoute();
         this.currentStation = route.getRoute().get(0);
         this.speed = locomotive.getSpeed();
     }
