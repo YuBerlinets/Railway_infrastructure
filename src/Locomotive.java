@@ -15,6 +15,7 @@ public class Locomotive {
     private double maxWeight;
     private int maxNumRailroadCarsElectricityGrid;
     private Route route;
+    private Route reverseRoute;
 
     private static int count = 1;
 
@@ -32,6 +33,7 @@ public class Locomotive {
     }
     public void generateRoute() {
         Route route = new Route();
+        Route reverseRoute = new Route(); // create a new Route object for storing the reverse route
         Station source = this.getSourceStation();
         Station destination = this.getDestinationStation();
         Map<Station, Double> distances = new HashMap<>();
@@ -71,13 +73,18 @@ public class Locomotive {
             double distance = previousStation.getDistanceTo(currentStation);
             totalDistance += distance;
             route.addStation(previousStation);
+            reverseRoute.addStation(currentStation); // add current station to the reverse route
             currentStation = previousStation;
         }
         route.reverse();
         route.addStation(destination);
+        reverseRoute.addStation(source);
         route.calculatedDistance(totalDistance);
         this.route = route;
+        reverseRoute.calculatedDistance(totalDistance); // calculate the distance for the reverse route
+        this.reverseRoute = reverseRoute; // store the reverse route in the reverseRoute field
     }
+
     public void adjustSpeed() throws InterruptedException {
         Random random = new Random();
         while (this.onRoute) {
@@ -107,6 +114,10 @@ public class Locomotive {
                 " | Current speed: " + getSpeed() + "\nHome Station: " + getHomeRailwayStation() +
                 "\nSource: " + getSourceStation() +
                 "\nDestination: " + getDestinationStation();
+    }
+
+    public Route getReverseRoute() {
+        return reverseRoute;
     }
 
     public Route getRoute() {

@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Trainset {
+public class Trainset implements Comparable<Trainset> {
     private String id = "t"; // t stands for Trainset
     private Locomotive locomotive;
     public ArrayList<RailroadCar> railroadCars = new ArrayList<>();
-    private int trainsetNumberCars;
     private double trainsetWeightLoad;
     private int trainsetCarsConnectedElectricalGrid;
     private Route route;
     private Station currentStation;
     private double speed;
     private boolean onRoute;
+    private double percentage;
 
     public static int count = 1;
 
@@ -29,153 +29,167 @@ public class Trainset {
         this.speed = locomotive.getSpeed();
     }
 
-//    public void moveRoute() throws InterruptedException {
-//        List<Station> r = this.route.getRoute();
-//        this.onRoute = true;
-//        Station lastStation = r.get(route.getRoute().size() - 1);
-//        System.out.println("the last station " + lastStation);
-//        while (this.onRoute) {
-//            for (int i = 0; i < r.size() - 1; i++) {
-//                Station station = r.get(i);
-//                Station nextStation = r.get(i + 1);
-//                double distance = station.getIntersectsWith().get(nextStation);
-//                if (nextStation.isAvailable()) {
-//                    double time = ((distance / this.speed) * 1000);
-//                    nextStation.setUnavailability();
-//                    try {
-//                        Thread.sleep((long) time);
-//                    } catch (InterruptedException e) {
-//                        System.out.println(e);
-//                    }
-//                    this.currentStation.setAvailability();
-//                    this.currentStation = nextStation;
-//                    //System.out.println(getId() + " is on station: " + this.currentStation);
-//                    double prevSpeed = this.speed;
-//                    this.locomotive.setSpeed(0);
-//                    Thread.sleep(4000);
-//                    this.locomotive.setSpeed(prevSpeed);
-//                    if (this.currentStation == lastStation) {
-//                        //System.out.println(this.getId() + " train has reached an endpoint");
-//                        Thread.sleep(30000);
-//                    }
-//
-//                } else {
-//                    //System.out.println(nextStation + " is currently not available");
-//                    //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
-//
-//                    double prevSpeed = this.speed;
-//                    this.speed = 0;
-//
-//                    while (this.isOnRoute()) {
-//                        Thread.sleep(1000);
-//
-//                        if (nextStation.isAvailable()) {
-//                            //System.out.println("Station: " + nextStation + " is now available");
-//                            this.speed = prevSpeed;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//            Collections.reverse(r);
-//        }
-//    }
-
     public void moveRoute() throws InterruptedException {
-        List<Station> r = this.route.getRoute();
+        List<Station> routeForward = this.locomotive.getRoute().getRoute();
+        List<Station> routeBack = this.getLocomotive().getReverseRoute().getRoute();
         this.onRoute = true;
-        Station startStation = r.get(0);
-        Station lastStation = r.get(r.size() - 1);
+        Station startStation = routeForward.get(0);
+        Station lastStation = routeForward.get(routeForward.size() - 1);
         boolean forward = true;
-        List<Station> backRoute = Station.generateStations();
+        List<Station> route = new ArrayList<>();
         while (this.isOnRoute()) {
-            if (forward) {
-                for (int i = 0; i < r.size() - 1; i++) {
-                    Station station = r.get(i);
-                    Station nextStation = r.get(i + 1);
-                    double distance = station.getIntersectsWith().get(nextStation);
-                    if (nextStation.isAvailable()) {
-                        double time = ((distance / this.speed) * 1000);
-                        nextStation.setUnavailability();
-                        try {
-                            Thread.sleep((long) time);
-                        } catch (InterruptedException e) {
-                            System.out.println(e);
-                        }
-                        this.currentStation.setAvailability();
-                        this.currentStation = nextStation;
-                        double prevSpeed = this.speed;
-                        this.locomotive.setSpeed(0);
-                        System.out.println(getId() + " is on station: " + this.currentStation);
-                        Thread.sleep(4000);
-                        this.locomotive.setSpeed(prevSpeed);
-                        if (this.currentStation == lastStation) {
-                            System.out.println(this.getId() + " train has reached an endpoint");
-                            prevSpeed = this.speed;
-                            this.speed = 0;
-                            Thread.sleep(30000);
-                            this.speed = prevSpeed;
-                            forward = false;
-                            break;
-                        }
-                    } else {
-                        System.out.println(nextStation + " is currently not available");
-                        System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
-                        double prevSpeed = this.speed;
-                        this.speed = 0;
-                        while (this.isOnRoute()) {
-                            Thread.sleep(1000);
-                            if (nextStation.isAvailable()) {
-                                this.speed = prevSpeed;
-                                break;
-                            }
-                        }
+            if (forward)
+                route = routeForward;
+            else
+                route = routeBack;
+            for (int i = 0; i < route.size() - 1; i++) {
+                Station station = route.get(i);
+                Station nextStation = route.get(i + 1);
+                double distance = station.getIntersectsWith().get(nextStation);
+                if (nextStation.isAvailable()) {
+                    double time = ((distance / this.speed) * 1000);
+                    nextStation.setUnavailability();
+                    try {
+                        Thread.sleep((long) time);
+                    } catch (InterruptedException e) {
+                        System.out.println(e);
                     }
-                }
-            } else {
-                for (int i = r.size() - 1; i > 0; i--) {
-                    Station station = r.get(i);
-                    Station nextStation = r.get(i - 1);
-                    double distance = station.getIntersectsWith().get(nextStation);
-                    if (nextStation.isAvailable()) {
-                        double time = ((distance / this.speed) * 1000);
-                        nextStation.setUnavailability();
-                        try {
-                            Thread.sleep((long) time);
-                        } catch (InterruptedException e) {
-                            System.out.println(e);
-                        }
-                        this.currentStation.setAvailability();
-                        this.currentStation = nextStation;
-                        double prevSpeed = this.speed;
-                        this.locomotive.setSpeed(0);
-                        System.out.println(getId() + " is on station: " + this.currentStation);
-                        Thread.sleep(4000);
-                        this.locomotive.setSpeed(prevSpeed);
-                        if (this.currentStation == startStation) {
-                            System.out.println(this.getId() + " train has reached an startpoint");
-                            Thread.sleep(30000);
-                            forward = true;
-                            break;
-                        }
-                    } else {
-                        System.out.println(nextStation + " is currently not available");
-                        System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
-                        double prevSpeed = this.speed;
+                    this.currentStation.setAvailability();
+                    this.currentStation = nextStation;
+                    double prevSpeed = this.speed;
+                    this.locomotive.setSpeed(0);
+                    System.out.println(getId() + " is on station: " + this.currentStation);
+                    Thread.sleep(4000);
+                    this.locomotive.setSpeed(prevSpeed);
+                    if (this.currentStation == lastStation) {
+                        System.out.println(this.getId() + " train has reached a startpoint");
+                        prevSpeed = this.speed;
                         this.speed = 0;
-                        while (this.isOnRoute()) {
-                            Thread.sleep(1000);
-                            if (nextStation.isAvailable()) {
-                                this.speed = prevSpeed;
-                                System.out.println("Station: " + nextStation + " is now available");
-                                break;
-                            }
+                        Thread.sleep(30000);
+                        this.speed = prevSpeed;
+                        forward = true;
+                    }
+                    if(this.currentStation == startStation){
+                        System.out.println(this.getId() + " train has reached an endpoint");
+                        prevSpeed = this.speed;
+                        this.speed = 0;
+                        Thread.sleep(30000);
+                        this.speed = prevSpeed;
+                        forward = false;
+                        break;
+                    }
+                } else {
+                    System.out.println(nextStation + " is currently not available");
+                    System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+                    double prevSpeed = this.speed;
+                    this.speed = 0;
+                    while (this.isOnRoute()) {
+                        Thread.sleep(1000);
+                        if (nextStation.isAvailable()) {
+                            this.speed = prevSpeed;
+                            break;
                         }
                     }
                 }
             }
         }
     }
+//    public void moveRoute() throws InterruptedException {
+//        List<Station> route = this.locomotive.getRoute().getRoute();
+//        List<Station> reverseRoute = this.getLocomotive().getReverseRoute().getRoute();
+//        this.onRoute = true;
+//        Station startStation = route.get(0);
+//        Station lastStation = route.get(route.size() - 1);
+//        boolean forward = true;
+////        List<Station> backRoute = Station.();
+//        while (this.isOnRoute()) {
+//            if (forward) {
+//                for (int i = 0; i < route.size() - 1; i++) {
+//                    Station station = route.get(i);
+//                    Station nextStation = route.get(i + 1);
+//                    double distance = station.getIntersectsWith().get(nextStation);
+//                    if (nextStation.isAvailable()) {
+//                        double time = ((distance / this.speed) * 1000);
+//                        nextStation.setUnavailability();
+//                        try {
+//                            Thread.sleep((long) time);
+//                        } catch (InterruptedException e) {
+//                            System.out.println(e);
+//                        }
+//                        this.currentStation.setAvailability();
+//                        this.currentStation = nextStation;
+//                        double prevSpeed = this.speed;
+//                        this.locomotive.setSpeed(0);
+//                        //System.out.println(getId() + " is on station: " + this.currentStation);
+//                        Thread.sleep(4000);
+//                        this.locomotive.setSpeed(prevSpeed);
+//                        if (this.currentStation == lastStation) {
+//                            //System.out.println(this.getId() + " train has reached an endpoint");
+//                            prevSpeed = this.speed;
+//                            this.speed = 0;
+//                            Thread.sleep(30000);
+//                            this.speed = prevSpeed;
+//                            forward = false;
+//                            break;
+//                        }
+//                    } else {
+//                        //System.out.println(nextStation + " is currently not available");
+//                        //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+//                        double prevSpeed = this.speed;
+//                        this.speed = 0;
+//                        while (this.isOnRoute()) {
+//                            Thread.sleep(1000);
+//                            if (nextStation.isAvailable()) {
+//                                this.speed = prevSpeed;
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            } else {
+//                for (int i = route.size() - 1; i > 0; i--) {
+//                    Station station = route.get(i);
+//                    Station nextStation = route.get(i - 1);
+//                    double distance = station.getIntersectsWith().get(nextStation);
+//                    if (nextStation.isAvailable()) {
+//                        double time = ((distance / this.speed) * 1000);
+//                        nextStation.setUnavailability();
+//                        try {
+//                            Thread.sleep((long) time);
+//                        } catch (InterruptedException e) {
+//                            System.out.println(e);
+//                        }
+//                        this.currentStation.setAvailability();
+//                        this.currentStation = nextStation;
+//                        double prevSpeed = this.speed;
+//                        this.locomotive.setSpeed(0);
+//                        //System.out.println(getId() + " is on station: " + this.currentStation);
+//                        Thread.sleep(4000);
+//                        this.locomotive.setSpeed(prevSpeed);
+//                        if (this.currentStation == startStation) {
+//                            //System.out.println(this.getId() + " train has reached a startpoint");
+//                            Thread.sleep(30000);
+//                            forward = true;
+//                            break;
+//                        }
+//                    } else {
+//                       // System.out.println(nextStation + " is currently not available");
+//                        //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+//                        double prevSpeed = this.speed;
+//                        this.speed = 0;
+//                        while (this.isOnRoute()) {
+//                            Thread.sleep(1000);
+//                            if (nextStation.isAvailable()) {
+//                                this.speed = prevSpeed;
+//                                //System.out.println("Station: " + nextStation + " is now available");
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 
     public void addCar(RailroadCar railroadCar) {
@@ -220,12 +234,14 @@ public class Trainset {
 
 
     public String toString() {
-        return "Trainset - ID: " + getId() + " | Current Station: " + getCurrentStation() + "\nTotal Weight: " + getTrainsetWeightLoad() + "\n" +
+        return "Trainset - ID: " + getId() + " | Current Station: " + getCurrentStation() +
+                " | Total Route Distance " + getRoute().getTotalDistance() + " | Completed path: " + getPercentage() +
+                "\nTotal Weight: " + getTrainsetWeightLoad() + "\n" +
                 "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
     }
 
-    public int getTrainsetNumberCars() {
-        return trainsetNumberCars;
+    public double getPercentage() {
+        return percentage;
     }
 
     public double getTrainsetWeightLoad() {
@@ -270,5 +286,15 @@ public class Trainset {
 
     public void setOnRoute(boolean onRoute) {
         this.onRoute = onRoute;
+    }
+
+    @Override
+    public int compareTo(Trainset trainset) {
+        if (route.getTotalDistance() == trainset.getRoute().getTotalDistance())
+            return 0;
+        else if (route.getTotalDistance() > trainset.getRoute().getTotalDistance())
+            return 1;
+        else
+            return -1;
     }
 }

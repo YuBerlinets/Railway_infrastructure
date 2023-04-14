@@ -1,8 +1,6 @@
 import RailroadCars.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -12,7 +10,7 @@ public class Main {
         Station stationTMP = new Station("Station TMP HOME");
         //creating locomotives
         Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
-                stationTMP, findStation("Poltava,Ukraine", stations), findStation("Lille,France", stations));
+                stationTMP, findStation("Lille,France", stations), findStation("Poltava,Ukraine", stations));
         Locomotive l2 = new Locomotive("Python", 10, 39500, 4,
                 stationTMP, findStation("Krakow,Poland", stations), findStation("Braga,Portugal", stations));
         Locomotive l3 = new Locomotive("Test 1", 10, 43000, 6, stationTMP,
@@ -23,6 +21,9 @@ public class Main {
         l3.generateRoute();
         System.out.println("HERE");
         System.out.println(l1.getRoute());
+        System.out.println();
+        System.out.println(l1.getReverseRoute());
+        System.out.println();
         System.out.println(l2.getRoute());
         System.out.println(l3.getRoute());
 
@@ -62,12 +63,14 @@ public class Main {
         t1.addCar(porc1);
         t1.addCar(bmrc1);
         t1.addCar(rrc1);
-//        t1.addCar(rfrc1);
-//        t1.addCar(lrc1);
-//        t1.addCar(grc1);
+        t1.addCar(rfrc1);
+        t1.addCar(lrc1);
+        t1.addCar(grc1);
 //        t1.addCar(erc1);
 //        t1.addCar(trc1);
         t1.addCar(erc1);//throws exception
+        System.out.println("REVERSE ROUTE");
+        System.out.println(t1.getLocomotive().getReverseRoute().getRoute());
 
         Trainset t2 = new Trainset(l2);
         t2.addCar(prc1);
@@ -118,6 +121,33 @@ public class Main {
         }
         Menu menuTest = new Menu(menuButton, hashCars);
         menuTest.display();
+        saveData(trainsets);
+
+    }
+
+    public static void saveData(List<Trainset> trainsets) {
+        String path = "TechFiles\\AppState.txt";
+        Collections.sort(trainsets);
+        boolean a = true;
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+            while (a) {
+                for (Trainset item : trainsets) {
+                    Collections.sort(item.getRailroadCars());
+                    writer.write(item.toString());
+                    writer.newLine();
+                }
+                writer.flush();
+                Thread.sleep(5000);
+            }
+                writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file");
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // restore interrupted status
+            System.out.println("Thread was interrupted");
+        }
     }
 
 

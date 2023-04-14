@@ -2,12 +2,13 @@ package RailroadCars;
 
 import java.util.Date;
 
-public class RailroadCar {
+public class RailroadCar implements Comparable<RailroadCar> {
     public String id;
     private String shipper;
     private String securityInformation;
     private double netWeight;
     private double grossWeight;
+    private double totalWeight;
     private Date dateOfManufacture;
     protected boolean connectedToElectricalGrid;
     protected boolean service;
@@ -21,23 +22,17 @@ public class RailroadCar {
         this.id = "rc" + count++;//rc stands for railroad car
         this.shipper = shipper;
         this.netWeight = netWeight;
+        this.totalWeight += netWeight;
     }
 
     public void addCargo(double weight){
         this.grossWeight += weight;
     }
 
-//    public void connectToElectricalGrid(){
-//        this.connectedToElectricalGrid = true;
-//    }
-//    public void disconnectFromElectricalGrid(){
-//        this.connectedToElectricalGrid = false;
-//    }
-
     public String toString(){
         return "\nID: " + getId() + " | Shipper: " + getShipper() +
                 " | Electrical grid: " + (isConnectedToElectricalGrid()? "Connected" : "Not connected") +
-                " | netWeight: " + getNetWeight();
+                " | netWeight: " + getNetWeight() + " | grossWeight: " + getGrossWeight();
     }
 
     public boolean isOnService() {
@@ -67,8 +62,21 @@ public class RailroadCar {
         return grossWeight;
     }
 
+    public double getTotalWeight() {
+        return totalWeight;
+    }
 
     public Date getDateOfManufacture() {
         return dateOfManufacture;
+    }
+
+    @Override
+    public int compareTo(RailroadCar railroadCar) {
+        if(this.netWeight == railroadCar.getNetWeight())
+            return 0;
+        else if(this.netWeight > railroadCar.getNetWeight())
+            return 1;
+        else
+            return -1;
     }
 }
