@@ -2,6 +2,7 @@ import RailroadCars.*;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
 
 public class Main {
     public static void main(String[] args) {
@@ -89,8 +90,8 @@ public class Main {
         //Threads
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
-        //trainsets.add(t2);
-        //trainsets.add(t3);
+        trainsets.add(t2);
+        trainsets.add(t3);
         Thread[] threadsSpeed = new Thread[trainsets.size()];
         Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
@@ -113,6 +114,8 @@ public class Main {
             threadsRoute[i].start(); //assigns routes to trainsets
         }
 
+        startMessage(trainsets);
+        saveData(trainsets);
         //menu
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
@@ -121,35 +124,46 @@ public class Main {
         }
         Menu menuTest = new Menu(menuButton, hashCars);
         menuTest.display();
-        saveData(trainsets);
+
 
     }
 
     public static void saveData(List<Trainset> trainsets) {
         String path = "TechFiles\\AppState.txt";
         Collections.sort(trainsets);
-        boolean a = true;
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-            while (a) {
-                for (Trainset item : trainsets) {
-                    Collections.sort(item.getRailroadCars());
-                    writer.write(item.toString());
-                    writer.newLine();
+        boolean programIsRunning = true;
+        Thread writing = new Thread(()->{
+            try {
+                FileWriter writer = new FileWriter(path);
+                while (programIsRunning) {
+                    for (Trainset item : trainsets) {
+                        Collections.sort(item.getRailroadCars());
+                        writer.write(item.toString());
+                        writer.write("\n");
+                    }
+                    writer.flush();
+                    Thread.sleep(5000);
+                    //trainsets.clear();
                 }
-                writer.flush();
-                Thread.sleep(5000);
-            }
                 writer.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred while writing to the file");
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // restore interrupted status
-            System.out.println("Thread was interrupted");
-        }
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing to the file");
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt(); // restore interrupted status
+                System.out.println("Thread was interrupted");
+            }
+        });
+        writing.start();
     }
 
+    public static void startMessage(List<Trainset> trainsets){
+        System.out.println("Currently on the routes: ");
+        int count = 1;
+        for(Trainset trainset : trainsets)
+            System.out.println(count++ + ". Trainset ID: " + trainset.getId() +
+                    " Path: " + trainset.getLocomotive().getSourceStation() + " to " + trainset.getLocomotive().getDestinationStation());
+    }
 
     public static Station findStation(String stationName, List<Station> stations) {
         for (Station station : stations) {
