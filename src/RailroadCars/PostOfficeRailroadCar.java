@@ -13,7 +13,7 @@ public class PostOfficeRailroadCar extends RailroadCar implements ElectricalGrid
     }
 
     public String toString(){
-        return super.toString() + " Fragile Parcels: " + (isFragileParcels() ? "Yes" : "No");
+        return super.toString() + " | Fragile Parcels: " + (isFragileParcels() ? "Yes" : "No");
     }
 
     public int getMaxCapacityBoxes() {

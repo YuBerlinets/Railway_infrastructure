@@ -2,25 +2,23 @@ package RailroadCars;
 
 import java.util.Random;
 
-public class LiquidRailroadCar extends RailroadCar implements BasicFreightRailroadCar {
+public class LiquidRailroadCar extends RailroadCar implements BasicFreightRailroadCar,Service {
     private String liquidType;
     private String cargoType;
-    private String cargoWeight;
+    private double cargoWeight;
     private double pressure;
     public static int count = 1;
-    private boolean running;
 
-    // add unique fields
 
     public LiquidRailroadCar(String shipper, double netWeight, String liquidType) {
         super(shipper, netWeight);
         this.liquidType = liquidType;
-        this.id = "lrc" + count++; //lrc stands for RailroadCars.LiquidRailroadCar
+        this.id = "lrc" + count++; //lrc stands for LiquidRailroadCar
         this.pressure = 30;//in meaning psi
-        this.running = true;
+        this.attached = true;
         Thread pressureUpdating = new Thread(() -> {
             double percentChange = 0.01;
-            while (running) {
+            while (attached) {
                 Random random = new Random();
                 double delta = this.pressure * percentChange;
                 boolean pressureChanging = random.nextBoolean();
@@ -29,7 +27,7 @@ public class LiquidRailroadCar extends RailroadCar implements BasicFreightRailro
                 else
                     this.pressure -= delta;
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(15000);
                 } catch (InterruptedException e) {
                     System.out.println(e);
                 }
@@ -38,19 +36,30 @@ public class LiquidRailroadCar extends RailroadCar implements BasicFreightRailro
         pressureUpdating.start();
     }
 
-    public String getLiquidType() {
-        return liquidType;
-    }
 
     public String toString() {
-        return super.toString() + " | Liquid type: " + getLiquidType() + " Pressure: " + getPressure();
+        return super.toString() + " | Cargo type: " + getLiquidType() + " | Pressure: " + getPressure();
+    }
+
+    public void checkLeaking() {
+        Random random = new Random();
+        boolean leaking = random.nextBoolean();
+        if(leaking)
+            System.out.println("Car " + getId() + " might be leaking, please take this car to service");
+        else
+            System.out.println("Everything is great with " + getId() + " car");
+
+    }
+
+    public String getLiquidType() {
+        return liquidType;
     }
 
     public String getCargoType() {
         return cargoType;
     }
 
-    public String getCargoWeight() {
+    public double getCargoWeight() {
         return cargoWeight;
     }
 
@@ -82,4 +91,13 @@ public class LiquidRailroadCar extends RailroadCar implements BasicFreightRailro
         }
     }
 
+    @Override
+    public void takeCarToService() {
+        super.service = true;
+    }
+
+    @Override
+    public void takeCarOffService() {
+        super.service = false;
+    }
 }

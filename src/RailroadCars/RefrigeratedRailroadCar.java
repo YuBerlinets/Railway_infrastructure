@@ -18,6 +18,7 @@ public class RefrigeratedRailroadCar extends RailroadCar implements BasicFreight
         this.coolingMethod = coolingMethod;
         this.humidityControl = humidityControl;
         this.temperature = 3;
+        this.pressure = 0;//in meaning psi
     }
 
     public String toString(){
@@ -97,12 +98,7 @@ public class RefrigeratedRailroadCar extends RailroadCar implements BasicFreight
         if(this.service){
             System.out.println("The pressure is 0, because car is in service");
         }else{
-            if (this.pressure > 40) {
-                System.out.println("Pressure is higher than it requires");
-            } else if (this.pressure < 20) {
-                System.out.println("Pressure is lower that it requires");
-            } else
-                System.out.println("Pressure is in normal condition");
+            System.out.println("Pressure is not measured in this car");
         }
     }
 }

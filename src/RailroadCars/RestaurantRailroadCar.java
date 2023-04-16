@@ -35,6 +35,7 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
         }else
             System.out.println("All tables are available");
     }
+    //booking table for some amount of people
     public void bookTable(){
         Scanner sc = new Scanner(System.in);
         if((this.availableTables - 1) > 0) {
@@ -61,7 +62,7 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
         else
             changeCuisine();
     }
-    //assings cuisine to the restaurant while creating a car
+    //assigns cuisine to the restaurant while creating a car
     public String generateCuisine() {
         Random random = new Random();
         String[] cuisineArr = {"Asian", "American", "Ukrainian","Polish","Italian"};
@@ -71,9 +72,20 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
 
     @Override
     public String toString() {
-        return super.toString() + " Cuisine: " + getCuisine();
+        return super.toString() + " Cuisine: " + getCuisine() + " | Available tables: " + getAvailableTables();
     }
 
+    public int getTables() {
+        return tables;
+    }
+
+    public int getAvailableTables() {
+        return availableTables;
+    }
+
+    public Map<String, String> getReservations() {
+        return reservations;
+    }
     public int getStaffMembers() {
         return staffMembers;
     }

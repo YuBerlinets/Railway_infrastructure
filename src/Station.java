@@ -27,8 +27,6 @@ public class Station {
 
     public void generateRandomIntersections(List<Station> allStations, int numIntersections) {
         Random rand = new Random();
-
-        // randomly select other stations to connect with
         for (int i = 0; i < numIntersections; i++) {
             Station randomStation = allStations.get(rand.nextInt(allStations.size()));
             double distance = rand.nextDouble() * 500 + 100; // randomly generate distance between 100 and 600
@@ -51,11 +49,10 @@ public class Station {
         } catch (IOException e) {
             System.out.println("Error reading file: " + e);
         }
-        // generate random intersections for each station
         for (Station station : stations) {
             Random random =new Random();
             int num = random.nextInt(4) + 2;
-            station.generateRandomIntersections(stations, num); // generate 3 random intersections for each station
+            station.generateRandomIntersections(stations, num);
         }
 
         return stations;

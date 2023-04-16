@@ -20,7 +20,10 @@ public class BaggageMailRailroadCar extends RailroadCar implements Service {
         else
             this.placePets = 5;
     }
-
+    @Override
+    public String toString() {
+        return super.toString() + " | Max number of suitcases: " + getNumSuitcase() + " | Storing pets: " + (isStoringPets()? "Yes" : "No");
+    }
     public void loadBaggage(int suitcases) {
         if ((this.numSuitcase + suitcases) <= maxNumSuitcase)
             this.maxNumSuitcase += suitcases;
@@ -78,10 +81,6 @@ public class BaggageMailRailroadCar extends RailroadCar implements Service {
         return placePets;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 
     @Override
     public void takeCarToService() {

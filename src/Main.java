@@ -10,88 +10,37 @@ public class Main {
         List<Station> stations = Station.generateStations();
         Station stationTMP = new Station("Station TMP HOME");
         //creating locomotives
-        Locomotive l1 = new Locomotive("Victory", 10, 45000, 5,
+        Locomotive l1 = new Locomotive("Victory", 12, 59500, 5,
                 stationTMP, findStation("Lille,France", stations), findStation("Poltava,Ukraine", stations));
-        Locomotive l2 = new Locomotive("Python", 10, 39500, 4,
+        Locomotive l2 = new Locomotive("Python", 12, 67000, 4,
                 stationTMP, findStation("Krakow,Poland", stations), findStation("Braga,Portugal", stations));
-        Locomotive l3 = new Locomotive("Test 1", 10, 43000, 6, stationTMP,
+        Locomotive l3 = new Locomotive("Test 1", 12, 58000, 6, stationTMP,
                 findStation("Zurich,Switzerland", stations), findStation("Reykjavik,Iceland", stations));
 
+        //generating routes for locomotives
         l1.generateRoute();
         l2.generateRoute();
         l3.generateRoute();
-        System.out.println("HERE");
-        System.out.println(l1.getRoute());
-        System.out.println();
-        System.out.println(l1.getReverseRoute());
-        System.out.println();
-        System.out.println(l2.getRoute());
-        System.out.println(l3.getRoute());
-
-
-        PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1, 40);
-        PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 2, 50);
-        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post", 3900,80, true);
-        BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000,10,false);
-        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG", 3600, 3,12);
-        RefrigeratedRailroadCar rfrc1 = new RefrigeratedRailroadCar("LG", 3800, "Direct Expansion System", true);
-        LiquidRailroadCar lrc1 = new LiquidRailroadCar("Stark Industries", 3400, "Water");
-        GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900, "Petrol", "Centrifugal Compressor");
-        ExplosiveRailroadCar erc1 = new ExplosiveRailroadCar("American Express", 4100, "Bomb");
-        ToxicRailroadCar trc1 = new ToxicRailroadCar("South uranium", 3400, "Uranium");
 
         Map<String, RailroadCar> hashCars = new HashMap<>();
-        hashCars.put("prc1", prc1);
-        hashCars.put("prc2", prc2);
-
-        prc1.connectToElectricalGrid();
-        porc1.connectToElectricalGrid();
-        rrc1.connectToElectricalGrid();
-
-        System.out.println("\nTest lines start: ");
-        prc1.takeCarToService();
-        prc1.addPeople(38);
-        prc2.addPeople(36);
-        prc1.hasWifi();
-        prc2.hasWifi();
-        prc1.addBicycle(2);
-        prc2.addBicycle(5);
-        System.out.println("Test lines end\n");
 
         Trainset t1 = new Trainset(l1);
-        t1.addCar(prc1);
-        t1.addCar(prc2);
-        t1.addCar(porc1);
-        t1.addCar(bmrc1);
-        t1.addCar(rrc1);
-        t1.addCar(rfrc1);
-        t1.addCar(lrc1);
-        t1.addCar(grc1);
-//        t1.addCar(erc1);
-//        t1.addCar(trc1);
-        t1.addCar(erc1);//throws exception
-        System.out.println("REVERSE ROUTE");
-        System.out.println(t1.getLocomotive().getReverseRoute().getRoute());
-
+        new CarGenerator().generateCars(t1);
         Trainset t2 = new Trainset(l2);
-        t2.addCar(prc1);
-        t2.addCar(prc2);
-        t2.addCar(porc1);
-        t2.addCar(bmrc1);
-        t2.addCar(rrc1);
-        t2.addCar(rfrc1);
-        t2.addCar(lrc1);
-        t2.addCar(grc1);
-        t2.addCar(erc1);
-        t2.addCar(trc1);
-        //t2.addCar(erc1);//throws exception
-
+        new CarGenerator().generateCars(t2);
         Trainset t3 = new Trainset(l3);
+        new CarGenerator().generateCars(t3);
+
         //Threads
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
         trainsets.add(t2);
         trainsets.add(t3);
+        Map<String, Trainset> menuButton = new HashMap<>();
+        for (int i = 0; i < trainsets.size(); i++) {
+            String trainNum = "t" + (i + 1);
+            menuButton.put(trainNum, trainsets.get(i));
+        }
         Thread[] threadsSpeed = new Thread[trainsets.size()];
         Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
@@ -118,11 +67,7 @@ public class Main {
         saveData(trainsets);
 
         //menu
-        Map<String, Trainset> menuButton = new HashMap<>();
-        for (int i = 0; i < trainsets.size(); i++) {
-            String trainNum = "t" + (i + 1);
-            menuButton.put(trainNum, trainsets.get(i));
-        }
+
         Menu menuTest = new Menu(menuButton, hashCars);
         menuTest.display();
 

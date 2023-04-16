@@ -6,6 +6,7 @@ import exception.TooManyRailroadCarsElecticalGrid;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Trainset implements Comparable<Trainset> {
     private String id = "t"; // t stands for Trainset
@@ -62,12 +63,12 @@ public class Trainset implements Comparable<Trainset> {
                     double prevSpeed = this.speed;
                     this.locomotive.setSpeed(0);
                     completedDistance += distance;
-                    this.percentage = (completedDistance/totalDistance)*100;
-                    System.out.println(getId() + " is on station: " + this.currentStation);
+                    this.percentage = (completedDistance / totalDistance) * 100;
+                    //System.out.println(getId() + " is on station: " + this.currentStation);
                     Thread.sleep(4000);
                     this.locomotive.setSpeed(prevSpeed);
                     if (this.currentStation == lastStation) {
-                        System.out.println(this.getId() + " train has reached a startpoint");
+                        //System.out.println(this.getId() + " train has reached a startpoint");
                         prevSpeed = this.speed;
                         this.speed = 0;
                         this.percentage = 100;
@@ -76,8 +77,8 @@ public class Trainset implements Comparable<Trainset> {
                         this.speed = prevSpeed;
                         forward = true;
                     }
-                    if(this.currentStation == startStation){
-                        System.out.println(this.getId() + " train has reached an endpoint");
+                    if (this.currentStation == startStation) {
+                        //System.out.println(this.getId() + " train has reached an endpoint");
                         prevSpeed = this.speed;
                         this.speed = 0;
                         this.percentage = 100;
@@ -87,8 +88,8 @@ public class Trainset implements Comparable<Trainset> {
                         forward = false;
                     }
                 } else {
-                    System.out.println(nextStation + " is currently not available");
-                    System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+                    //System.out.println(nextStation + " is currently not available");
+                    //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
                     double prevSpeed = this.speed;
                     this.speed = 0;
                     while (this.isOnRoute()) {
@@ -103,6 +104,7 @@ public class Trainset implements Comparable<Trainset> {
         }
     }
 
+
     public void addCar(RailroadCar railroadCar) {
         int numCar = this.getLocomotive().getMaxNumCar(); // getting num of max car from locomotive
         double maxWeightLoad = this.getLocomotive().getMaxWeight();// getting a max weight load
@@ -111,10 +113,12 @@ public class Trainset implements Comparable<Trainset> {
             if (this.trainsetWeightLoad + (railroadCar.getNetWeight() + railroadCar.getGrossWeight()) <= maxWeightLoad) {
                 if (!railroadCar.isConnectedToElectricalGrid()) {
                     railroadCars.add(railroadCar);
+                    railroadCar.attachCar();
                     this.trainsetWeightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
                 } else if (railroadCar.isConnectedToElectricalGrid() &&
                         (this.trainsetCarsConnectedElectricalGrid + 1 <= numCarsConnectedElectricalGrid)) {
                     railroadCars.add(railroadCar);
+                    railroadCar.attachCar();
                     this.trainsetWeightLoad += (railroadCar.getNetWeight() + railroadCar.getGrossWeight());
                     this.trainsetCarsConnectedElectricalGrid++;
                 } else {
@@ -144,11 +148,17 @@ public class Trainset implements Comparable<Trainset> {
         }
     }
 
+    public void removeCar(RailroadCar railroadCar) {
+        if (this.railroadCars.contains(railroadCar))
+            this.railroadCars.remove(railroadCar);
+        else
+            System.out.println("Car " + railroadCar.getId() + " hasn't been found");
+    }
 
     public String toString() {
         return "Trainset - ID: " + getId() + " | Current Station: " + getCurrentStation() +
                 " | Total Route Distance " + String.format("%.2f", getRoute().getTotalDistance()) + " | Completed path: "
-                + String.format("%.2f", getPercentage()) +"%"+
+                + String.format("%.2f", getPercentage()) + "%" +
                 "\nTotal Weight: " + getTrainsetWeightLoad() + "\n" +
                 "Locomotive: " + getLocomotive() + "\t\nCars:" + getRailroadCars() + "\n";
     }

@@ -1,10 +1,6 @@
-import RailroadCars.PassengerRailroadCar;
-import RailroadCars.RailroadCar;
+import RailroadCars.*;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Menu {
     private Map<Integer, Map<Integer, Runnable>> menu;
@@ -17,40 +13,25 @@ public class Menu {
         this.menu = new HashMap<>();
         this.menuTrain = menuTrain;
         this.menuCar = menuCar;
-        // Category A functions
+
         Map<Integer, Runnable> trains = new HashMap<>();
         trains.put(1, this::addCar);
-        trains.put(2, this::deleteCars);
+        trains.put(2, this::removeCar);
         trains.put(3, this::trainInformation);
         menu.put(1, trains);
 
-        //Category B functions
         Map<Integer, Runnable> cars = new HashMap<>();
         cars.put(1, this::createCar);
-        cars.put(2, this::functionA2);
-        cars.put(3, this::functionA2);
+        cars.put(2, this::removeCar);
+        cars.put(3, this::carInformation);
         menu.put(2, cars);
 
-        // Category C functions
         Map<Integer, Runnable> routes = new HashMap<>();
-        routes.put(1, this::functionA2);
-        routes.put(2, this::functionA2);
-        routes.put(3, this::functionA2);
+        routes.put(1, this::foo);
+        routes.put(2, this::foo);
+        routes.put(3, this::foo);
         menu.put(3, routes);
 
-        // Category D functions
-        Map<Integer, Runnable> info = new HashMap<>();
-        info.put(1, this::functionA2);
-        info.put(2, this::functionA2);
-        info.put(3, this::functionA2);
-        menu.put(4, info);
-
-        // Category E functions
-        Map<Integer, Runnable> categoryE = new HashMap<>();
-        categoryE.put(1, this::functionA2);
-        categoryE.put(2, this::functionA2);
-        categoryE.put(3, this::functionA2);
-        menu.put(5, categoryE);
 
         this.scanner = new Scanner(System.in);
     }
@@ -65,7 +46,7 @@ public class Menu {
             System.out.println(
                     "1. Trains\n" +
                             "2. Cars\n" +
-                            "3. Route\n" +
+                            "3. Station\n" +
                             "4. Abbreviation\n" +
                             "5. Category E\n" +
                             "0. Exit");
@@ -87,12 +68,12 @@ public class Menu {
                     System.out.println("3. Train information");
                 } else if (choice == 2) {
                     System.out.println("1. Create new Car");
-                    System.out.println("2. Edit car");
+                    System.out.println("2. Remove car");
                     System.out.println("3. Car information");
                 } else if (choice == 3) {
-                    System.out.println("1. smth about route");
-                    System.out.println("2. smth about route");
-                    System.out.println("3. smth about route");
+                    System.out.println("1. smth about station");
+                    System.out.println("2. smth about station");
+                    System.out.println("3. smth about station");
                 }
                 System.out.println();
                 System.out.print("Enter your choice of function: ");
@@ -127,29 +108,178 @@ public class Menu {
                 System.out.println("Enter number of seats( > 0):");
                 int numSeats = scanner.nextInt();
                 PassengerRailroadCar prc = new PassengerRailroadCar(shipper, netWeight, carClass, numSeats);
-                menuCar.put("prc3", prc);
+                menuCar.put(prc.getId(), prc);
                 System.out.println(prc);
                 break;
             }
             case "porc": {
-                //fa
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the max capacity of boxes:");
+                int maxCapacityBoxes = scanner.nextInt();
+                System.out.println("Enter is this will be able to store fragile parcels (yes/no)");
+                String answer = scanner.next().toLowerCase();
+                boolean fragile;
+                if (answer.equals("yes"))
+                    fragile = true;
+                else
+                    fragile = false;
+                PostOfficeRailroadCar porc = new PostOfficeRailroadCar(shipper, netWeight, maxCapacityBoxes, fragile);
+                menuCar.put(porc.getId(), porc);
+                System.out.println(porc);
                 break;
             }
             case "bmrc": {
-                //fafadsf
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter max capacity of the suitcases");
+                int maxNumSuitcase = scanner.nextInt();
+                System.out.println("Enter is this will be able to store pets (yes/no)");
+                String answer = scanner.next().toLowerCase();
+                boolean storingpets;
+                if (answer.equals("yes"))
+                    storingpets = true;
+                else
+                    storingpets = false;
+                BaggageMailRailroadCar bmrc = new BaggageMailRailroadCar(shipper, netWeight, maxNumSuitcase, storingpets);
+                menuCar.put(bmrc.getId(), bmrc);
+                System.out.println(bmrc);
                 break;
             }
             case "rrc": {
-                //fafad
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter number of staff members:");
+                int staff = scanner.nextInt();
+                System.out.println("Enter number of tables");
+                int tables = scanner.nextInt();
+                RestaurantRailroadCar rrc = new RestaurantRailroadCar(shipper, netWeight, staff, tables);
+                menuCar.put(rrc.getId(), rrc);
+                System.out.println(rrc);
                 break;
             }
-            case "bfrc": {
-                //fafadsffdas
+            case "rfrc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the cooling method:");
+                String coollingMethod = scanner.next();
+                System.out.println("Enter is this car will have humidity control (yes/no)");
+                String answer = scanner.next().toLowerCase();
+                boolean humidityControl;
+                if (answer.equals("yes"))
+                    humidityControl = true;
+                else
+                    humidityControl = false;
+                RefrigeratedRailroadCar rfrc = new RefrigeratedRailroadCar(shipper, netWeight, coollingMethod, humidityControl);
+                menuCar.put(rfrc.getId(), rfrc);
+                System.out.println(rfrc);
+                break;
+            }
+            case "lrc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the type of Liquid:");
+                String liquidType = scanner.next();
+                LiquidRailroadCar lrc = new LiquidRailroadCar(shipper, netWeight, liquidType);
+                menuCar.put(lrc.getId(), lrc);
+                System.out.println(lrc);
+                break;
+            }
+            case "grc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the gasType:");
+                String gasType = scanner.next();
+                System.out.println("Enter the type of gas compressor:");
+                String typeGasCompressor = scanner.next();
+                GaseousRailroadCar grc = new GaseousRailroadCar(shipper, netWeight, gasType, typeGasCompressor);
+                menuCar.put(grc.getId(), grc);
+                System.out.println(grc);
+                break;
+            }
+            case "erc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the numbers of security guards");
+                int security = scanner.nextInt();
+                System.out.println("Enter the type of danger (A, B, C):");
+                char dangerType = scanner.next().charAt(0);
+                System.out.println("Enter the type of cargo:");
+                String cargoType = scanner.next();
+                ExplosiveRailroadCar erc = new ExplosiveRailroadCar(shipper, netWeight, security, dangerType, cargoType);
+                menuCar.put(erc.getId(), erc);
+                System.out.println(erc);
+                break;
+            }
+            case "trc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the type of toxic materials:");
+                String materials = scanner.next();
+                ToxicRailroadCar trc = new ToxicRailroadCar(shipper, netWeight, materials);
+                menuCar.put(trc.getId(), trc);
+                System.out.println(trc);
+                break;
+            }
+            case "ltrc": {
+                System.out.println("Enter the shipper:");
+                String shipper = scanner.next();
+                System.out.println("Enter the netweight:");
+                double netWeight = scanner.nextDouble();
+                System.out.println("Enter the type of cargo:");
+                String cargoType = scanner.next();
+                LiquidToxicRailroadCar ltrc = new LiquidToxicRailroadCar(shipper, netWeight, cargoType);
+                menuCar.put(ltrc.getId(), ltrc);
+                System.out.println(ltrc);
                 break;
             }
             default:
                 System.out.println("Incorrect input");
                 break;
+        }
+    }
+
+    private void carInformation() {
+        System.out.println("Enter car's id:");
+        String carId = scanner.next();
+        if (this.menuCar.containsKey(carId))
+            System.out.println(this.menuCar.get(carId));
+        else
+            System.out.println("Car with " + carId + " id hasn't been found");
+    }
+
+    private void removeCar() {
+        System.out.println("Enter car's id:");
+        String carId = scanner.next();
+        RailroadCar car = null;
+        for (String item : this.menuCar.keySet()) {
+            if (this.menuCar.containsKey(carId))
+                car = this.menuCar.get(carId);
+            else
+                System.out.println("car with " + carId + "hasn't been found");
+        }
+        if (car != null) {
+            for (String item : this.menuTrain.keySet()) {
+                List<RailroadCar> cars = this.menuTrain.get(item).railroadCars;
+                if (cars.contains(car))
+                    cars.remove(car);
+            }
         }
     }
 
@@ -173,7 +303,7 @@ public class Menu {
         if (railroadCar != null) {
             //System.out.println(railroadCar);
             trainset.addCar(railroadCar);
-            System.out.println("The railroad car " + railroadCar.getId() + " has been attached to trainset " + trainset.getId());
+            System.out.println("The railroad car " + railroadCar.getId() + " has been attached to trainset");
         } else
             System.out.println("Railroad Car " + railroadCar.getId() + " haven't been found");
     }
@@ -186,13 +316,10 @@ public class Menu {
         System.out.println("Exiting the program...");
     }
 
-    private void functionA2() {
+    private void foo() {
         System.out.println("You've picked func 2");
     }
 
-    private void deleteCars() {
-        System.out.println("You've picked func 2");
-    }
 
     private void trainInformation() {
         System.out.print("Enter the train ID: my here ");
@@ -211,8 +338,6 @@ public class Menu {
                 "porc - Post Office Railroad Car\n" +
                 "bmrc - Baggage and Mail Railroad Car\n" +
                 "rrc - Restaurant Railroad Car\n" +
-                "bfrc - Basic Freight Railroad Car\n" +
-                "hrfc - Heavy Freight Railroad Car\n" +
                 "rfrc - Refrigerated Railroad Car\n" +
                 "lrc - Liquid Railroad Car\n" +
                 "grc - Gaseous Railroad Car\n" +
