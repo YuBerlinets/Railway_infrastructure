@@ -6,42 +6,46 @@ import java.util.logging.Level;
 
 public class Main {
     public static void main(String[] args) {
-        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
         //creating locomotives
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
         Locomotive l1 = locomotiveGenerator.generateLocomotive();
         Locomotive l2 = locomotiveGenerator.generateLocomotive();
         Locomotive l3 = locomotiveGenerator.generateLocomotive();
         Locomotive l4 = locomotiveGenerator.generateLocomotive();
+
         //generating routes for locomotives
         l1.generateRoute();
         l2.generateRoute();
         l3.generateRoute();
         l4.generateRoute();
-        System.out.println(l4.getRoute());
-        System.out.println(l4.getReverseRoute());
 
-        Map<String, RailroadCar> hashCars = new HashMap<>();
-
+        //creating trainsets
         Trainset t1 = new Trainset(l1);
-        new CarGenerator().generateCars(t1);
         Trainset t2 = new Trainset(l2);
-        new CarGenerator().generateCars(t2);
         Trainset t3 = new Trainset(l3);
-        new CarGenerator().generateCars(t3);
         Trainset t4 = new Trainset(l4);
-        new CarGenerator().generateCars(t4);
 
-        //Threads
+        //generating cars for each trainset
+        CarGenerator carGenerator = new CarGenerator();
+        carGenerator.generateCars(t1);
+        carGenerator.generateCars(t2);
+        carGenerator.generateCars(t3);
+        carGenerator.generateCars(t4);
+
+        //storing information about cars and trainsets for menu
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
         trainsets.add(t2);
         trainsets.add(t3);
         trainsets.add(t4);
-        Map<String, Trainset> menuButton = new HashMap<>();
+        Map<String, Trainset> hashTrains = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
             String trainNum = "t" + (i + 1);
-            menuButton.put(trainNum, trainsets.get(i));
+            hashTrains.put(trainNum, trainsets.get(i));
         }
+        Map<String, RailroadCar> hashCars = saveCars(trainsets);
+
+        //Threads
         Thread[] threadsSpeed = new Thread[trainsets.size()];
         Thread[] threadsRoute = new Thread[trainsets.size()];
         for (int i = 0; i < trainsets.size(); i++) {
@@ -64,22 +68,33 @@ public class Main {
             threadsRoute[i].start(); //assigns routes to trainsets
         }
 
+        //Message about current trainsets on the route
         startMessage(trainsets);
+        //saving data to AppState.txt
         saveData(trainsets);
 
         //menu
-
-        Menu menuTest = new Menu(menuButton, hashCars);
+        Menu menuTest = new Menu(hashTrains, hashCars);
         menuTest.display();
 
 
+    }
+
+    public static Map<String, RailroadCar> saveCars(List<Trainset> trainsets) {
+        Map<String, RailroadCar> hashCars = new HashMap<>();
+        for (Trainset item : trainsets) {
+            for (RailroadCar railroadCar : item.getRailroadCars()) {
+                hashCars.put(railroadCar.getId(), railroadCar);
+            }
+        }
+        return hashCars;
     }
 
     public static void saveData(List<Trainset> trainsets) {
         String path = "TechFiles\\AppState.txt";
         Collections.sort(trainsets);
         boolean programIsRunning = true;
-        Thread writing = new Thread(()->{
+        Thread writing = new Thread(() -> {
             try {
                 FileWriter writer = new FileWriter(path);
                 while (programIsRunning) {
@@ -103,10 +118,10 @@ public class Main {
         writing.start();//starting
     }
 
-    public static void startMessage(List<Trainset> trainsets){
+    public static void startMessage(List<Trainset> trainsets) {
         System.out.println("Currently on the routes: ");
         int count = 1;
-        for(Trainset trainset : trainsets)
+        for (Trainset trainset : trainsets)
             System.out.println(count++ + ". Trainset ID: " + trainset.getId() +
                     " Path: " + trainset.getLocomotive().getSourceStation() + " to " + trainset.getLocomotive().getDestinationStation());
     }

@@ -4,9 +4,7 @@ import exception.TooManyRailroadCars;
 import exception.TooManyRailroadCarsElecticalGrid;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class Trainset implements Comparable<Trainset> {
     private String id = "t"; // t stands for Trainset
@@ -65,7 +63,7 @@ public class Trainset implements Comparable<Trainset> {
                     completedDistance += distance;
                     this.percentage = (completedDistance / totalDistance) * 100;
                     //System.out.println(getId() + " is on station: " + this.currentStation);
-                    Thread.sleep(4000);
+                    Thread.sleep(2000);
                     this.locomotive.setSpeed(prevSpeed);
                     if (this.currentStation == lastStation) {
                         //System.out.println(this.getId() + " train has reached a startpoint");
