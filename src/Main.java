@@ -31,9 +31,9 @@ public class Main {
 
         PassengerRailroadCar prc1 = new PassengerRailroadCar("Ukrzaliznitsya", 4000, 1, 40);
         PassengerRailroadCar prc2 = new PassengerRailroadCar("PKP Intercity", 4000, 2, 50);
-        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post", 3900);
-        BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000);
-        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG", 3600, 3);
+        PostOfficeRailroadCar porc1 = new PostOfficeRailroadCar("Nova Post", 3900,80, true);
+        BaggageMailRailroadCar bmrc1 = new BaggageMailRailroadCar("DHL", 4000,10,false);
+        RestaurantRailroadCar rrc1 = new RestaurantRailroadCar("WOG", 3600, 3,12);
         RefrigeratedRailroadCar rfrc1 = new RefrigeratedRailroadCar("LG", 3800, "Direct Expansion System", true);
         LiquidRailroadCar lrc1 = new LiquidRailroadCar("Stark Industries", 3400, "Water");
         GaseousRailroadCar grc1 = new GaseousRailroadCar("OKO", 3900, "Petrol", "Centrifugal Compressor");
@@ -116,6 +116,7 @@ public class Main {
 
         startMessage(trainsets);
         saveData(trainsets);
+
         //menu
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
@@ -143,7 +144,6 @@ public class Main {
                     }
                     writer.flush();
                     Thread.sleep(5000);
-                    //trainsets.clear();
                 }
                 writer.close();
             } catch (IOException e) {
@@ -154,7 +154,7 @@ public class Main {
                 System.out.println("Thread was interrupted");
             }
         });
-        writing.start();
+        writing.start();//starting
     }
 
     public static void startMessage(List<Trainset> trainsets){

@@ -1,108 +1,82 @@
-Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 1427.9830284779912 | Completed path: 0.0
-Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 116.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t3 | Current Station:  ID: s12 Name: Zurich,Switzerland | Total Route Distance 1118.010578844708 | Completed path: 0.0
-Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 116.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
-Cars:[]
-
-Trainset - ID: t1 | Current Station:  ID: s96 Name: Lille,France | Total Route Distance 830.6014088556105 | Completed path: 0.0
+Trainset - ID: t1 | Current Station:  ID: s96 Name: Lille,France | Total Route Distance 1510.66 | Completed path: 0.00%
 Total Weight: 34700.0
 Locomotive: id: l1 | Name: Victory | Current speed: 124.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s96 Name: Lille,France
 Destination:  ID: s1 Name: Poltava,Ukraine	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 30.3, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t2 | Current Station:  ID: s18 Name: Lisbon,Portugal | Total Route Distance 1427.9830284779912 | Completed path: 0.0
+Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 1380.90 | Completed path: 0.00%
 Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
+Locomotive: id: l2 | Name: Python | Current speed: 124.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s22 Name: Krakow,Poland
 Destination:  ID: s97 Name: Braga,Portugal	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 30.3, 
 ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t3 | Current Station:  ID: s100 Name: Sevastopol,Ukraine | Total Route Distance 1118.010578844708 | Completed path: 0.0
+Trainset - ID: t3 | Current Station:  ID: s12 Name: Zurich,Switzerland | Total Route Distance 972.41 | Completed path: 0.00%
 Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
+Locomotive: id: l3 | Name: Test 1 | Current speed: 124.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s12 Name: Zurich,Switzerland
 Destination:  ID: s45 Name: Reykjavik,Iceland	
 Cars:[]
 
-Trainset - ID: t1 | Current Station:  ID: s4 Name: Berlin,Germany | Total Route Distance 830.6014088556105 | Completed path: 0.0
+Trainset - ID: t1 | Current Station:  ID: s41 Name: Innsbruck,Austria | Total Route Distance 1510.66 | Completed path: 16.98%
 Total Weight: 34700.0
 Locomotive: id: l1 | Name: Victory | Current speed: 0.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s96 Name: Lille,France
 Destination:  ID: s1 Name: Poltava,Ukraine	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.397119694030003, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t2 | Current Station:  ID: s13 Name: Oslo,Norway | Total Route Distance 1427.9830284779912 | Completed path: 0.0
+Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 1380.90 | Completed path: 0.00%
 Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
+Locomotive: id: l2 | Name: Python | Current speed: 107.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s22 Name: Krakow,Poland
 Destination:  ID: s97 Name: Braga,Portugal	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.397119694030003, 
 ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t3 | Current Station:  ID: s52 Name: Split,Croatia | Total Route Distance 1118.010578844708 | Completed path: 0.0
+Trainset - ID: t3 | Current Station:  ID: s28 Name: Frankfurt,Germany | Total Route Distance 972.41 | Completed path: 38.56%
 Total Weight: 0.0
 Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
 Home Station:  ID: s101 Name: Station TMP HOME
@@ -110,128 +84,42 @@ Source:  ID: s12 Name: Zurich,Switzerland
 Destination:  ID: s45 Name: Reykjavik,Iceland	
 Cars:[]
 
-Trainset - ID: t1 | Current Station:  ID: s30 Name: Bruges,Belgium | Total Route Distance 830.6014088556105 | Completed path: 0.0
+Trainset - ID: t1 | Current Station:  ID: s36 Name: Tallinn,Estonia | Total Route Distance 1510.66 | Completed path: 25.27%
 Total Weight: 34700.0
 Locomotive: id: l1 | Name: Victory | Current speed: 0.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s96 Name: Lille,France
 Destination:  ID: s1 Name: Poltava,Ukraine	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.685152969703015, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t2 | Current Station:  ID: s13 Name: Oslo,Norway | Total Route Distance 1427.9830284779912 | Completed path: 0.0
+Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 1380.90 | Completed path: 0.00%
 Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 128.0
+Locomotive: id: l2 | Name: Python | Current speed: 92.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s22 Name: Krakow,Poland
 Destination:  ID: s97 Name: Braga,Portugal	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.685152969703015, 
 ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t3 | Current Station:  ID: s64 Name: Dubrovnik,Croatia | Total Route Distance 1118.010578844708 | Completed path: 0.0
-Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
-Cars:[]
-
-Trainset - ID: t1 | Current Station:  ID: s1 Name: Poltava,Ukraine | Total Route Distance 830.6014088556105 | Completed path: 0.0
-Total Weight: 34700.0
-Locomotive: id: l1 | Name: Victory | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t2 | Current Station:  ID: s61 Name: Dresden,Germany | Total Route Distance 1427.9830284779912 | Completed path: 0.0
-Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t3 | Current Station:  ID: s51 Name: Sarajevo,BosniaandHerzegovina | Total Route Distance 1118.010578844708 | Completed path: 0.0
-Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
-Cars:[]
-
-Trainset - ID: t1 | Current Station:  ID: s1 Name: Poltava,Ukraine | Total Route Distance 830.6014088556105 | Completed path: 0.0
-Total Weight: 34700.0
-Locomotive: id: l1 | Name: Victory | Current speed: 113.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t2 | Current Station:  ID: s97 Name: Braga,Portugal | Total Route Distance 1427.9830284779912 | Completed path: 0.0
-Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t3 | Current Station:  ID: s51 Name: Sarajevo,BosniaandHerzegovina | Total Route Distance 1118.010578844708 | Completed path: 0.0
+Trainset - ID: t3 | Current Station:  ID: s28 Name: Frankfurt,Germany | Total Route Distance 972.41 | Completed path: 38.56%
 Total Weight: 0.0
 Locomotive: id: l3 | Name: Test 1 | Current speed: 116.0
 Home Station:  ID: s101 Name: Station TMP HOME
@@ -239,106 +127,46 @@ Source:  ID: s12 Name: Zurich,Switzerland
 Destination:  ID: s45 Name: Reykjavik,Iceland	
 Cars:[]
 
-Trainset - ID: t1 | Current Station:  ID: s1 Name: Poltava,Ukraine | Total Route Distance 830.6014088556105 | Completed path: 0.0
+Trainset - ID: t1 | Current Station:  ID: s64 Name: Dubrovnik,Croatia | Total Route Distance 1510.66 | Completed path: 42.59%
 Total Weight: 34700.0
-Locomotive: id: l1 | Name: Victory | Current speed: 110.0
+Locomotive: id: l1 | Name: Victory | Current speed: 0.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s96 Name: Lille,France
 Destination:  ID: s1 Name: Poltava,Ukraine	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.97600839832021, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t2 | Current Station:  ID: s97 Name: Braga,Portugal | Total Route Distance 1427.9830284779912 | Completed path: 0.0
+Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 1380.90 | Completed path: 0.00%
 Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 110.0
+Locomotive: id: l2 | Name: Python | Current speed: 86.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s22 Name: Krakow,Poland
 Destination:  ID: s97 Name: Braga,Portugal	
 Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
+ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water Pressure: 29.97600839832021, 
 ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
+ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0 Cuisine: American, 
+ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0 Fragile Parcels: Yes, 
 ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
 ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
 ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
 ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
 ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 
-Trainset - ID: t3 | Current Station:  ID: s45 Name: Reykjavik,Iceland | Total Route Distance 1118.010578844708 | Completed path: 0.0
+Trainset - ID: t3 | Current Station:  ID: s80 Name: Granada,Spain | Total Route Distance 972.41 | Completed path: 82.85%
 Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 116.0
+Locomotive: id: l3 | Name: Test 1 | Current speed: 120.0
 Home Station:  ID: s101 Name: Station TMP HOME
 Source:  ID: s12 Name: Zurich,Switzerland
 Destination:  ID: s45 Name: Reykjavik,Iceland	
 Cars:[]
-
-Trainset - ID: t1 | Current Station:  ID: s1 Name: Poltava,Ukraine | Total Route Distance 830.6014088556105 | Completed path: 0.0
-Total Weight: 34700.0
-Locomotive: id: l1 | Name: Victory | Current speed: 113.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t2 | Current Station:  ID: s97 Name: Braga,Portugal | Total Route Distance 1427.9830284779912 | Completed path: 0.0
-Total Weight: 38100.0
-Locomotive: id: l2 | Name: Python | Current speed: 113.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: trc1 | Shipper: South uranium | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Toxic materials type: Uranium, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
-
-Trainset - ID: t3 | Current Station:  ID: s45 Name: Reykjavik,Iceland | Total Route Distance 1118.010578844708 | Completed path: 0.0
-Total Weight: 0.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 119.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
-Cars:[]
-
-Trainset - ID: t1 | Current Station:  ID: s1 Name: Poltava,Ukraine | Total Route Distance 830.6014088556105 | Completed path: 0.0
-Total Weight: 34700.0
-Locomotive: id: l1 | Name: Victory | Current speed: 110.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
-Cars:[
-ID: lrc1 | Shipper: Stark Industries | Electrical grid: Not connected | netWeight: 3400.0 | grossWeight: 0.0 | Liquid type: Water, 
-ID: rrc1 | Shipper: WOG | Electrical grid: Connected | netWeight: 3600.0 | grossWeight: 0.0, 
-ID: rfrc1 | Shipper: LG | Electrical grid: Not connected | netWeight: 3800.0 | grossWeight: 0.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes, 
-ID: porc1 | Shipper: Nova Post | Electrical grid: Connected | netWeight: 3900.0 | grossWeight: 0.0, 
-ID: grc1 | Shipper: OKO | Electrical grid: Not connected | netWeight: 3900.0 | grossWeight: 0.0 | Gas type: Petrol | Gas compressor type: Centrifugal Compressor, 
-ID: prc1 | Shipper: Ukrzaliznitsya | Electrical grid: Connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 40 | Passengers: 0 | Bicycle places: 4, 
-ID: prc2 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0 | Seats: 50 | Passengers: 36 | Bicycle places: 4, 
-ID: bmrc1 | Shipper: DHL | Electrical grid: Not connected | netWeight: 4000.0 | grossWeight: 0.0, 
-ID: erc1 | Shipper: American Express | Electrical grid: Not connected | netWeight: 4100.0 | grossWeight: 0.0 | Cargotype: Bomb | CargoWeight: 0.0]
 

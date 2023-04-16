@@ -1,7 +1,10 @@
 package RailroadCars;
 
-public class GaseousRailroadCar extends BasicFreightRailroadCar{
+public class GaseousRailroadCar extends RailroadCar implements BasicFreightRailroadCar{
     private String gasType;
+    private String cargoType;
+    private String cargoWeight;
+    private double pressure;
     private String typeGasCompressor;
     //examples of Gas Compressor types:
     //Positive Displacement Compressor
@@ -30,4 +33,27 @@ public class GaseousRailroadCar extends BasicFreightRailroadCar{
         return gasType;
     }
 
+    @Override
+    public void addCargo(String cargoType, double weight) {
+        if(this.service){
+            System.out.println("The cargo can't be added, because car is in service");
+        }else{
+            this.cargoType += ("," + cargoType);
+            this.cargoWeight += cargoWeight;
+        }
+    }
+
+    @Override
+    public void checkPressure() {
+        if(this.service){
+            System.out.println("The pressure is 0, because car is in service");
+        }else{
+            if (this.pressure > 40) {
+                System.out.println("Pressure is higher than it requires");
+            } else if (this.pressure < 20) {
+                System.out.println("Pressure is lower that it requires");
+            } else
+                System.out.println("Pressure is in normal condition");
+        }
+    }
 }
