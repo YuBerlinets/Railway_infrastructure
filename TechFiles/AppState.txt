@@ -1,245 +1,256 @@
-Trainset - ID: t1 | Current Station:  ID: s96 Name: Lille,France | Total Route Distance 1403.42 | Completed path: 0.00%
-Total Weight: 54103.0
-Locomotive: id: l1 | Name: Victory | Current speed: 116.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
+Trainset - ID: t3 | Current Station:  ID: s69 Name: Poznan,Poland | Total Route Distance 1333.17 | Completed path: 0.00%
+Total Weight: 53146.0
+Locomotive: id: l3 | Name: Powerhouse | Current speed: 124.0
+Home Station:  ID: s85 Name: Odense,Denmark
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s35 Name: Bucharest,Romania	
 Cars:[
-ID: bmrc2 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2760.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rfrc2 | Shipper: LTE Group | Electrical grid: Connected | netWeight: 3251.0 | grossWeight: 2852.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: erc1 | Shipper: Rail Cargo Group | Electrical grid: Not connected | netWeight: 3305.0 | grossWeight: 2686.0 | Security Guards: 3 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: ltrc1 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3309.0 | grossWeight: 2811.0 | Cargo type: Transmission fluid | Pressure: 29.7 | Certificate date: dd.mm.yy - 3.12.2019, 
-ID: bmrc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3523.0 | grossWeight: 2437.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3546.0 | grossWeight: 2351.0 Cuisine: American | Available tables: 12, 
-ID: grc2 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3623.0 | grossWeight: 2580.0 | Gas type: Petrol | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: rfrc1 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3700.0 | grossWeight: 2170.0 | Cooling Method: Direct Expansion System | Humidity Control: No | Pressure: 0.0, 
-ID: grc1 | Shipper: SBB Cargo International | Electrical grid: Not connected | netWeight: 3967.0 | grossWeight: 2166.0 | Gas type: Petrol | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3]
+ID: bmrc4 | Shipper: Transfesa Logistics | Electrical grid: Not connected | netWeight: 3024.0 | grossWeight: 2360.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: grc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3052.0 | grossWeight: 2633.0 | Gas type: LNG | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
+ID: bmrc3 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2304.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: ltrc5 | Shipper: TX Logistik AG | Electrical grid: Not connected | netWeight: 3126.0 | grossWeight: 2574.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 5.10.2014, 
+ID: erc4 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3448.0 | grossWeight: 2278.0 | Security Guards: 3 | Cargotype: TNT | CargoWeight: 0.0, 
+ID: porc3 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3499.0 | grossWeight: 2766.0 | Fragile Parcels: No, 
+ID: grc2 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3521.0 | grossWeight: 2434.0 | Gas type: LNG | Gas compressor type: Axial Compressor | Pressure: 29.7, 
+ID: grc1 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 3626.0 | grossWeight: 2969.0 | Gas type: Diesel | Gas compressor type: Centrifugal Compressor | Pressure: 29.7, 
+ID: rrc1 | Shipper: RegioJet Cargo | Electrical grid: Connected | netWeight: 3672.0 | grossWeight: 2801.0 Cuisine: American | Available tables: 13]
 
-Trainset - ID: t3 | Current Station:  ID: s12 Name: Zurich,Switzerland | Total Route Distance 1139.87 | Completed path: 0.00%
-Total Weight: 41495.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 116.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
+Trainset - ID: t2 | Current Station:  ID: s69 Name: Poznan,Poland | Total Route Distance 1027.32 | Completed path: 0.00%
+Total Weight: 53467.0
+Locomotive: id: l2 | Name: Black Diamond | Current speed: 124.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s74 Name: Pisa,Italy	
 Cars:[
-ID: rfrc4 | Shipper: SBB Cargo International | Electrical grid: Connected | netWeight: 3038.0 | grossWeight: 2288.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: prc2 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3139.0 | grossWeight: 2329.0 | Seats: 45 | Passengers: 0 | Bicycle places: 4, 
-ID: bmrc5 | Shipper: CargoNet AS | Electrical grid: Not connected | netWeight: 3459.0 | grossWeight: 2302.0 | Max number of suitcases: 0 | Storing pets: Yes, 
-ID: erc4 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3500.0 | grossWeight: 2679.0 | Security Guards: 4 | Cargotype: Detonators | CargoWeight: 0.0, 
-ID: erc5 | Shipper: Railcare Group AB | Electrical grid: Not connected | netWeight: 3544.0 | grossWeight: 2544.0 | Security Guards: 3 | Cargotype: Pyrotechnics | CargoWeight: 0.0, 
-ID: rrc2 | Shipper: Green Cargo AB | Electrical grid: Connected | netWeight: 3745.0 | grossWeight: 2978.0 Cuisine: Italian | Available tables: 9, 
-ID: trc3 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3834.0 | grossWeight: 2116.0 | Toxic materials type: **SECRET** | Store Diff Materials: No]
+ID: porc1 | Shipper: TFG Transfracht | Electrical grid: Connected | netWeight: 3007.0 | grossWeight: 2846.0 | Fragile Parcels: No, 
+ID: erc3 | Shipper: TFG Transfracht | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2927.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc4 | Shipper: Nordcargo GmbH | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2595.0 | Cargo type: Glue | Pressure: 29.7 | Certificate date: dd.mm.yy - 11.10.2014, 
+ID: porc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3189.0 | grossWeight: 2708.0 | Fragile Parcels: No, 
+ID: ltrc3 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3224.0 | grossWeight: 2390.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 6.3.2012, 
+ID: lrc5 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3288.0 | grossWeight: 2818.0 | Cargo type: Water | Pressure: 30.3, 
+ID: prc2 | Shipper: DB Cargo AG | Electrical grid: Connected | netWeight: 3307.0 | grossWeight: 2315.0 | Seats: 35 | Passengers: 0 | Bicycle places: 4, 
+ID: erc2 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3635.0 | grossWeight: 2160.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: bmrc2 | Shipper: Railport Arad | Electrical grid: Not connected | netWeight: 3962.0 | grossWeight: 2971.0 | Max number of suitcases: 0 | Storing pets: Yes]
 
-Trainset - ID: t2 | Current Station:  ID: s22 Name: Krakow,Poland | Total Route Distance 686.09 | Completed path: 0.00%
-Total Weight: 52117.0
-Locomotive: id: l2 | Name: Python | Current speed: 124.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
+Trainset - ID: t1 | Current Station:  ID: s45 Name: Reykjavik,Iceland | Total Route Distance 988.73 | Completed path: 0.00%
+Total Weight: 54834.0
+Locomotive: id: l1 | Name: Green Machine | Current speed: 116.0
+Home Station:  ID: s18 Name: Lisbon,Portugal
+Source:  ID: s45 Name: Reykjavik,Iceland
+Destination:  ID: s3 Name: Barcelona,Spain	
 Cars:[
-ID: grc3 | Shipper: Rail Polska | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2105.0 | Gas type: Diesel | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: bmrc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2630.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: erc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3216.0 | grossWeight: 2899.0 | Security Guards: 2 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: trc2 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3236.0 | grossWeight: 2229.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: bmrc4 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3333.0 | grossWeight: 2110.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: grc4 | Shipper: Lineas | Electrical grid: Not connected | netWeight: 3381.0 | grossWeight: 2399.0 | Gas type: Diesel | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
-ID: erc2 | Shipper: ZSSK Cargo Slovakia | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2219.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
-ID: trc1 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3715.0 | grossWeight: 2449.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: rfrc3 | Shipper: Railtraxx | Electrical grid: Connected | netWeight: 3787.0 | grossWeight: 2420.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0]
+ID: lrc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3205.0 | grossWeight: 2036.0 | Cargo type: Liquid waste | Pressure: 30.3, 
+ID: rfrc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3248.0 | grossWeight: 2538.0 | Cooling Method: Eutectic Plate System | Humidity Control: No | Pressure: 0.0, 
+ID: erc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3507.0 | grossWeight: 2752.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc1 | Shipper: DB Cargo AG | Electrical grid: Not connected | netWeight: 3518.0 | grossWeight: 2506.0 | Cargo type: Brake fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 11.4.2016, 
+ID: rfrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3524.0 | grossWeight: 2889.0 | Cooling Method: Cryogenic Cooling | Humidity Control: No | Pressure: 0.0, 
+ID: bmrc1 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2863.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: rfrc3 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3786.0 | grossWeight: 2250.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: ltrc2 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3835.0 | grossWeight: 2255.0 | Cargo type: Wastewater | Pressure: 30.3 | Certificate date: dd.mm.yy - 13.6.2017, 
+ID: prc1 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3893.0 | grossWeight: 2534.0 | Seats: 49 | Passengers: 0 | Bicycle places: 4]
 
-Trainset - ID: t1 | Current Station:  ID: s7 Name: Vienna,Austria | Total Route Distance 1403.42 | Completed path: 17.41%
-Total Weight: 54103.0
-Locomotive: id: l1 | Name: Victory | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
+Trainset - ID: t4 | Current Station:  ID: s35 Name: Bucharest,Romania | Total Route Distance 778.72 | Completed path: 0.00%
+Total Weight: 29763.0
+Locomotive: id: l4 | Name: Highballer | Current speed: 124.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s35 Name: Bucharest,Romania
+Destination:  ID: s21 Name: Edinburgh,Scotland	
 Cars:[
-ID: bmrc2 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2760.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rfrc2 | Shipper: LTE Group | Electrical grid: Connected | netWeight: 3251.0 | grossWeight: 2852.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: erc1 | Shipper: Rail Cargo Group | Electrical grid: Not connected | netWeight: 3305.0 | grossWeight: 2686.0 | Security Guards: 3 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: ltrc1 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3309.0 | grossWeight: 2811.0 | Cargo type: Transmission fluid | Pressure: 29.7 | Certificate date: dd.mm.yy - 3.12.2019, 
-ID: bmrc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3523.0 | grossWeight: 2437.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3546.0 | grossWeight: 2351.0 Cuisine: American | Available tables: 12, 
-ID: grc2 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3623.0 | grossWeight: 2580.0 | Gas type: Petrol | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: rfrc1 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3700.0 | grossWeight: 2170.0 | Cooling Method: Direct Expansion System | Humidity Control: No | Pressure: 0.0, 
-ID: grc1 | Shipper: SBB Cargo International | Electrical grid: Not connected | netWeight: 3967.0 | grossWeight: 2166.0 | Gas type: Petrol | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3]
+ID: erc5 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3141.0 | grossWeight: 2577.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: erc6 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3329.0 | grossWeight: 2450.0 | Security Guards: 2 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: ltrc6 | Shipper: Fret SNCF | Electrical grid: Not connected | netWeight: 3464.0 | grossWeight: 2418.0 | Cargo type: Wastewater | Pressure: 29.7 | Certificate date: dd.mm.yy - 8.1.2013, 
+ID: bmrc5 | Shipper: Crossrail AG | Electrical grid: Not connected | netWeight: 3555.0 | grossWeight: 2330.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: porc4 | Shipper: Mercitalia Rail | Electrical grid: Connected | netWeight: 3614.0 | grossWeight: 2885.0 | Fragile Parcels: Yes]
 
-Trainset - ID: t3 | Current Station:  ID: s18 Name: Lisbon,Portugal | Total Route Distance 1139.87 | Completed path: 19.94%
-Total Weight: 41495.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
+Trainset - ID: t3 | Current Station:  ID: s69 Name: Poznan,Poland | Total Route Distance 1333.17 | Completed path: 0.00%
+Total Weight: 53146.0
+Locomotive: id: l3 | Name: Powerhouse | Current speed: 120.0
+Home Station:  ID: s85 Name: Odense,Denmark
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s35 Name: Bucharest,Romania	
 Cars:[
-ID: rfrc4 | Shipper: SBB Cargo International | Electrical grid: Connected | netWeight: 3038.0 | grossWeight: 2288.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: prc2 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3139.0 | grossWeight: 2329.0 | Seats: 45 | Passengers: 0 | Bicycle places: 4, 
-ID: bmrc5 | Shipper: CargoNet AS | Electrical grid: Not connected | netWeight: 3459.0 | grossWeight: 2302.0 | Max number of suitcases: 0 | Storing pets: Yes, 
-ID: erc4 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3500.0 | grossWeight: 2679.0 | Security Guards: 4 | Cargotype: Detonators | CargoWeight: 0.0, 
-ID: erc5 | Shipper: Railcare Group AB | Electrical grid: Not connected | netWeight: 3544.0 | grossWeight: 2544.0 | Security Guards: 3 | Cargotype: Pyrotechnics | CargoWeight: 0.0, 
-ID: rrc2 | Shipper: Green Cargo AB | Electrical grid: Connected | netWeight: 3745.0 | grossWeight: 2978.0 Cuisine: Italian | Available tables: 9, 
-ID: trc3 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3834.0 | grossWeight: 2116.0 | Toxic materials type: **SECRET** | Store Diff Materials: No]
+ID: bmrc4 | Shipper: Transfesa Logistics | Electrical grid: Not connected | netWeight: 3024.0 | grossWeight: 2360.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: grc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3052.0 | grossWeight: 2633.0 | Gas type: LNG | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
+ID: bmrc3 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2304.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: ltrc5 | Shipper: TX Logistik AG | Electrical grid: Not connected | netWeight: 3126.0 | grossWeight: 2574.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 5.10.2014, 
+ID: erc4 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3448.0 | grossWeight: 2278.0 | Security Guards: 3 | Cargotype: TNT | CargoWeight: 0.0, 
+ID: porc3 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3499.0 | grossWeight: 2766.0 | Fragile Parcels: No, 
+ID: grc2 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3521.0 | grossWeight: 2434.0 | Gas type: LNG | Gas compressor type: Axial Compressor | Pressure: 29.7, 
+ID: grc1 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 3626.0 | grossWeight: 2969.0 | Gas type: Diesel | Gas compressor type: Centrifugal Compressor | Pressure: 29.7, 
+ID: rrc1 | Shipper: RegioJet Cargo | Electrical grid: Connected | netWeight: 3672.0 | grossWeight: 2801.0 Cuisine: American | Available tables: 13]
 
-Trainset - ID: t2 | Current Station:  ID: s54 Name: Toulouse,France | Total Route Distance 686.09 | Completed path: 49.31%
-Total Weight: 52117.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
+Trainset - ID: t2 | Current Station:  ID: s24 Name: Madrid,Spain | Total Route Distance 1027.32 | Completed path: 21.47%
+Total Weight: 53467.0
+Locomotive: id: l2 | Name: Black Diamond | Current speed: 0.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s74 Name: Pisa,Italy	
 Cars:[
-ID: grc3 | Shipper: Rail Polska | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2105.0 | Gas type: Diesel | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: bmrc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2630.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: erc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3216.0 | grossWeight: 2899.0 | Security Guards: 2 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: trc2 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3236.0 | grossWeight: 2229.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: bmrc4 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3333.0 | grossWeight: 2110.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: grc4 | Shipper: Lineas | Electrical grid: Not connected | netWeight: 3381.0 | grossWeight: 2399.0 | Gas type: Diesel | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
-ID: erc2 | Shipper: ZSSK Cargo Slovakia | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2219.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
-ID: trc1 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3715.0 | grossWeight: 2449.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: rfrc3 | Shipper: Railtraxx | Electrical grid: Connected | netWeight: 3787.0 | grossWeight: 2420.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0]
+ID: porc1 | Shipper: TFG Transfracht | Electrical grid: Connected | netWeight: 3007.0 | grossWeight: 2846.0 | Fragile Parcels: No, 
+ID: erc3 | Shipper: TFG Transfracht | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2927.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc4 | Shipper: Nordcargo GmbH | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2595.0 | Cargo type: Glue | Pressure: 29.7 | Certificate date: dd.mm.yy - 11.10.2014, 
+ID: porc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3189.0 | grossWeight: 2708.0 | Fragile Parcels: No, 
+ID: ltrc3 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3224.0 | grossWeight: 2390.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 6.3.2012, 
+ID: lrc5 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3288.0 | grossWeight: 2818.0 | Cargo type: Water | Pressure: 30.3, 
+ID: prc2 | Shipper: DB Cargo AG | Electrical grid: Connected | netWeight: 3307.0 | grossWeight: 2315.0 | Seats: 35 | Passengers: 0 | Bicycle places: 4, 
+ID: erc2 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3635.0 | grossWeight: 2160.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: bmrc2 | Shipper: Railport Arad | Electrical grid: Not connected | netWeight: 3962.0 | grossWeight: 2971.0 | Max number of suitcases: 0 | Storing pets: Yes]
 
-Trainset - ID: t1 | Current Station:  ID: s52 Name: Split,Croatia | Total Route Distance 1403.42 | Completed path: 37.22%
-Total Weight: 54103.0
-Locomotive: id: l1 | Name: Victory | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
+Trainset - ID: t1 | Current Station:  ID: s41 Name: Innsbruck,Austria | Total Route Distance 988.73 | Completed path: 12.62%
+Total Weight: 54834.0
+Locomotive: id: l1 | Name: Green Machine | Current speed: 120.0
+Home Station:  ID: s18 Name: Lisbon,Portugal
+Source:  ID: s45 Name: Reykjavik,Iceland
+Destination:  ID: s3 Name: Barcelona,Spain	
 Cars:[
-ID: bmrc2 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2760.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rfrc2 | Shipper: LTE Group | Electrical grid: Connected | netWeight: 3251.0 | grossWeight: 2852.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: erc1 | Shipper: Rail Cargo Group | Electrical grid: Not connected | netWeight: 3305.0 | grossWeight: 2686.0 | Security Guards: 3 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: ltrc1 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3309.0 | grossWeight: 2811.0 | Cargo type: Transmission fluid | Pressure: 29.7 | Certificate date: dd.mm.yy - 3.12.2019, 
-ID: bmrc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3523.0 | grossWeight: 2437.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3546.0 | grossWeight: 2351.0 Cuisine: American | Available tables: 12, 
-ID: grc2 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3623.0 | grossWeight: 2580.0 | Gas type: Petrol | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: rfrc1 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3700.0 | grossWeight: 2170.0 | Cooling Method: Direct Expansion System | Humidity Control: No | Pressure: 0.0, 
-ID: grc1 | Shipper: SBB Cargo International | Electrical grid: Not connected | netWeight: 3967.0 | grossWeight: 2166.0 | Gas type: Petrol | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3]
+ID: lrc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3205.0 | grossWeight: 2036.0 | Cargo type: Liquid waste | Pressure: 30.3, 
+ID: rfrc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3248.0 | grossWeight: 2538.0 | Cooling Method: Eutectic Plate System | Humidity Control: No | Pressure: 0.0, 
+ID: erc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3507.0 | grossWeight: 2752.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc1 | Shipper: DB Cargo AG | Electrical grid: Not connected | netWeight: 3518.0 | grossWeight: 2506.0 | Cargo type: Brake fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 11.4.2016, 
+ID: rfrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3524.0 | grossWeight: 2889.0 | Cooling Method: Cryogenic Cooling | Humidity Control: No | Pressure: 0.0, 
+ID: bmrc1 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2863.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: rfrc3 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3786.0 | grossWeight: 2250.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: ltrc2 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3835.0 | grossWeight: 2255.0 | Cargo type: Wastewater | Pressure: 30.3 | Certificate date: dd.mm.yy - 13.6.2017, 
+ID: prc1 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3893.0 | grossWeight: 2534.0 | Seats: 49 | Passengers: 0 | Bicycle places: 4]
 
-Trainset - ID: t3 | Current Station:  ID: s100 Name: Sevastopol,Ukraine | Total Route Distance 1139.87 | Completed path: 29.41%
-Total Weight: 41495.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
+Trainset - ID: t4 | Current Station:  ID: s37 Name: Belgrade,Serbia | Total Route Distance 778.72 | Completed path: 26.10%
+Total Weight: 29763.0
+Locomotive: id: l4 | Name: Highballer | Current speed: 0.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s35 Name: Bucharest,Romania
+Destination:  ID: s21 Name: Edinburgh,Scotland	
 Cars:[
-ID: rfrc4 | Shipper: SBB Cargo International | Electrical grid: Connected | netWeight: 3038.0 | grossWeight: 2288.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: prc2 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3139.0 | grossWeight: 2329.0 | Seats: 45 | Passengers: 0 | Bicycle places: 4, 
-ID: bmrc5 | Shipper: CargoNet AS | Electrical grid: Not connected | netWeight: 3459.0 | grossWeight: 2302.0 | Max number of suitcases: 0 | Storing pets: Yes, 
-ID: erc4 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3500.0 | grossWeight: 2679.0 | Security Guards: 4 | Cargotype: Detonators | CargoWeight: 0.0, 
-ID: erc5 | Shipper: Railcare Group AB | Electrical grid: Not connected | netWeight: 3544.0 | grossWeight: 2544.0 | Security Guards: 3 | Cargotype: Pyrotechnics | CargoWeight: 0.0, 
-ID: rrc2 | Shipper: Green Cargo AB | Electrical grid: Connected | netWeight: 3745.0 | grossWeight: 2978.0 Cuisine: Italian | Available tables: 9, 
-ID: trc3 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3834.0 | grossWeight: 2116.0 | Toxic materials type: **SECRET** | Store Diff Materials: No]
+ID: erc5 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3141.0 | grossWeight: 2577.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: erc6 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3329.0 | grossWeight: 2450.0 | Security Guards: 2 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: ltrc6 | Shipper: Fret SNCF | Electrical grid: Not connected | netWeight: 3464.0 | grossWeight: 2418.0 | Cargo type: Wastewater | Pressure: 29.7 | Certificate date: dd.mm.yy - 8.1.2013, 
+ID: bmrc5 | Shipper: Crossrail AG | Electrical grid: Not connected | netWeight: 3555.0 | grossWeight: 2330.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: porc4 | Shipper: Mercitalia Rail | Electrical grid: Connected | netWeight: 3614.0 | grossWeight: 2885.0 | Fragile Parcels: Yes]
 
-Trainset - ID: t2 | Current Station:  ID: s85 Name: Odense,Denmark | Total Route Distance 686.09 | Completed path: 65.55%
-Total Weight: 52117.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
+Trainset - ID: t3 | Current Station:  ID: s80 Name: Granada,Spain | Total Route Distance 1333.17 | Completed path: 12.54%
+Total Weight: 53146.0
+Locomotive: id: l3 | Name: Powerhouse | Current speed: 0.0
+Home Station:  ID: s85 Name: Odense,Denmark
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s35 Name: Bucharest,Romania	
 Cars:[
-ID: grc3 | Shipper: Rail Polska | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2105.0 | Gas type: Diesel | Gas compressor type: Axial Compressor | Pressure: 29.7, 
-ID: bmrc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2630.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: erc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3216.0 | grossWeight: 2899.0 | Security Guards: 2 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: trc2 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3236.0 | grossWeight: 2229.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: bmrc4 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3333.0 | grossWeight: 2110.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: grc4 | Shipper: Lineas | Electrical grid: Not connected | netWeight: 3381.0 | grossWeight: 2399.0 | Gas type: Diesel | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
-ID: erc2 | Shipper: ZSSK Cargo Slovakia | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2219.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
-ID: trc1 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3715.0 | grossWeight: 2449.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: rfrc3 | Shipper: Railtraxx | Electrical grid: Connected | netWeight: 3787.0 | grossWeight: 2420.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0]
+ID: bmrc4 | Shipper: Transfesa Logistics | Electrical grid: Not connected | netWeight: 3024.0 | grossWeight: 2360.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: grc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3052.0 | grossWeight: 2633.0 | Gas type: LNG | Gas compressor type: Positive Displacement Compressor | Pressure: 30.3, 
+ID: bmrc3 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2304.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: ltrc5 | Shipper: TX Logistik AG | Electrical grid: Not connected | netWeight: 3126.0 | grossWeight: 2574.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 5.10.2014, 
+ID: erc4 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3448.0 | grossWeight: 2278.0 | Security Guards: 3 | Cargotype: TNT | CargoWeight: 0.0, 
+ID: porc3 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3499.0 | grossWeight: 2766.0 | Fragile Parcels: No, 
+ID: grc2 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3521.0 | grossWeight: 2434.0 | Gas type: LNG | Gas compressor type: Axial Compressor | Pressure: 29.7, 
+ID: grc1 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 3626.0 | grossWeight: 2969.0 | Gas type: Diesel | Gas compressor type: Centrifugal Compressor | Pressure: 29.7, 
+ID: rrc1 | Shipper: RegioJet Cargo | Electrical grid: Connected | netWeight: 3672.0 | grossWeight: 2801.0 Cuisine: American | Available tables: 13]
 
-Trainset - ID: t1 | Current Station:  ID: s25 Name: Venice,Italy | Total Route Distance 1403.42 | Completed path: 45.77%
-Total Weight: 54103.0
-Locomotive: id: l1 | Name: Victory | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
+Trainset - ID: t2 | Current Station:  ID: s39 Name: Riga,Latvia | Total Route Distance 1027.32 | Completed path: 34.09%
+Total Weight: 53467.0
+Locomotive: id: l2 | Name: Black Diamond | Current speed: 0.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s74 Name: Pisa,Italy	
 Cars:[
-ID: bmrc2 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2760.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rfrc2 | Shipper: LTE Group | Electrical grid: Connected | netWeight: 3251.0 | grossWeight: 2852.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: erc1 | Shipper: Rail Cargo Group | Electrical grid: Not connected | netWeight: 3305.0 | grossWeight: 2686.0 | Security Guards: 3 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: ltrc1 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3309.0 | grossWeight: 2811.0 | Cargo type: Transmission fluid | Pressure: 29.403 | Certificate date: dd.mm.yy - 3.12.2019, 
-ID: bmrc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3523.0 | grossWeight: 2437.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3546.0 | grossWeight: 2351.0 Cuisine: American | Available tables: 12, 
-ID: grc2 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3623.0 | grossWeight: 2580.0 | Gas type: Petrol | Gas compressor type: Axial Compressor | Pressure: 29.997, 
-ID: rfrc1 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3700.0 | grossWeight: 2170.0 | Cooling Method: Direct Expansion System | Humidity Control: No | Pressure: 0.0, 
-ID: grc1 | Shipper: SBB Cargo International | Electrical grid: Not connected | netWeight: 3967.0 | grossWeight: 2166.0 | Gas type: Petrol | Gas compressor type: Positive Displacement Compressor | Pressure: 30.603]
+ID: porc1 | Shipper: TFG Transfracht | Electrical grid: Connected | netWeight: 3007.0 | grossWeight: 2846.0 | Fragile Parcels: No, 
+ID: erc3 | Shipper: TFG Transfracht | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2927.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc4 | Shipper: Nordcargo GmbH | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2595.0 | Cargo type: Glue | Pressure: 29.7 | Certificate date: dd.mm.yy - 11.10.2014, 
+ID: porc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3189.0 | grossWeight: 2708.0 | Fragile Parcels: No, 
+ID: ltrc3 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3224.0 | grossWeight: 2390.0 | Cargo type: Transmission fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 6.3.2012, 
+ID: lrc5 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3288.0 | grossWeight: 2818.0 | Cargo type: Water | Pressure: 30.3, 
+ID: prc2 | Shipper: DB Cargo AG | Electrical grid: Connected | netWeight: 3307.0 | grossWeight: 2315.0 | Seats: 35 | Passengers: 0 | Bicycle places: 4, 
+ID: erc2 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3635.0 | grossWeight: 2160.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: bmrc2 | Shipper: Railport Arad | Electrical grid: Not connected | netWeight: 3962.0 | grossWeight: 2971.0 | Max number of suitcases: 0 | Storing pets: Yes]
 
-Trainset - ID: t3 | Current Station:  ID: s73 Name: Basel,Switzerland | Total Route Distance 1139.87 | Completed path: 50.54%
-Total Weight: 41495.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
+Trainset - ID: t1 | Current Station:  ID: s46 Name: Gdansk,Poland | Total Route Distance 988.73 | Completed path: 72.39%
+Total Weight: 54834.0
+Locomotive: id: l1 | Name: Green Machine | Current speed: 0.0
+Home Station:  ID: s18 Name: Lisbon,Portugal
+Source:  ID: s45 Name: Reykjavik,Iceland
+Destination:  ID: s3 Name: Barcelona,Spain	
 Cars:[
-ID: rfrc4 | Shipper: SBB Cargo International | Electrical grid: Connected | netWeight: 3038.0 | grossWeight: 2288.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: prc2 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3139.0 | grossWeight: 2329.0 | Seats: 45 | Passengers: 0 | Bicycle places: 4, 
-ID: bmrc5 | Shipper: CargoNet AS | Electrical grid: Not connected | netWeight: 3459.0 | grossWeight: 2302.0 | Max number of suitcases: 0 | Storing pets: Yes, 
-ID: erc4 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3500.0 | grossWeight: 2679.0 | Security Guards: 4 | Cargotype: Detonators | CargoWeight: 0.0, 
-ID: erc5 | Shipper: Railcare Group AB | Electrical grid: Not connected | netWeight: 3544.0 | grossWeight: 2544.0 | Security Guards: 3 | Cargotype: Pyrotechnics | CargoWeight: 0.0, 
-ID: rrc2 | Shipper: Green Cargo AB | Electrical grid: Connected | netWeight: 3745.0 | grossWeight: 2978.0 Cuisine: Italian | Available tables: 9, 
-ID: trc3 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3834.0 | grossWeight: 2116.0 | Toxic materials type: **SECRET** | Store Diff Materials: No]
+ID: lrc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3205.0 | grossWeight: 2036.0 | Cargo type: Liquid waste | Pressure: 30.3, 
+ID: rfrc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3248.0 | grossWeight: 2538.0 | Cooling Method: Eutectic Plate System | Humidity Control: No | Pressure: 0.0, 
+ID: erc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3507.0 | grossWeight: 2752.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc1 | Shipper: DB Cargo AG | Electrical grid: Not connected | netWeight: 3518.0 | grossWeight: 2506.0 | Cargo type: Brake fluid | Pressure: 30.3 | Certificate date: dd.mm.yy - 11.4.2016, 
+ID: rfrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3524.0 | grossWeight: 2889.0 | Cooling Method: Cryogenic Cooling | Humidity Control: No | Pressure: 0.0, 
+ID: bmrc1 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2863.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: rfrc3 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3786.0 | grossWeight: 2250.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: ltrc2 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3835.0 | grossWeight: 2255.0 | Cargo type: Wastewater | Pressure: 30.3 | Certificate date: dd.mm.yy - 13.6.2017, 
+ID: prc1 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3893.0 | grossWeight: 2534.0 | Seats: 49 | Passengers: 0 | Bicycle places: 4]
 
-Trainset - ID: t2 | Current Station:  ID: s21 Name: Edinburgh,Scotland | Total Route Distance 686.09 | Completed path: 84.48%
-Total Weight: 52117.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
+Trainset - ID: t4 | Current Station:  ID: s37 Name: Belgrade,Serbia | Total Route Distance 778.72 | Completed path: 26.10%
+Total Weight: 29763.0
+Locomotive: id: l4 | Name: Highballer | Current speed: 115.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s35 Name: Bucharest,Romania
+Destination:  ID: s21 Name: Edinburgh,Scotland	
 Cars:[
-ID: grc3 | Shipper: Rail Polska | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2105.0 | Gas type: Diesel | Gas compressor type: Axial Compressor | Pressure: 29.997, 
-ID: bmrc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2630.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: erc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3216.0 | grossWeight: 2899.0 | Security Guards: 2 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: trc2 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3236.0 | grossWeight: 2229.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: bmrc4 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3333.0 | grossWeight: 2110.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: grc4 | Shipper: Lineas | Electrical grid: Not connected | netWeight: 3381.0 | grossWeight: 2399.0 | Gas type: Diesel | Gas compressor type: Positive Displacement Compressor | Pressure: 29.997, 
-ID: erc2 | Shipper: ZSSK Cargo Slovakia | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2219.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
-ID: trc1 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3715.0 | grossWeight: 2449.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: rfrc3 | Shipper: Railtraxx | Electrical grid: Connected | netWeight: 3787.0 | grossWeight: 2420.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0]
+ID: erc5 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3141.0 | grossWeight: 2577.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: erc6 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3329.0 | grossWeight: 2450.0 | Security Guards: 2 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: ltrc6 | Shipper: Fret SNCF | Electrical grid: Not connected | netWeight: 3464.0 | grossWeight: 2418.0 | Cargo type: Wastewater | Pressure: 29.7 | Certificate date: dd.mm.yy - 8.1.2013, 
+ID: bmrc5 | Shipper: Crossrail AG | Electrical grid: Not connected | netWeight: 3555.0 | grossWeight: 2330.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: porc4 | Shipper: Mercitalia Rail | Electrical grid: Connected | netWeight: 3614.0 | grossWeight: 2885.0 | Fragile Parcels: Yes]
 
-Trainset - ID: t1 | Current Station:  ID: s25 Name: Venice,Italy | Total Route Distance 1403.42 | Completed path: 45.77%
-Total Weight: 54103.0
-Locomotive: id: l1 | Name: Victory | Current speed: 123.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s96 Name: Lille,France
-Destination:  ID: s1 Name: Poltava,Ukraine	
+Trainset - ID: t3 | Current Station:  ID: s5 Name: Brussels,Belgium | Total Route Distance 1333.17 | Completed path: 35.48%
+Total Weight: 53146.0
+Locomotive: id: l3 | Name: Powerhouse | Current speed: 0.0
+Home Station:  ID: s85 Name: Odense,Denmark
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s35 Name: Bucharest,Romania	
 Cars:[
-ID: bmrc2 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2760.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rfrc2 | Shipper: LTE Group | Electrical grid: Connected | netWeight: 3251.0 | grossWeight: 2852.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: erc1 | Shipper: Rail Cargo Group | Electrical grid: Not connected | netWeight: 3305.0 | grossWeight: 2686.0 | Security Guards: 3 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: ltrc1 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3309.0 | grossWeight: 2811.0 | Cargo type: Transmission fluid | Pressure: 29.403 | Certificate date: dd.mm.yy - 3.12.2019, 
-ID: bmrc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3523.0 | grossWeight: 2437.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: rrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3546.0 | grossWeight: 2351.0 Cuisine: American | Available tables: 12, 
-ID: grc2 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3623.0 | grossWeight: 2580.0 | Gas type: Petrol | Gas compressor type: Axial Compressor | Pressure: 29.997, 
-ID: rfrc1 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3700.0 | grossWeight: 2170.0 | Cooling Method: Direct Expansion System | Humidity Control: No | Pressure: 0.0, 
-ID: grc1 | Shipper: SBB Cargo International | Electrical grid: Not connected | netWeight: 3967.0 | grossWeight: 2166.0 | Gas type: Petrol | Gas compressor type: Positive Displacement Compressor | Pressure: 30.603]
+ID: bmrc4 | Shipper: Transfesa Logistics | Electrical grid: Not connected | netWeight: 3024.0 | grossWeight: 2360.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: grc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3052.0 | grossWeight: 2633.0 | Gas type: LNG | Gas compressor type: Positive Displacement Compressor | Pressure: 30.603, 
+ID: bmrc3 | Shipper: Railtraxx | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2304.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: ltrc5 | Shipper: TX Logistik AG | Electrical grid: Not connected | netWeight: 3126.0 | grossWeight: 2574.0 | Cargo type: Transmission fluid | Pressure: 30.603 | Certificate date: dd.mm.yy - 5.10.2014, 
+ID: erc4 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3448.0 | grossWeight: 2278.0 | Security Guards: 3 | Cargotype: TNT | CargoWeight: 0.0, 
+ID: porc3 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3499.0 | grossWeight: 2766.0 | Fragile Parcels: No, 
+ID: grc2 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3521.0 | grossWeight: 2434.0 | Gas type: LNG | Gas compressor type: Axial Compressor | Pressure: 29.403, 
+ID: grc1 | Shipper: PKP Intercity | Electrical grid: Not connected | netWeight: 3626.0 | grossWeight: 2969.0 | Gas type: Diesel | Gas compressor type: Centrifugal Compressor | Pressure: 29.997, 
+ID: rrc1 | Shipper: RegioJet Cargo | Electrical grid: Connected | netWeight: 3672.0 | grossWeight: 2801.0 Cuisine: American | Available tables: 13]
 
-Trainset - ID: t3 | Current Station:  ID: s73 Name: Basel,Switzerland | Total Route Distance 1139.87 | Completed path: 50.54%
-Total Weight: 41495.0
-Locomotive: id: l3 | Name: Test 1 | Current speed: 113.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s12 Name: Zurich,Switzerland
-Destination:  ID: s45 Name: Reykjavik,Iceland	
+Trainset - ID: t2 | Current Station:  ID: s81 Name: Cannes,France | Total Route Distance 1027.32 | Completed path: 64.68%
+Total Weight: 53467.0
+Locomotive: id: l2 | Name: Black Diamond | Current speed: 0.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s69 Name: Poznan,Poland
+Destination:  ID: s74 Name: Pisa,Italy	
 Cars:[
-ID: rfrc4 | Shipper: SBB Cargo International | Electrical grid: Connected | netWeight: 3038.0 | grossWeight: 2288.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0, 
-ID: prc2 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3139.0 | grossWeight: 2329.0 | Seats: 45 | Passengers: 0 | Bicycle places: 4, 
-ID: bmrc5 | Shipper: CargoNet AS | Electrical grid: Not connected | netWeight: 3459.0 | grossWeight: 2302.0 | Max number of suitcases: 0 | Storing pets: Yes, 
-ID: erc4 | Shipper: Ecco Rail | Electrical grid: Not connected | netWeight: 3500.0 | grossWeight: 2679.0 | Security Guards: 4 | Cargotype: Detonators | CargoWeight: 0.0, 
-ID: erc5 | Shipper: Railcare Group AB | Electrical grid: Not connected | netWeight: 3544.0 | grossWeight: 2544.0 | Security Guards: 3 | Cargotype: Pyrotechnics | CargoWeight: 0.0, 
-ID: rrc2 | Shipper: Green Cargo AB | Electrical grid: Connected | netWeight: 3745.0 | grossWeight: 2978.0 Cuisine: Italian | Available tables: 9, 
-ID: trc3 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3834.0 | grossWeight: 2116.0 | Toxic materials type: **SECRET** | Store Diff Materials: No]
+ID: porc1 | Shipper: TFG Transfracht | Electrical grid: Connected | netWeight: 3007.0 | grossWeight: 2846.0 | Fragile Parcels: No, 
+ID: erc3 | Shipper: TFG Transfracht | Electrical grid: Not connected | netWeight: 3059.0 | grossWeight: 2927.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc4 | Shipper: Nordcargo GmbH | Electrical grid: Not connected | netWeight: 3066.0 | grossWeight: 2595.0 | Cargo type: Glue | Pressure: 29.997 | Certificate date: dd.mm.yy - 11.10.2014, 
+ID: porc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3189.0 | grossWeight: 2708.0 | Fragile Parcels: No, 
+ID: ltrc3 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3224.0 | grossWeight: 2390.0 | Cargo type: Transmission fluid | Pressure: 30.603 | Certificate date: dd.mm.yy - 6.3.2012, 
+ID: lrc5 | Shipper: DB Schenker Rail Scandinavia | Electrical grid: Not connected | netWeight: 3288.0 | grossWeight: 2818.0 | Cargo type: Water | Pressure: 29.997, 
+ID: prc2 | Shipper: DB Cargo AG | Electrical grid: Connected | netWeight: 3307.0 | grossWeight: 2315.0 | Seats: 35 | Passengers: 0 | Bicycle places: 4, 
+ID: erc2 | Shipper: ERS Railways | Electrical grid: Not connected | netWeight: 3635.0 | grossWeight: 2160.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: bmrc2 | Shipper: Railport Arad | Electrical grid: Not connected | netWeight: 3962.0 | grossWeight: 2971.0 | Max number of suitcases: 0 | Storing pets: Yes]
 
-Trainset - ID: t2 | Current Station:  ID: s97 Name: Braga,Portugal | Total Route Distance 686.09 | Completed path: 100.00%
-Total Weight: 52117.0
-Locomotive: id: l2 | Name: Python | Current speed: 0.0
-Home Station:  ID: s101 Name: Station TMP HOME
-Source:  ID: s22 Name: Krakow,Poland
-Destination:  ID: s97 Name: Braga,Portugal	
+Trainset - ID: t1 | Current Station:  ID: s46 Name: Gdansk,Poland | Total Route Distance 988.73 | Completed path: 72.39%
+Total Weight: 54834.0
+Locomotive: id: l1 | Name: Green Machine | Current speed: 128.0
+Home Station:  ID: s18 Name: Lisbon,Portugal
+Source:  ID: s45 Name: Reykjavik,Iceland
+Destination:  ID: s3 Name: Barcelona,Spain	
 Cars:[
-ID: grc3 | Shipper: Rail Polska | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2105.0 | Gas type: Diesel | Gas compressor type: Axial Compressor | Pressure: 29.997, 
-ID: bmrc3 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3147.0 | grossWeight: 2630.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: erc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3216.0 | grossWeight: 2899.0 | Security Guards: 2 | Cargotype: Ammunition | CargoWeight: 0.0, 
-ID: trc2 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3236.0 | grossWeight: 2229.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: bmrc4 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3333.0 | grossWeight: 2110.0 | Max number of suitcases: 0 | Storing pets: No, 
-ID: grc4 | Shipper: Lineas | Electrical grid: Not connected | netWeight: 3381.0 | grossWeight: 2399.0 | Gas type: Diesel | Gas compressor type: Positive Displacement Compressor | Pressure: 29.997, 
-ID: erc2 | Shipper: ZSSK Cargo Slovakia | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2219.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
-ID: trc1 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3715.0 | grossWeight: 2449.0 | Toxic materials type: **SECRET** | Store Diff Materials: No, 
-ID: rfrc3 | Shipper: Railtraxx | Electrical grid: Connected | netWeight: 3787.0 | grossWeight: 2420.0 | Cooling Method: Eutectic Plate System | Humidity Control: Yes | Pressure: 0.0]
+ID: lrc3 | Shipper: Euro Cargo Rail | Electrical grid: Not connected | netWeight: 3205.0 | grossWeight: 2036.0 | Cargo type: Liquid waste | Pressure: 29.997, 
+ID: rfrc2 | Shipper: Fret SNCF | Electrical grid: Connected | netWeight: 3248.0 | grossWeight: 2538.0 | Cooling Method: Eutectic Plate System | Humidity Control: No | Pressure: 0.0, 
+ID: erc1 | Shipper: DSB Gods | Electrical grid: Not connected | netWeight: 3507.0 | grossWeight: 2752.0 | Security Guards: 3 | Cargotype: Detonators | CargoWeight: 0.0, 
+ID: ltrc1 | Shipper: DB Cargo AG | Electrical grid: Not connected | netWeight: 3518.0 | grossWeight: 2506.0 | Cargo type: Brake fluid | Pressure: 30.603 | Certificate date: dd.mm.yy - 11.4.2016, 
+ID: rfrc1 | Shipper: Captrain Deutschland GmbH | Electrical grid: Connected | netWeight: 3524.0 | grossWeight: 2889.0 | Cooling Method: Cryogenic Cooling | Humidity Control: No | Pressure: 0.0, 
+ID: bmrc1 | Shipper: Green Cargo AB | Electrical grid: Not connected | netWeight: 3695.0 | grossWeight: 2863.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: rfrc3 | Shipper: Transfennica | Electrical grid: Connected | netWeight: 3786.0 | grossWeight: 2250.0 | Cooling Method: Direct Expansion System | Humidity Control: Yes | Pressure: 0.0, 
+ID: ltrc2 | Shipper: American Express | Electrical grid: Not connected | netWeight: 3835.0 | grossWeight: 2255.0 | Cargo type: Wastewater | Pressure: 30.603 | Certificate date: dd.mm.yy - 13.6.2017, 
+ID: prc1 | Shipper: Railport Arad | Electrical grid: Connected | netWeight: 3893.0 | grossWeight: 2534.0 | Seats: 49 | Passengers: 0 | Bicycle places: 4]
+
+Trainset - ID: t4 | Current Station:  ID: s21 Name: Edinburgh,Scotland | Total Route Distance 778.72 | Completed path: 100.00%
+Total Weight: 29763.0
+Locomotive: id: l4 | Name: Highballer | Current speed: 116.0
+Home Station:  ID: s39 Name: Riga,Latvia
+Source:  ID: s35 Name: Bucharest,Romania
+Destination:  ID: s21 Name: Edinburgh,Scotland	
+Cars:[
+ID: erc5 | Shipper: PCC Intermodal SA | Electrical grid: Not connected | netWeight: 3141.0 | grossWeight: 2577.0 | Security Guards: 3 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: erc6 | Shipper: RegioJet Cargo | Electrical grid: Not connected | netWeight: 3329.0 | grossWeight: 2450.0 | Security Guards: 2 | Cargotype: RDX | CargoWeight: 0.0, 
+ID: ltrc6 | Shipper: Fret SNCF | Electrical grid: Not connected | netWeight: 3464.0 | grossWeight: 2418.0 | Cargo type: Wastewater | Pressure: 29.997 | Certificate date: dd.mm.yy - 8.1.2013, 
+ID: bmrc5 | Shipper: Crossrail AG | Electrical grid: Not connected | netWeight: 3555.0 | grossWeight: 2330.0 | Max number of suitcases: 0 | Storing pets: Yes, 
+ID: porc4 | Shipper: Mercitalia Rail | Electrical grid: Connected | netWeight: 3614.0 | grossWeight: 2885.0 | Fragile Parcels: Yes]
 

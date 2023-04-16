@@ -6,21 +6,19 @@ import java.util.logging.Level;
 
 public class Main {
     public static void main(String[] args) {
-        //generate stations with intersections from file Station.txt
-        List<Station> stations = Station.generateStations();
-        Station stationTMP = new Station("Station TMP HOME");
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
         //creating locomotives
-        Locomotive l1 = new Locomotive("Victory", 12, 59500, 5,
-                stationTMP, findStation("Lille,France", stations), findStation("Poltava,Ukraine", stations));
-        Locomotive l2 = new Locomotive("Python", 12, 67000, 4,
-                stationTMP, findStation("Krakow,Poland", stations), findStation("Braga,Portugal", stations));
-        Locomotive l3 = new Locomotive("Test 1", 12, 58000, 6, stationTMP,
-                findStation("Zurich,Switzerland", stations), findStation("Reykjavik,Iceland", stations));
-
+        Locomotive l1 = locomotiveGenerator.generateLocomotive();
+        Locomotive l2 = locomotiveGenerator.generateLocomotive();
+        Locomotive l3 = locomotiveGenerator.generateLocomotive();
+        Locomotive l4 = locomotiveGenerator.generateLocomotive();
         //generating routes for locomotives
         l1.generateRoute();
         l2.generateRoute();
         l3.generateRoute();
+        l4.generateRoute();
+        System.out.println(l4.getRoute());
+        System.out.println(l4.getReverseRoute());
 
         Map<String, RailroadCar> hashCars = new HashMap<>();
 
@@ -30,12 +28,15 @@ public class Main {
         new CarGenerator().generateCars(t2);
         Trainset t3 = new Trainset(l3);
         new CarGenerator().generateCars(t3);
+        Trainset t4 = new Trainset(l4);
+        new CarGenerator().generateCars(t4);
 
         //Threads
         List<Trainset> trainsets = new ArrayList<>();
         trainsets.add(t1);
         trainsets.add(t2);
         trainsets.add(t3);
+        trainsets.add(t4);
         Map<String, Trainset> menuButton = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
             String trainNum = "t" + (i + 1);
