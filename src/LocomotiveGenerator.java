@@ -6,19 +6,32 @@ import java.util.List;
 import java.util.Random;
 
 public class LocomotiveGenerator {
-    List<Station> stations = Station.generateStations();
+    final List<Station> stations = Station.generateStations();
     LocomotiveGenerator(){
 
+    }
+    public Locomotive generateLocomotive(String home, String source, String destination){
+        Random random = new Random();
+        int maxCars = random.nextInt(2)+9;
+        double maxWeight = random.nextDouble(110000-82000)+82000;
+        int maxNumCarsElecticGrid = random.nextInt(3)+5;
+        Station homeStation = getStation(home,stations);
+        Station sourceStation = getStation(source,stations);
+        Station destinationStation = getStation(destination,stations);
+        Locomotive locomotive = new Locomotive(getName(),maxCars,maxWeight,maxNumCarsElecticGrid,homeStation,
+                sourceStation, destinationStation);
+        locomotive.generateRoute();
+        System.out.println(locomotive.getRoute().getRouteStations());
+        return locomotive;
     }
     public Locomotive generateLocomotive(){
         Random random = new Random();
         int maxCars = random.nextInt(2)+9;
-        double maxWeight = random.nextDouble(70001-62000)+62000;
-        int maxNumCarsElecticGrid = random.nextInt(7-4)+4;
+        double maxWeight = random.nextDouble(110000-82000)+82000;
+        int maxNumCarsElecticGrid = random.nextInt(3)+5;
         Station homeStation = getStation(getStationName(),stations);
         Station sourceStation = getStation(getStationName(),stations);
         Station destitationStation = getStation(getStationName(),stations);
-
         Locomotive locomotive = new Locomotive(getName(),maxCars,maxWeight,maxNumCarsElecticGrid,homeStation,
                 sourceStation, destitationStation);
         return locomotive;
@@ -33,6 +46,14 @@ public class LocomotiveGenerator {
     private static Station getStation(String stationName, List<Station> stations) {
         for (Station station : stations) {
             if (station.getName().equals(stationName)) {
+                return station;
+            }
+        }
+        return null;
+    }
+    public Station findStation(String name){
+        for (Station station : stations) {
+            if (station.getName().equals(name)) {
                 return station;
             }
         }

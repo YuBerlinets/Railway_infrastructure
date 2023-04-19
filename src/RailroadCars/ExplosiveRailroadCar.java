@@ -25,7 +25,7 @@ public class ExplosiveRailroadCar extends RailroadCar implements HeavyFreightRai
 
     public String toString() {
         return super.toString() + " | Security Guards: " + getSecurityGuard() + " | Cargotype: " + getCargoType() +
-                " | CargoWeight: " + getCargoWeight();
+                " | newCargoWeight: " + getCargoWeight();
     }
 
     public void remoteMonitoring(){

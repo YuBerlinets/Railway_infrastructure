@@ -128,7 +128,7 @@ public class CarGenerator {
         return Math.round(random.nextDouble(1000 + 1) + 3000);
     }
 
-    private static String getShipper() {
+    public String getShipper() {
         String result = null;
         Random random = new Random();
         String path = "TechFiles\\CarShipper.txt";

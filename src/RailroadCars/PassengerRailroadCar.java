@@ -19,6 +19,8 @@ public class PassengerRailroadCar extends RailroadCar implements ElectricalGrid,
         this.numberSeats = numberSeats;
         this.carClass = carClass;
         this.wifi = (carClass == 1) ? true : false;
+        if(carClass == 1)
+            this.placeBicycle = 0;
     }
 
     public void hasWifi() {

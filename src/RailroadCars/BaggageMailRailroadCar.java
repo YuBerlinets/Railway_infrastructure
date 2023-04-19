@@ -20,21 +20,38 @@ public class BaggageMailRailroadCar extends RailroadCar implements Service {
         else
             this.placePets = 5;
     }
+
     @Override
     public String toString() {
-        return super.toString() + " | Max number of suitcases: " + getNumSuitcase() + " | Storing pets: " + (isStoringPets()? "Yes" : "No");
+        return super.toString() + " | Number of suitcases: " + getNumSuitcase() + " | Storing pets: " + (isStoringPets() ? "Yes" : "No");
     }
+
     public void loadBaggage(int suitcases) {
-        if ((this.numSuitcase + suitcases) <= maxNumSuitcase)
-            this.maxNumSuitcase += suitcases;
-        else
-            try {
-                throw new TooManyBaggage();
-            } catch (TooManyBaggage e) {
-                System.out.println("There too many suitcases in this car");
-            }
+        if (!this.service) {
+            if ((this.numSuitcase + suitcases) <= maxNumSuitcase)
+                this.numSuitcase += suitcases;
+            else
+                try {
+                    throw new TooManyBaggage();
+                } catch (TooManyBaggage e) {
+                    System.out.println("There too many suitcases in this car");
+                }
+        } else
+            System.out.println("This car " + getId() + " is on service");
     }
-    public void unloadPets(int pets){
+
+    public void unloadBaggage(int suitcases) {
+        if (!this.service) {
+            if ((this.numSuitcase - suitcases) >= 0)
+                this.numSuitcase -= suitcases;
+            else
+                System.out.println(suitcases + " can't be removed, because there are " + this.getNumSuitcase() +
+                        " in car " + this.getId());
+        } else
+            System.out.println("This car " + getId() + " is on service");
+    }
+
+    public void unloadPets(int pets) {
         if (!this.service) {
             if (this.storingPets) {
                 if ((this.placePets - pets) > 0) {
@@ -49,6 +66,7 @@ public class BaggageMailRailroadCar extends RailroadCar implements Service {
         } else
             System.out.println("This car " + getId() + " is on service");
     }
+
     public void loadPets(int pets) {
         if (!this.service) {
             if (this.storingPets) {

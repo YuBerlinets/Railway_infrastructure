@@ -52,7 +52,6 @@ Sarajevo,BosniaandHerzegovina
 Split,Croatia
 Cologne,Germany
 Toulouse,France
-Bordeaux,France
 Bern,Switzerland
 Bologna,Italy
 Donetsk,Ukraine
@@ -60,11 +59,8 @@ Vilnius,Lithuania
 Leipzig,Germany
 Dresden,Germany
 Zagreb,Croatia
-Valencia,Spain
-Dubrovnik,Croatia
 Genoa,Italy
 Kharkiv,Ukraine
-Krakow,Poland
 Ghent,Belgium
 Poznan,Poland
 Trieste,Italy
@@ -81,12 +77,10 @@ Granada,Spain
 Cannes,France
 Graz,Austria
 Santander,Spain
-Valencia,Spain
 Odense,Denmark
 Bordeaux,France
 Malaga,Spain
 Utrecht,Netherlands
-Valencia,Spain
 Porto,Portugal
 Kyiv,Ukraine
 LuxembourgCity,Luxembourg
@@ -101,3 +95,8 @@ Sevastopol,Ukraine
 Antwerp,Belgium
 Turin,Italy
 Bremen,Germany
+Lodz,Poland
+Katowice,Poland
+Milano,Italy
+Rotterdam,Netherlands
+Hamburg,Germany

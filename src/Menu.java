@@ -27,7 +27,7 @@ public class Menu {
         menu.put(2, cars);
 
         Map<Integer, Runnable> routes = new HashMap<>();
-        routes.put(1, this::foo);
+        routes.put(1, this::createLocomotive);
         routes.put(2, this::foo);
         routes.put(3, this::foo);
         menu.put(3, routes);
@@ -46,7 +46,7 @@ public class Menu {
             System.out.println(
                     "1. Trains\n" +
                             "2. Cars\n" +
-                            "3. Station\n" +
+                            "3. Locomotive\n" +
                             "4. Abbreviation\n" +
                             "5. Category E\n" +
                             "0. Exit");
@@ -71,7 +71,7 @@ public class Menu {
                     System.out.println("2. Remove car");
                     System.out.println("3. Car information");
                 } else if (choice == 3) {
-                    System.out.println("1. smth about station");
+                    System.out.println("1. Create a new locomotive");
                     System.out.println("2. smth about station");
                     System.out.println("3. smth about station");
                 }
@@ -92,7 +92,17 @@ public class Menu {
             System.out.println();
         }
     }
-
+    private void createLocomotive(){
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
+        System.out.println("Enter the home station:");
+        String home = scanner.next();
+        System.out.println("Enter the source station:");
+        String source = scanner.next();
+        System.out.println("Enter the destination station:");
+        String destination = scanner.next();
+        Locomotive locomotive = locomotiveGenerator.generateLocomotive(home,source,destination);
+        System.out.println(locomotive);
+    }
     private void createCar() {
         System.out.println(abbreviationInfo());
         System.out.println("Enter the type of Car");
@@ -322,7 +332,7 @@ public class Menu {
 
 
     private void trainInformation() {
-        System.out.print("Enter the train ID: my here ");
+        System.out.print("Enter the train ID:");
         String trainId = scanner.next();
         Trainset trainset = null;
         for (String id : this.menuTrain.keySet()) {

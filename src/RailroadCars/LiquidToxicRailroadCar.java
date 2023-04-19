@@ -39,7 +39,7 @@ public class LiquidToxicRailroadCar extends LiquidRailroadCar implements HeavyFr
     //checking usual time to get loaded
     public void usualLoadingTime(){
         int weightPerMin = 300;
-        double time = Math.round(this.cargoWeight / weightPerMin);
+        double time = Math.round((this.cargoWeight + this.getGrossWeight()) / weightPerMin);
         System.out.println(time + " minutes");
     }
     private String generateCertificateDate() {

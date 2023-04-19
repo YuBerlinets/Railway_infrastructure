@@ -41,10 +41,13 @@ public class GaseousRailroadCar extends RailroadCar implements BasicFreightRailr
             }
         });
         pressureUpdating.start();
+        if(!this.carSystemWorking)
+            pressureUpdating.interrupt();
 
     }
 
     public void emergencyShutDown() {
+        this.pressure = 0;
         this.carSystemWorking = false;
     }
 

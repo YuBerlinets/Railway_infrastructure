@@ -3,7 +3,7 @@ package RailroadCars;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroadCar {
+public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroadCar, Service {
     private String toxicMaterialsType;
     private boolean storingDiffTypes;
     private double cargoWeight;
@@ -21,6 +21,7 @@ public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroa
         return super.toString() + " | Toxic materials type: **SECRET**" +
                 " | Store Diff Materials: " + (isStoringDiffTypes() ? "Yes" : "No");
     }
+
     //in order to check type of materials on this car, user needs to write a password
     public void checkMaterialType() {
         String password = "check";
@@ -35,10 +36,13 @@ public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroa
 
     //adding different materials
     public void addMaterial(String material) {
-        if (this.storingDiffTypes)
-            this.toxicMaterialsType += "," + material;
-        else
-            System.out.println("This car " + getId() + " is not allowed to store different materials at the same time");
+        if(!this.service) {
+            if (this.storingDiffTypes)
+                this.toxicMaterialsType += "," + material;
+            else
+                System.out.println("This car " + getId() + " is not allowed to store different materials at the same time");
+        }else
+            System.out.println("New materials can't be added,since car is on service");
     }
 
     public String getToxicMaterialsType() {
@@ -66,6 +70,19 @@ public class ToxicRailroadCar extends RailroadCar implements HeavyFreightRailroa
 
     @Override
     public void checkPressure() {
-        System.out.println("Pressure is not measured in this car " + getId());
+        if (this.service)
+            System.out.println("Pressure can't be measured,because car is on service");
+        else
+            System.out.println("Pressure is not measured in this car " + getId());
+    }
+
+    @Override
+    public void takeCarToService() {
+        super.service = true;
+    }
+
+    @Override
+    public void takeCarOffService() {
+        super.service = false;
     }
 }

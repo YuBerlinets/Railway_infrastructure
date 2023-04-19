@@ -1,47 +1,38 @@
+import com.sun.security.jgss.GSSUtil;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
 public class Station {
-    private String id = "s"; //s stands for station
+    private String id; //s stands for station
     private String name;
-    private Map<Station,Double> intersectsWith;
-    private Map<Station, Double> kmToNextStation;
+    private Map<Station, Double> intersectsWith;
     private boolean visited;
     private boolean available = true;
     public static int count = 1;
 
 
-    Station(String name){
+    Station(String name) {
         this.name = name;
-        this.id = id + count++;
+        this.id = "s" + count++;
         this.intersectsWith = new HashMap<>();
         this.visited = false;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return " ID: " + getId() + " Name: " + getName();
 
     }
-
-    public void generateRandomIntersections(List<Station> allStations, int numIntersections) {
-        Random rand = new Random();
-        for (int i = 0; i < numIntersections; i++) {
-            Station randomStation = allStations.get(rand.nextInt(allStations.size()));
-            double distance = rand.nextDouble() * 500 + 100; // randomly generate distance between 100 and 600
-            this.addIntersectsWith(randomStation, distance);
-            //System.out.println(this.intersectsWith.get(this));
-        }
-    }
-
     public static List<Station> generateStations() {
         List<Station> stations = new ArrayList<>();
         String path = "TechFiles\\Stations.txt";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             String line = null;
             int index = 0;
-            while ((line = bufferedReader.readLine()) != null && index < 100) {
+            while ((line = bufferedReader.readLine()) != null) {
                 Station station = new Station(line);
                 stations.add(station);
                 index++;
@@ -50,26 +41,34 @@ public class Station {
             System.out.println("Error reading file: " + e);
         }
         for (Station station : stations) {
-            Random random =new Random();
-            int num = random.nextInt(4) + 2;
-            station.generateRandomIntersections(stations, num);
+            int numConnections = station.getIntersectsWith().size();
+            while (numConnections < 3) {
+                Station otherStation = stations.get(new Random().nextInt(stations.size()));
+                if (otherStation != station && !station.intersectsWith.containsKey(otherStation)) {
+                    double distance = new Random().nextDouble() * 300 + 300;//distance between 300 and 600
+                    station.addIntersectsWith(otherStation, distance);
+                    otherStation.addIntersectsWith(station, distance);
+                    numConnections++;
+                }
+            }
         }
 
         return stations;
     }
 
+
     public String getId() {
         return id;
     }
-    public Map<Station, Double> getKmToNextStation() {
-        return getKmToNextStation();
-    }
-    public void setUnavailability(){
+
+    public void setUnavailability() {
         this.available = false;
     }
-    public void setAvailability(){
+
+    public void setAvailability() {
         this.available = true;
     }
+
     public boolean isVisited() {
         return visited;
     }
@@ -81,15 +80,16 @@ public class Station {
     public boolean isAvailable() {
         return available;
     }
-    public void addIntersectsWith(Station station,double distance) {
-        this.intersectsWith.put(station,distance);
+
+    public void addIntersectsWith(Station station, double distance) {
+        this.intersectsWith.put(station, distance);
     }
 
     public String getName() {
         return name;
     }
 
-    public Map<Station,Double> getIntersectsWith() {
+    public Map<Station, Double> getIntersectsWith() {
         return intersectsWith;
     }
 

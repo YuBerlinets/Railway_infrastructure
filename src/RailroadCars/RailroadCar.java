@@ -7,7 +7,7 @@ public class RailroadCar implements Comparable<RailroadCar> {
     private String shipper;
     private double netWeight;
     private double grossWeight;
-    private double totalWeight;
+
     protected boolean connectedToElectricalGrid;
     protected boolean service;
     protected boolean attached;
@@ -20,7 +20,7 @@ public class RailroadCar implements Comparable<RailroadCar> {
         this.id = "rc" + count++;//rc stands for railroad car
         this.shipper = shipper;
         this.netWeight = netWeight;
-        this.totalWeight += netWeight;
+        this.grossWeight = netWeight;
     }
 
     public void addCargo(double weight) {
@@ -57,9 +57,6 @@ public class RailroadCar implements Comparable<RailroadCar> {
         return grossWeight;
     }
 
-    public double getTotalWeight() {
-        return totalWeight;
-    }
     public void attachCar(){
         this.attached = true;
     }

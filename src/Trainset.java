@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Trainset implements Comparable<Trainset> {
-    private String id = "t"; // t stands for Trainset
+    private String id;
     private Locomotive locomotive;
     public ArrayList<RailroadCar> railroadCars = new ArrayList<>();
     private double trainsetWeightLoad;
@@ -21,21 +21,20 @@ public class Trainset implements Comparable<Trainset> {
     public static int count = 1;
 
     Trainset(Locomotive locomotive) {
-        this.id = id + count++;
+        this.id = "t" + count++;// t stands for Trainset
         this.locomotive = locomotive;
         this.route = locomotive.getRoute();
-        this.currentStation = route.getRoute().get(0);
+        this.currentStation = route.getRouteStations().get(0);
         this.speed = locomotive.getSpeed();
     }
 
-    public void moveRoute() throws InterruptedException {
-        List<Station> routeForward = this.locomotive.getRoute().getRoute();
-        List<Station> routeBack = this.getLocomotive().getReverseRoute().getRoute();
+    public void moveRoute() throws InterruptedException, NullPointerException {
+        List<Station> routeForward = this.getLocomotive().getRoute().getRouteStations();
+        List<Station> routeBack = this.getLocomotive().getReverseRoute().getRouteStations();
         this.onRoute = true;
         Station startStation = routeForward.get(0);
         Station lastStation = routeForward.get(routeForward.size() - 1);
         boolean forward = true;
-        double percentage = 0;
         double completedDistance = 0;
         double totalDistance = this.getLocomotive().getRoute().getTotalDistance();
         List<Station> route = new ArrayList<>();
@@ -66,27 +65,29 @@ public class Trainset implements Comparable<Trainset> {
                     Thread.sleep(2000);
                     this.locomotive.setSpeed(prevSpeed);
                     if (this.currentStation == lastStation) {
-                        //System.out.println(this.getId() + " train has reached a startpoint");
+                        //System.out.println(this.getId() + " train has reached a endpoint");
                         prevSpeed = this.speed;
                         this.speed = 0;
                         this.percentage = 100;
                         Thread.sleep(30000);
                         this.percentage = 0;
+                        completedDistance = 0;
                         this.speed = prevSpeed;
                         forward = true;
                     }
                     if (this.currentStation == startStation) {
-                        //System.out.println(this.getId() + " train has reached an endpoint");
+                        //System.out.println(this.getId() + " train has reached an startpoint");
                         prevSpeed = this.speed;
                         this.speed = 0;
                         this.percentage = 100;
                         Thread.sleep(30000);
                         this.percentage = 0;
+                        completedDistance = 0;
                         this.speed = prevSpeed;
                         forward = false;
                     }
                 } else {
-                    //System.out.println(nextStation + " is currently not available");
+                    //System.out.println(nextStation + " is currently not available"); // to check when two trainset meet at the route and then wait
                     //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
                     double prevSpeed = this.speed;
                     this.speed = 0;

@@ -7,25 +7,11 @@ public class Route{
         this.stations = new ArrayList<>();
     }
 
-    public Route(Locomotive locomotive) {
-        this.stations = new ArrayList<>();
-    }
-
     public void addStation(Station station) {
         this.stations.add(station);
     }
-    public void removeStation(int index){
-        this.stations.remove(index);
-    }
 
-    public List<Station> getRoute() {
-        return stations;
-    }
-
-    public Station getStation(int index) {
-        return stations.get(index);
-    }
-    public List<Station> getStations() {
+    public List<Station> getRouteStations() {
         return stations;
     }
     public void reverse() {

@@ -7,7 +7,7 @@ import java.util.*;
 public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid, Service {
     private int staffMembers;
     private String cuisine;
-    private int tables;
+    private final int tables;
     private int availableTables;
     private Map<String, String> reservations;
     public static int count = 1;
@@ -24,7 +24,7 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
 
     public void releaseTable(){
         Scanner sc = new Scanner(System.in);
-        if((this.availableTables + 1) < this.availableTables){
+        if((this.availableTables + 1) <= this.tables){
             System.out.println("Enter name of reserver:");
             String name = sc.next();
             if(this.reservations.containsKey(name)) {
@@ -38,7 +38,7 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
     //booking table for some amount of people
     public void bookTable(){
         Scanner sc = new Scanner(System.in);
-        if((this.availableTables - 1) > 0) {
+        if((this.availableTables - 1) >= 0) {
             System.out.println("Enter your name:");
             String name = sc.next();
             System.out.println("Enter time and date:");
@@ -72,7 +72,7 @@ public class RestaurantRailroadCar extends RailroadCar implements ElectricalGrid
 
     @Override
     public String toString() {
-        return super.toString() + " Cuisine: " + getCuisine() + " | Available tables: " + getAvailableTables();
+        return super.toString() + " | Cuisine: " + getCuisine() + " | Available tables: " + getAvailableTables();
     }
 
     public int getTables() {

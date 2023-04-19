@@ -2,42 +2,15 @@ import RailroadCars.*;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
 
 public class Main {
     public static void main(String[] args) {
         //creating locomotives
-        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
-        Locomotive l1 = locomotiveGenerator.generateLocomotive();
-        Locomotive l2 = locomotiveGenerator.generateLocomotive();
-        Locomotive l3 = locomotiveGenerator.generateLocomotive();
-        Locomotive l4 = locomotiveGenerator.generateLocomotive();
+        List<Locomotive> locomotives = creatingLocomotives();
 
-        //generating routes for locomotives
-        l1.generateRoute();
-        l2.generateRoute();
-        l3.generateRoute();
-        l4.generateRoute();
-
-        //creating trainsets
-        Trainset t1 = new Trainset(l1);
-        Trainset t2 = new Trainset(l2);
-        Trainset t3 = new Trainset(l3);
-        Trainset t4 = new Trainset(l4);
-
-        //generating cars for each trainset
-        CarGenerator carGenerator = new CarGenerator();
-        carGenerator.generateCars(t1);
-        carGenerator.generateCars(t2);
-        carGenerator.generateCars(t3);
-        carGenerator.generateCars(t4);
+        List<Trainset> trainsets = creatingTrainsets(locomotives);
 
         //storing information about cars and trainsets for menu
-        List<Trainset> trainsets = new ArrayList<>();
-        trainsets.add(t1);
-        trainsets.add(t2);
-        trainsets.add(t3);
-        trainsets.add(t4);
         Map<String, Trainset> hashTrains = new HashMap<>();
         for (int i = 0; i < trainsets.size(); i++) {
             String trainNum = "t" + (i + 1);
@@ -78,6 +51,34 @@ public class Main {
         menuTest.display();
 
 
+    }
+
+    public static List<Trainset> creatingTrainsets(List<Locomotive> locomotives) {
+        List<Trainset> trainsets = new ArrayList<>();
+        CarGenerator carGenerator = new CarGenerator();
+        for (int i = 0; i < locomotives.size(); i++) {
+            Trainset trainset = new Trainset(locomotives.get(i));
+            carGenerator.generateCars(trainset);
+            trainsets.add(trainset);
+        }
+        return trainsets;
+    }
+
+    public static List<Locomotive> creatingLocomotives() {
+        List<Locomotive> locomotives = new ArrayList<>();
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
+        for (int i = 0; i < 25; i++) {
+            Locomotive locomotive = locomotiveGenerator.generateLocomotive();
+            locomotive.generateRoute();
+//            System.out.println("Forward");
+//            System.out.println(locomotive.getRoute().getRouteStations());//test
+//            System.out.println("Back");
+//            System.out.println(locomotive.getReverseRoute().getRouteStations());
+//            System.out.println();
+            locomotives.add(locomotive);
+
+        }
+        return locomotives;
     }
 
     public static Map<String, RailroadCar> saveCars(List<Trainset> trainsets) {
@@ -123,7 +124,7 @@ public class Main {
         int count = 1;
         for (Trainset trainset : trainsets)
             System.out.println(count++ + ". Trainset ID: " + trainset.getId() +
-                    " Path: " + trainset.getLocomotive().getSourceStation() + " to " + trainset.getLocomotive().getDestinationStation());
+                    "\tPath: " + trainset.getLocomotive().getSourceStation() + " to " + trainset.getLocomotive().getDestinationStation());
     }
 
     public static Station findStation(String stationName, List<Station> stations) {
