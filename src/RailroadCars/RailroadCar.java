@@ -62,9 +62,9 @@ public class RailroadCar implements Comparable<RailroadCar> {
     }
     @Override
     public int compareTo(RailroadCar railroadCar) {
-        if (this.netWeight == railroadCar.getNetWeight())
+        if (this.grossWeight == railroadCar.getGrossWeight())
             return 0;
-        else if (this.netWeight > railroadCar.getNetWeight())
+        else if (this.grossWeight > railroadCar.getGrossWeight())
             return 1;
         else
             return -1;

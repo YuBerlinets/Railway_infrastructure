@@ -44,10 +44,10 @@ public class Presentation {
         rrc1.changeCuisine();
         System.out.println("Cuisine after changing:");
         System.out.println(rrc1.getCuisine());
-        //rrc1.bookTable();
+        rrc1.bookTable();
         System.out.println("Getting our reservations:");
         System.out.println(rrc1.getReservations());
-        //rrc1.releaseTable();
+        rrc1.releaseTable();
         System.out.println("Getting our reservations after releasing:");
         System.out.println(rrc1.getReservations());
         System.out.println(rrc1);
@@ -98,7 +98,7 @@ public class Presentation {
 
         System.out.println("=-=-=-=-=");
         ToxicRailroadCar trc1 = new ToxicRailroadCar(carGenerator.getShipper(), 3442,"Wastes");
-        //trc1.checkMaterialType();//password is "check"
+        trc1.checkMaterialType();//password is "check"
         trc1.takeCarToService();
         trc1.checkPressure();
         trc1.addMaterial("Smth new");

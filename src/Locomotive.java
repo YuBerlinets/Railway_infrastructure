@@ -29,7 +29,7 @@ public class Locomotive {
         this.homeRailwayStation = homeRailwayStation;
         this.sourceStation = sourceStation;
         this.destinationStation = destinationStation;
-        this.speed = 135;
+        this.speed = 110;
         this.onRoute = true;
     }
 
