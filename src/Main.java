@@ -5,9 +5,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //creating locomotives
-        List<Locomotive> locomotives = creatingLocomotives();
+        //generating stations
+        List<Station> stations = Station.generateStations();
 
+        //creating locomotives
+        List<Locomotive> locomotives = creatingLocomotives(stations);
+
+        //creating trainsets
         List<Trainset> trainsets = creatingTrainsets(locomotives);
 
         //storing information about cars and trainsets for menu
@@ -47,11 +51,13 @@ public class Main {
         saveData(trainsets);
 
         //menu
-        Menu menuTest = new Menu(hashTrains, hashCars);
+        Menu menuTest = new Menu(hashTrains, hashCars,stations);
         menuTest.display();
 
 
     }
+
+
 
     public static List<Trainset> creatingTrainsets(List<Locomotive> locomotives) {
         List<Trainset> trainsets = new ArrayList<>();
@@ -64,23 +70,25 @@ public class Main {
         return trainsets;
     }
 
-    public static List<Locomotive> creatingLocomotives() {
+    public static List<Locomotive> creatingLocomotives(List<Station> stations) {
         List<Locomotive> locomotives = new ArrayList<>();
-        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator(stations);
         for (int i = 0; i < 25; i++) {
             Locomotive locomotive = locomotiveGenerator.generateLocomotive();
             locomotive.generateRoute();
-//            System.out.println("Forward");
-//            System.out.println(locomotive.getRoute().getRouteStations());//test
-//            System.out.println("Back");
-//            System.out.println(locomotive.getReverseRoute().getRouteStations());
-//            System.out.println();
+            //printingRoute(locomotive);//prints routes forward and back
             locomotives.add(locomotive);
 
         }
         return locomotives;
     }
-
+    public static void printingRoute(Locomotive locomotive){
+        System.out.println("Forward");
+        System.out.println(locomotive.getRoute().getRouteStations());//test
+        System.out.println("Back");
+        System.out.println(locomotive.getReverseRoute().getRouteStations());
+        System.out.println();
+    }
     public static Map<String, RailroadCar> saveCars(List<Trainset> trainsets) {
         Map<String, RailroadCar> hashCars = new HashMap<>();
         for (Trainset item : trainsets) {
@@ -126,34 +134,5 @@ public class Main {
             System.out.println(count++ + ". Trainset ID: " + trainset.getId() +
                     "\tPath: " + trainset.getLocomotive().getSourceStation() + " to " + trainset.getLocomotive().getDestinationStation());
     }
-
-    public static Station findStation(String stationName, List<Station> stations) {
-        for (Station station : stations) {
-            if (station.getName().equals(stationName)) {
-                return station;
-            }
-        }
-        return null;
-    }
-
-    public static String getShipper() {
-        String result = null;
-        Random random = new Random();
-        String path = "TechFiles\\CarShipper.txt";
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
-            ArrayList<String> lines = new ArrayList<>();
-            String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
-                lines.add(line);
-            }
-            int randomLine = random.nextInt(lines.size());
-            result = lines.get(randomLine);
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e);
-        }
-
-        return result;
-    }
-
 }
 

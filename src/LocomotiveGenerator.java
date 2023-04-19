@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 public class LocomotiveGenerator {
-    final List<Station> stations = Station.generateStations();
-    LocomotiveGenerator(){
-
+    List<Station> stations;
+    LocomotiveGenerator(List<Station> stations){
+        this.stations = stations;
     }
     public Locomotive generateLocomotive(String home, String source, String destination){
         Random random = new Random();

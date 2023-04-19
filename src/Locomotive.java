@@ -29,13 +29,13 @@ public class Locomotive {
         this.homeRailwayStation = homeRailwayStation;
         this.sourceStation = sourceStation;
         this.destinationStation = destinationStation;
-        this.speed = 140;
+        this.speed = 135;
         this.onRoute = true;
     }
 
     public void generateRoute() {
         Route route = new Route();
-        Route reverseRoute = new Route(); // create a new Route object for storing the reverse route
+        Route reverseRoute = new Route();
         Station source = this.getSourceStation();
         Station destination = this.getDestinationStation();
         Map<Station, Double> distances = new HashMap<>();
@@ -45,7 +45,6 @@ public class Locomotive {
         distances.put(source, 0.0);
         pq.offer(source);
 
-        // Check if there is a path between the source and destination stations
         boolean hasPath = false;
         while (!pq.isEmpty()) {
             Station currentStation = pq.poll();
@@ -97,7 +96,7 @@ public class Locomotive {
                 try {
                     throw new RailroadHazard();
                 } catch (RailroadHazard e) {
-                    System.out.println(("WARNING: Locomotive " + getId() + " is out of speed limit | Current speed is " + getSpeed()));
+                    System.out.println("WARNING: Locomotive " + getId() + " is out of speed limit | Current speed is " + getSpeed());
                 }//throwing exception if it's out of bounded speed
             }
             double delta = Math.round(speed * 0.03);
@@ -107,7 +106,7 @@ public class Locomotive {
             } else {
                 speed -= delta;
             }
-            //System.out.println("Train " + getId() + " 's speed is " + getSpeed());
+            //System.out.println("Train " + getId() + " 's speed is " + getSpeed());//in order to check how our speed is changing
             Thread.sleep(1000);
         }
     }

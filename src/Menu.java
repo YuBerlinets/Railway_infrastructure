@@ -5,19 +5,24 @@ import java.util.*;
 public class Menu {
     private Map<Integer, Map<Integer, Runnable>> menu;
     private Scanner scanner;
-    Map<String, Trainset> menuTrain = new HashMap<>();
-    Map<String, RailroadCar> menuCar = new HashMap<>();
+    Map<String, Trainset> menuTrain;
+    Map<String, RailroadCar> menuCar;
+    Map<String, Locomotive> menuLocomotive;
     private boolean programIsWorking = true;
+    List<Station> stations;
 
-    public Menu(Map<String, Trainset> menuTrain, Map<String, RailroadCar> menuCar) {
+    public Menu(Map<String, Trainset> menuTrain, Map<String, RailroadCar> menuCar, List<Station> stations) {
         this.menu = new HashMap<>();
         this.menuTrain = menuTrain;
         this.menuCar = menuCar;
-
+        this.stations = stations;
+        this.menuLocomotive = new HashMap<>();
         Map<Integer, Runnable> trains = new HashMap<>();
         trains.put(1, this::addCar);
         trains.put(2, this::removeCar);
         trains.put(3, this::trainInformation);
+        trains.put(4, this::printingRoute);
+        trains.put(5, this::checkNumCars);
         menu.put(1, trains);
 
         Map<Integer, Runnable> cars = new HashMap<>();
@@ -28,8 +33,8 @@ public class Menu {
 
         Map<Integer, Runnable> routes = new HashMap<>();
         routes.put(1, this::createLocomotive);
-        routes.put(2, this::foo);
-        routes.put(3, this::foo);
+        routes.put(2, this::createTrainset);
+        routes.put(3, this::printingRoute);
         menu.put(3, routes);
 
 
@@ -38,27 +43,21 @@ public class Menu {
 
     public void display() {
         int choice = -1;
-
         while (programIsWorking) {
-
-            // Display the menu
             System.out.println("Choose the option:");
             System.out.println(
                     "1. Trains\n" +
                             "2. Cars\n" +
                             "3. Locomotive\n" +
                             "4. Abbreviation\n" +
-                            "5. Category E\n" +
                             "0. Exit");
             System.out.println();
 
-            // Get the user's choice
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
             if (choice == 0) {
                 exitProgram();
             }
-            // Call the selected function using the HashMap
             if (choice >= 1 && choice <= 3) {
                 Map<Integer, Runnable> category = menu.get(choice);
                 System.out.println("Functions:");
@@ -66,19 +65,21 @@ public class Menu {
                     System.out.println("1. Add a car");
                     System.out.println("2. Delete cars");
                     System.out.println("3. Train information");
+                    System.out.println("4. Train route");
+                    System.out.println("5. Number of different cars");
                 } else if (choice == 2) {
                     System.out.println("1. Create new Car");
                     System.out.println("2. Remove car");
                     System.out.println("3. Car information");
                 } else if (choice == 3) {
                     System.out.println("1. Create a new locomotive");
-                    System.out.println("2. smth about station");
-                    System.out.println("3. smth about station");
+                    System.out.println("2. Create a new trainset");
+                    System.out.println("3. smth about locomotive");
                 }
                 System.out.println();
                 System.out.print("Enter your choice of function: ");
                 int functionChoice = scanner.nextInt();
-                if (functionChoice >= 1 && functionChoice <= 3) {
+                if (functionChoice >= 1 && functionChoice <= category.size()) {
                     Runnable function = category.get(functionChoice);
                     function.run();
                 } else {
@@ -92,17 +93,84 @@ public class Menu {
             System.out.println();
         }
     }
-    private void createLocomotive(){
-        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator();
+
+    public void checkNumCars() {
+        System.out.println("Enter trainset's id:");
+        String id = scanner.next();
+        if (menuTrain.containsKey(id)) {
+            System.out.println(countRailroadCars(menuTrain.get(id).getRailroadCars()));
+        } else
+            System.out.println("Trainset with " + id + " hasn't been found");
+    }
+
+    public static Map<Class<? extends RailroadCar>, Integer> countRailroadCars(List<? extends RailroadCar> list) {
+        Map<Class<? extends RailroadCar>, Integer> countMap = new HashMap<>();
+
+        for (RailroadCar car : list) {
+            Class<? extends RailroadCar> carClass = car.getClass();
+            countMap.put(carClass, countMap.getOrDefault(carClass, 0) + 1);
+        }
+
+        return countMap;
+    }
+
+    private void printingRoute() {
+        System.out.println("Enter trainset's id:");
+        String id = scanner.next();
+        if (menuTrain.containsKey(id)) {
+            System.out.println("Route forward");
+            System.out.println(menuTrain.get(id).getLocomotive().getRoute().getRouteStations());
+            System.out.println("Route backward");
+            System.out.println(menuTrain.get(id).getLocomotive().getReverseRoute().getRouteStations());
+        } else
+            System.out.println("Trainset with " + id + " hasn't been found");
+    }
+
+    private void createTrainset() {
+        System.out.println("Enter locomotive's id:");
+        String id = scanner.next();
+        Trainset trainset = null;
+        if (this.menuLocomotive.containsKey(id)) {
+            trainset = new Trainset(this.menuLocomotive.get(id));
+            System.out.println("Would you like to start moving this trainset through the route? y/n");
+            String choice = scanner.next();
+            if (choice.equals("y")) {
+                Trainset finalTrainset = trainset;
+                Thread adjustSpeed = new Thread(() -> {
+                    try {
+                        finalTrainset.getLocomotive().adjustSpeed();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                Thread moving = new Thread(() -> {
+                    try {
+                        finalTrainset.moveRoute();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                adjustSpeed.start();
+                moving.start();
+            } else
+                System.out.println("So here is your trainset" + trainset);
+        } else
+            System.out.println("Locomotive with " + id + " hasn't been found");
+    }
+
+    private void createLocomotive() {
+        LocomotiveGenerator locomotiveGenerator = new LocomotiveGenerator(this.stations);
         System.out.println("Enter the home station:");
         String home = scanner.next();
         System.out.println("Enter the source station:");
         String source = scanner.next();
         System.out.println("Enter the destination station:");
         String destination = scanner.next();
-        Locomotive locomotive = locomotiveGenerator.generateLocomotive(home,source,destination);
+        Locomotive locomotive = locomotiveGenerator.generateLocomotive(home, source, destination);
+        menuLocomotive.put(locomotive.getId(), locomotive);
         System.out.println(locomotive);
     }
+
     private void createCar() {
         System.out.println(abbreviationInfo());
         System.out.println("Enter the type of Car");

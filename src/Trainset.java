@@ -37,7 +37,7 @@ public class Trainset implements Comparable<Trainset> {
         boolean forward = true;
         double completedDistance = 0;
         double totalDistance = this.getLocomotive().getRoute().getTotalDistance();
-        List<Station> route = new ArrayList<>();
+        List<Station> route;
         while (this.isOnRoute()) {
             if (forward)
                 route = routeForward;
@@ -87,8 +87,8 @@ public class Trainset implements Comparable<Trainset> {
                         forward = false;
                     }
                 } else {
-                    //System.out.println(nextStation + " is currently not available"); // to check when two trainset meet at the route and then wait
-                    //System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
+//                    System.out.println(nextStation + " is currently not available"); // to check when two trainset meet at the route and then wait
+//                    System.out.println("Train: " + getId() + " is near the station: " + nextStation + ". Waiting for availability");
                     double prevSpeed = this.speed;
                     this.speed = 0;
                     while (this.isOnRoute()) {
